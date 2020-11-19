@@ -1,33 +1,36 @@
+import json
 import pathlib
 
 import saneyaml
-from licensedcode.models import load_licenses
 from jinja2 import Environment, PackageLoader
-import json
+from licensedcode.models import load_licenses
 
 licenses = load_licenses(with_deprecated=True)
 
+BUILD_LOCATION = "build"
 
 env = Environment(
-    loader=PackageLoader('licenses', 'templates'),
+    loader=PackageLoader("licenses", "templates"),
     autoescape=True,
 )
 
+
 def write_file(path, filename, content):
-    (path / filename).open('w').write(content)
+    (path / filename).open("w").write(content)
 
 
-def generate_html():
-    output_path = pathlib.Path(".")
+def generate():
+    output_path = pathlib.Path(BUILD_LOCATION)
     output_path.mkdir(parents=False, exist_ok=True)
+
     licenses_path = output_path / "licenses"
     licenses_path.mkdir(parents=False, exist_ok=True)
 
-    license_list_template = env.get_template('license_list.html')
+    license_list_template = env.get_template("license_list.html")
     html = license_list_template.render(title="License list", licenses=licenses)
-    (output_path / "index.html").open('w').write(html)
+    (output_path / "index.html").open("w").write(html)
 
-    license_details_template = env.get_template('license_details.html')
+    license_details_template = env.get_template("license_details.html")
     for license in licenses.values():
         license_data = license.to_dict()
         yml = saneyaml.dump(license_data)
@@ -39,4 +42,4 @@ def generate_html():
 
 
 if __name__ == "__main__":
-    generate_html()
+    generate()

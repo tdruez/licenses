@@ -29,6 +29,9 @@ conf:
 	${PYTHON_EXE} -m venv .
 	@${ACTIVATE} pip install "scancode-toolkit[full]"
 
+clean:
+	git rm -r build
+
 build:
 	@echo "-> Generate the HTML content"
 	bin/python licenses.py
