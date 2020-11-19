@@ -29,8 +29,8 @@ conf:
 	${PYTHON_EXE} -m venv .
 	@${ACTIVATE} pip install "scancode-toolkit[full]" dominate
 
-html: conf
+build: conf
 	@echo "-> Generate the HTML content"
 	bin/python licenses.py
 
-.PHONY: conf html
+.PHONY: conf build

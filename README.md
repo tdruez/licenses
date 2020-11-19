@@ -1,4 +1,4 @@
 ScanCode licenses
 -----------------
 
-Generate the HTML content with: `$ make html`
+Generate the HTML content with: `$ make build`
