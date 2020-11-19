@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ license.key }}{% endblock %}
+{% block content %}
+  <a href="{{ license.key }}.yml">yml</a> -
+  <a href="{{ license.key }}.json">json</a> -
+  <a href="{{ license.key }}.LICENSE">text</a> -
+  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/{{ license.key }}.LICENSE">edit text</a> -
+  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/{{ license.key }}.yml">edit data</a>
+  <hr>
+  <pre>{{ license_data }}</pre>
+  <hr>
+  <pre>{{ license.text }}</pre>
+{% endblock %}

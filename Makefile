@@ -27,9 +27,9 @@ ACTIVATE=. bin/activate;
 conf:
 	@echo "-> Configure the Python venv and install dependencies"
 	${PYTHON_EXE} -m venv .
-	@${ACTIVATE} pip install "scancode-toolkit[full]" dominate
+	@${ACTIVATE} pip install "scancode-toolkit[full]"
 
-build: conf
+build:
 	@echo "-> Generate the HTML content"
 	bin/python licenses.py
 
