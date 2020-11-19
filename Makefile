@@ -30,7 +30,7 @@ conf:
 	@${ACTIVATE} pip install "scancode-toolkit[full]"
 
 clean:
-	git rm -r build
+	git rm -r docs
 
 build:
 	@echo "-> Generate the HTML content"

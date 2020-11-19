@@ -7,7 +7,8 @@ from licensedcode.models import load_licenses
 
 licenses = load_licenses(with_deprecated=True)
 
-BUILD_LOCATION = "build"
+# GitHub Pages support only /(root) or docs/ for the source
+BUILD_LOCATION = "docs"
 
 env = Environment(
     loader=PackageLoader("licenses", "templates"),

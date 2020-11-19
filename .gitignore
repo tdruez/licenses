@@ -8,6 +8,7 @@ eggs
 downloads
 lib
 lib64
+build
 .project
 .pydevproject
 include
