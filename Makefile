@@ -35,5 +35,6 @@ clean:
 build:
 	@echo "-> Generate the HTML content"
 	bin/python licenses.py
+	cp -R static/ docs/static/
 
-.PHONY: conf build
+.PHONY: conf clean build
