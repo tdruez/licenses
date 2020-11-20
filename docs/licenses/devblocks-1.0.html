@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>devblocks-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="devblocks-1.0.yml">yml</a> -
   <a href="devblocks-1.0.json">json</a> -
   <a href="devblocks-1.0.LICENSE">text</a> -
@@ -22,7 +31,7 @@ text_urls:
   - https://cerb.ai/license/
 </pre>
   <hr>
-  <pre>
+  <pre id="license-text">
 Devblocks Public License 1.0 (DPL)
 
 The following are the terms and conditions by which Webgroup Media, LLC (“Licensor”) grants you a License to use, modify, and redistribute this software, which is protected as the exclusive intellectual property of Licensor by U.S. copyright law.
@@ -108,6 +117,21 @@ Limitation of Liability and Remedies
 
 In no event unless required by applicable law or agreed to in writing will Licensor be liable to you under any circumstances for any lost profits or any indirect, special, consequential or punitive damages including, without limitation, loss or alteration of data, failure to provide support, interruption of business, or loss of employee work time. Some jurisdictions do not allow the exclusion or limitation of certain warranties or liability for loss or damage caused by negligence, breach of contract or breach of implied terms, or incidental or consequential damages. Accordingly, only the limitations which are lawful in your jurisdiction will apply to you and Licensor’s liability will be limited to the maximum extent permitted by law. The entire liability of Licensor shall not exceed the aggregate amount paid by you for the software.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

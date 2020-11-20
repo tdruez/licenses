@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sencha-commercial-3.9</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sencha-commercial-3.9.yml">yml</a> -
   <a href="sencha-commercial-3.9.json">json</a> -
   <a href="sencha-commercial-3.9.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_emails:
   - license@sencha.com
 </pre>
   <hr>
-  <pre>Sencha Software License Agreement
+  <pre id="license-text">Sencha Software License Agreement
 Summary of Important Use Restrictions
 
 Please read the entire agreement and definitions below.
@@ -159,6 +168,21 @@ If the Software or any related documentation is licensed to the U.S. Government 
 Sencha Ext JS Bundles: Sencha Ext JS Standard includes Sencha Ext JS (which includes Sencha Tree Grid and Sencha Charts), Sencha Stencils, Sencha Visual Studio Code Plugin, and Sencha Cmd. Sencha Ext JS Pro includes all the Sencha Ext JS Standard Software and Sencha Architect, Sencha JetBrains Plugin, Sencha Eclipse Plugin, Sencha Visual Studio Plugin, and Sencha Themer. Sencha Ext JS Premium includes all the Sencha Ext JS Pro Software and Sencha Pivot Grid, Sencha Inspector, Sencha Calendar Component, Sencha Exporter, and Sencha D3 Adapter.
 
 Sencha ExtReact Bundles: Sencha ExtReact Standard includes Sencha ExtReact and Sencha Cmd. Sencha ExtReact Premium includes all the Sencha ExtReact Standard Software and Sencha Themer, Sencha Tree Grid, Sencha Pivot Grid, Sencha Calendar Component, Sencha Exporter, and Sencha D3 Adapter.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

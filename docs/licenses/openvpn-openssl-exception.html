@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>openvpn-openssl-exception</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="openvpn-openssl-exception.yml">yml</a> -
   <a href="openvpn-openssl-exception.json">json</a> -
   <a href="openvpn-openssl-exception.LICENSE">text</a> -
@@ -25,7 +34,7 @@ other_urls:
   - http://www.gnu.org/licenses/gpl-2.0.txt
 </pre>
   <hr>
-  <pre>Special exception for linking OpenVPN with OpenSSL:
+  <pre id="license-text">Special exception for linking OpenVPN with OpenSSL:
 
 In addition, as a special exception, OpenVPN Technologies, Inc. gives permission
 to link the code of this program with the OpenSSL Library (or with modified
@@ -35,6 +44,21 @@ all respects for all of the code used other than OpenSSL. If you modify this
 file, you may extend this exception to your version of the file, but you are not
 obligated to do so. If you do not wish to do so, delete this exception statement
 from your version.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

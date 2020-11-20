@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>far-manager-exception</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="far-manager-exception.yml">yml</a> -
   <a href="far-manager-exception.json">json</a> -
   <a href="far-manager-exception.LICENSE">text</a> -
@@ -50,11 +59,26 @@ standard_notice: |
   possible license with no implications from the above license on them.
 </pre>
   <hr>
-  <pre>EXCEPTION:
+  <pre id="license-text">EXCEPTION:
 Far Manager plugins that use only the following header files from this
 distribution (none or any): farcolor.hpp, farkeys.hpp, plugin.hpp,
 farcolorW.pas, farkeysW.pas and pluginW.pas; can be distributed under any other
 possible license with no implications from the above license on them.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

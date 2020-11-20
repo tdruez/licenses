@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>corporate-accountability-commercial-1.1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="corporate-accountability-commercial-1.1.yml">yml</a> -
   <a href="corporate-accountability-commercial-1.1.json">json</a> -
   <a href="corporate-accountability-commercial-1.1.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_urls:
   - https://wiki.creativecommons.org/wiki/CCPlus
 </pre>
   <hr>
-  <pre>The CC+CAL Commercial Use License Agreement Legal Notice
+  <pre id="license-text">The CC+CAL Commercial Use License Agreement Legal Notice
 
 The CC+CAL Commercial Use License Agreement (the &#34;Agreement&#34;) is intended to be used in tandem with any standard Creative Commons Public License that does not provide the public with rights to use licensed material for commercial purposes (i.e., a Creative Commons Public License that includes a NonCommercial restriction). Through this Agreement, licensors using a Creative Commons Public License grant additional permissions to the public to use the licensed material for commercial purposes subject to a Morals Clause for Safe and Environmentally Sustainable Supply Chains set forth in this Agreement. For the avoidance of doubt, this Agreement does not modify or customize any Creative Commons Public License. This Agreement is a separate and independent agreement intended to exist alongside a Creative Commons Public License, granting additional permissions not provided by the Creative Commons Public License that pertain specifically to the commercial use of licensed material and the use of licensed material to promote safe and environmentally sustainable supply chains.
 
@@ -202,6 +211,21 @@ c. No term or condition of this Agreement will be waived and no failure to compl
 
 Nothing in this Agreement constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sun-bcl-sdk-1.4.2</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sun-bcl-sdk-1.4.2.yml">yml</a> -
   <a href="sun-bcl-sdk-1.4.2.json">json</a> -
   <a href="sun-bcl-sdk-1.4.2.LICENSE">text</a> -
@@ -25,7 +34,7 @@ ignorable_urls:
   - http://www.sun.com/policies/trademarks
 </pre>
   <hr>
-  <pre>Sun Microsystems, Inc. Binary Code License Agreement
+  <pre id="license-text">Sun Microsystems, Inc. Binary Code License Agreement
 for the JAVA 2 SOFTWARE DEVELOPMENT KIT (J2SDK), STANDARD EDITION,
 VERSION 1.4.2_X
 
@@ -82,6 +91,21 @@ G.Third Party Code. Additional copyright notices and license terms applicable to
 H.Termination for Infringement. Either party may terminate this Agreement immediately should any Software become, or in either party&#39;s opinion be likely to become, the subject of a claim of infringement of any intellectual property right.
 
 For inquiries please contact: Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California 95054, U.S.A. (LFI#129530/Form ID#011801)</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

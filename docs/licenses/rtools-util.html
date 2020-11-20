@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>rtools-util</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="rtools-util.yml">yml</a> -
   <a href="rtools-util.json">json</a> -
   <a href="rtools-util.LICENSE">text</a> -
@@ -21,7 +30,7 @@ other_urls:
   - http://www.codeproject.com/Articles/3143/RTools-Util-C-Library
 </pre>
   <hr>
-  <pre>This software is provided AS IS. No warranty is granted, 
+  <pre id="license-text">This software is provided AS IS. No warranty is granted, 
 neither expressed nor implied. USE THIS SOFTWARE AT YOUR OWN RISK.
 NO REPRESENTATION OF MERCHANTABILITY or FITNESS FOR ANY 
 PURPOSE is given.
@@ -34,6 +43,21 @@ License to use this software is limited by the following terms:
 Also, in return for using this code, please attempt to make your fixes and
 updates available in some way, such as by sending your updates to the
 author.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

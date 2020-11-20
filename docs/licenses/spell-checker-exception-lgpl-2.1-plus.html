@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>spell-checker-exception-lgpl-2.1-plus</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="spell-checker-exception-lgpl-2.1-plus.yml">yml</a> -
   <a href="spell-checker-exception-lgpl-2.1-plus.json">json</a> -
   <a href="spell-checker-exception-lgpl-2.1-plus.LICENSE">text</a> -
@@ -47,7 +56,7 @@ standard_notice: |
   do so, delete this exception statement from your version.
 </pre>
   <hr>
-  <pre>In addition, as a special exception, Dom Lachowicz
+  <pre id="license-text">In addition, as a special exception, Dom Lachowicz
 gives permission to link the code of this program with
 non-LGPL Spelling Provider libraries (eg: a MSFT Office
 spell checker backend) and distribute linked combinations including
@@ -56,6 +65,21 @@ respects for all of the code used other than said providers.  If you modify
 this file, you may extend this exception to your version of the
 file, but you are not obligated to do so.  If you do not wish to
 do so, delete this exception statement from your version.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

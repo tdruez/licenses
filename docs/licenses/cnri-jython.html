@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>cnri-jython</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="cnri-jython.yml">yml</a> -
   <a href="cnri-jython.json">json</a> -
   <a href="cnri-jython.LICENSE">text</a> -
@@ -27,7 +36,7 @@ ignorable_urls:
   - http://hdl.handle.net/1895.22/1006
 </pre>
   <hr>
-  <pre>
+  <pre id="license-text">
 1. This LICENSE AGREEMENT is between the Corporation for National Research Initiatives, having an office at 1895 Preston White Drive, Reston, VA 20191 (&#34;CNRI&#34;), and the Individual or Organization (&#34;Licensee&#34;) accessing and using JPython version 1.1.x in source or binary form and its associated documentation as provided herein (&#34;Software&#34;).  
 
 2. Subject to the terms and conditions of this License Agreement, CNRI hereby grants Licensee a non-exclusive, non-transferable, royalty-free, world-wide license to reproduce, analyze, test, perform and/or display publicly, prepare derivative works, distribute, and otherwise use the Software alone or in any derivative version, provided, however, that CNRI&#39;s License Agreement and CNRI&#39;s notice of copyright, i.e., &#34;Copyright (c) 1996-1999 Corporation for National Research Initiatives; All Rights Reserved&#34; are both retained in the Software, alone or in any derivative version prepared by Licensee. Alternatively, in lieu of CNRI&#39;s License Agreement, Licensee may substitute the following text (omitting the quotes), provided, however, that such text is displayed prominently in the Software alone or in any derivative version prepared by Licensee: &#34;JPython (Version 1.1.x) is made available subject to the terms and conditions in CNRI&#39;s License Agreement. This Agreement may be located on the Internet using the following unique, persistent identifier (known as a handle): 1895.22/1006. The License may also be obtained from a proxy server on the Web using the following URL: http://hdl.handle.net/1895.22/1006.&#34;  
@@ -45,6 +54,21 @@ ignorable_urls:
 8. This License Agreement shall be governed by and interpreted in all respects by the law of the State of Virginia, excluding conflict of law provisions. Nothing in this Agreement shall be deemed to create any relationship of agency, partnership, or joint venture between CNRI and Licensee.  
 
 9. By clicking on the &#34;ACCEPT&#34; button where indicated, or by installing, copying or otherwise using the Software, Licensee agrees to be bound by the terms and conditions of this License Agreement.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>eclipse-sua-2002</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="eclipse-sua-2002.yml">yml</a> -
   <a href="eclipse-sua-2002.json">json</a> -
   <a href="eclipse-sua-2002.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_urls:
   - http://www.eclipse.org/legal/cpl-v10.html
 </pre>
   <hr>
-  <pre>Eclipse.org Software User Agreement
+  <pre id="license-text">Eclipse.org Software User Agreement
 
 17th June, 2002
 
@@ -46,6 +55,21 @@ The terms and conditions governing Plug-ins and Fragments should be contained in
 Note: if a Feature made available by Eclipse.org is installed using the Eclipse Update Manager, you must agree to a license (&#34;Feature Update License&#34;) during the installation process. If the Feature contains Included Features, the Feature Update License should either provide you with the terms and conditions governing the Included Features or inform you where you can locate them. Feature Update Licenses may be found in the &#34;license&#34; property of files named &#34;feature.properties&#34;. Such Abouts, Feature Licenses and Feature Update Licenses contain the terms and conditions (or references to such terms and conditions) that govern your use of the associated Content in that directory. The Abouts, Feature Licenses and Feature Update Licenses may refer to the CPL or other license agreements, notices or terms and conditions . It is your obligation to read and accept all such all terms and conditions prior to use of the Content. If no About, Feature License or Feature Update License is provided, please contact Eclipse.org to determine what terms and conditions govern that particular Content.
 
 Content may contain encryption software. The country in which you are currently may have restrictions on the import, possession, and use, and/or re-export to another country, of encryption software. BEFORE using any encryption software, please check the country&#39;s laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

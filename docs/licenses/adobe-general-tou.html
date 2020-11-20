@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>adobe-general-tou</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="adobe-general-tou.yml">yml</a> -
   <a href="adobe-general-tou.json">json</a> -
   <a href="adobe-general-tou.LICENSE">text</a> -
@@ -34,7 +43,7 @@ ignorable_emails:
   - copyright@adobe.com
 </pre>
   <hr>
-  <pre>Adobe General Terms of Use
+  <pre id="license-text">Adobe General Terms of Use
 
 Last updated June 18, 2014. Replaces the October 16, 2012 version in its entirety.
 
@@ -391,6 +400,21 @@ Adobe Systems Incorporated: 345 Park Avenue, San Jose, California 95110-2704
 Adobe Systems Software Ireland Limited: 4-6 Riverwalk, City West Business Campus, Saggart, Dublin 24
 
 Adobe_General_Terms_of_Use-en_US-20140618_2200</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>script-nikhilk</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="script-nikhilk.yml">yml</a> -
   <a href="script-nikhilk.json">json</a> -
   <a href="script-nikhilk.LICENSE">text</a> -
@@ -25,7 +34,7 @@ other_urls:
   - http://www.nikhilk.net/About.aspx
 </pre>
   <hr>
-  <pre>End User License Agreement for Script# 
+  <pre id="license-text">End User License Agreement for Script# 
 IT IS IMPORTANT THAT YOU CAREFULLY READ THIS NOTICE BEFORE INSTALLING THIS PRODUCT. BY INSTALLING, OR OTHERWISE USING THIS SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE AGREEMENT (THE &#34;AGREEMENT&#34;) WHICH CONSTITUTES A LEGALLY BINDING CONTRACT BETWEEN THE LICENSOR (PROJECTS.NIKHILK.NET, HEREAFTER &#34;WE&#34;, OR &#34;US&#34;) AND THE LICENSEE (EITHER AN INDIVIDUAL OR ENTITY, HEREAFTER &#34;YOU&#34;). 
 THIS AGREEMENT 
 1.1 In this Agreement, the phrase &#34;Software&#34; means any version of the computer programs above and all associated media, printed materials, &#34;online&#34; or electronic documentation and bundled software. 
@@ -63,6 +72,21 @@ GENERAL TERMS
 6.4 This Agreement is governed by the laws of the State of Washington, USA. Irrespective of the country in which the Software was acquired, the construction, validity and performance of the Agreement shall be governed in all respects by English law. You agree to submit to exclusive jurisdiction of English courts. 
 6.5 If any provision of this Agreement is found to be invalid by any court having competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining provisions of this Agreement, which shall remain in full force and effect. 
 6.6 You agree that the Software will not be shipped, transferred or exported into any country or used in any manner prohibited by the United States Export Administration Act or any other export laws, restrictions or regulations.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

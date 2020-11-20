@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sybase</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sybase.yml">yml</a> -
   <a href="sybase.json">json</a> -
   <a href="sybase.LICENSE">text</a> -
@@ -35,7 +44,7 @@ ignorable_urls:
   - http://www.sybase.com/developer/opensource
 </pre>
   <hr>
-  <pre>USE OF THE SYBASE OPEN WATCOM SOFTWARE DESCRIBED BELOW (&#34;SOFTWARE&#34;) IS 
+  <pre id="license-text">USE OF THE SYBASE OPEN WATCOM SOFTWARE DESCRIBED BELOW (&#34;SOFTWARE&#34;) IS 
 SUBJECT TO THE TERMS AND CONDITIONS SET FORTH IN THE SYBASE OPEN WATCOM 
 PUBLIC LICENSE SET FORTH BELOW (&#34;LICENSE&#34;). YOU MAY NOT USE THE SOFTWARE 
 IN ANY MANNER UNLESS YOU ACCEPT THE TERMS AND CONDITIONS OF THE LICENSE. 
@@ -385,6 +394,21 @@ WARRANTIES, INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT. Please 
 see the License for the specific language governing rights and limitations 
 under the License.&#34;</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

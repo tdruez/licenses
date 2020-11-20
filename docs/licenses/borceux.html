@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>borceux</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="borceux.yml">yml</a> -
   <a href="borceux.json">json</a> -
   <a href="borceux.LICENSE">text</a> -
@@ -25,7 +34,7 @@ ignorable_holders:
   - Francis Borceux
 </pre>
   <hr>
-  <pre>Copyright 1993 Francis Borceux
+  <pre id="license-text">Copyright 1993 Francis Borceux
 You may freely use, modify, and/or distribute each of the files in this package without limitation.  The package consists of the following files:
 
 README
@@ -44,6 +53,21 @@ user-guides/Diagram_Read_Me
 
 Of course no support is guaranteed, but the author will attempt to assist with problems.  Current email address:
 francis dot borceux at uclouvain dot be.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

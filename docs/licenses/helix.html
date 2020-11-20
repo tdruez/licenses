@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>helix</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="helix.yml">yml</a> -
   <a href="helix.json">json</a> -
   <a href="helix.LICENSE">text</a> -
@@ -28,7 +37,7 @@ ignorable_urls:
   - http://www.helixcommunity.org/
 </pre>
   <hr>
-  <pre>Helix DNA Technology Binary Research Use License
+  <pre id="license-text">Helix DNA Technology Binary Research Use License
 
 REDISTRIBUTION NOT PERMITTED
 
@@ -67,6 +76,21 @@ d) Certain components of the Software may embody a serial copying management sys
 10. MISCELLANEOUS. This License Agreement shall constitute the complete and exclusive agreement between us. A separate written agreement with respect to the subject matter hereof shall supersede this instrument to the extent indicated in such separate agreement. This License Agreement may not be modified except in a writing duly signed by an authorized representative of RealNetworks and You. If any provision of this License Agreement is held to be unenforceable for any reason, such provision shall be reformed only to the extent necessary to make it enforceable, and such decision shall not affect the enforceability of such provision under other circumstances, or of the remaining provisions hereof under all circumstances. This License Agreement shall be governed by the laws of the State of Washington without regard to conflicts of law provisions and You consent to the exclusive jurisdiction of the state and federal courts sitting in the State of Washington. This License Agreement will not be governed by the United Nations Convention of Contracts for the International Sale of Goods, the application of which is hereby expressly excluded.
 
 Copyright ©1995-2002 RealNetworks, Inc. and/or its suppliers. 2601 Elliott Avenue, Suite 1000, Seattle, Washington 98121 U.S.A. The Software may incorporate one or more of the following patents: U.S. Patent #5,917,835; U.S. Patent # 5,854,858; U.S. Patent # 5,917,954. Other U.S. patents pending. All rights reserved. RealNetworks, Helix, RealAudio, and RealVideo are trademarks or registered trademarks of RealNetworks, Inc.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

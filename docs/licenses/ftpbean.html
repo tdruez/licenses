@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ftpbean</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ftpbean.yml">yml</a> -
   <a href="ftpbean.json">json</a> -
   <a href="ftpbean.LICENSE">text</a> -
@@ -28,7 +37,7 @@ ignorable_emails:
   - citidancer@hongkong.com
 </pre>
   <hr>
-  <pre>FtpBean                      Version 1.4.2
+  <pre id="license-text">FtpBean                      Version 1.4.2
 Copyright 1999 Calvin Tai
 E-mail: citidancer@hongkong.com
 URL: http://www.geocities.com/SiliconValley/Code/9129/javabean/ftpbean
@@ -48,6 +57,21 @@ this java bean as a standalone application.
 Obtain permission before redistributing this software over the Internet or
 in any other medium.  In all cases copyright and header must remain intact.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

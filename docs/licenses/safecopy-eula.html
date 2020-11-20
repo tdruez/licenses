@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>safecopy-eula</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="safecopy-eula.yml">yml</a> -
   <a href="safecopy-eula.json">json</a> -
   <a href="safecopy-eula.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Elwinsoft
 homepage_url: http://www.elwinsoft.com/
 </pre>
   <hr>
-  <pre>The SafeCopy Free! utility is freeware. 
+  <pre id="license-text">The SafeCopy Free! utility is freeware. 
 
 User is granted a non-exclusive license to use SafeCopy Free! utility, for any legal purpose, at a time.
 The SafeCopy Free! software may not be rented or leased, but may be permanently transferred, if the person
@@ -47,6 +56,21 @@ Installing and/or using SafeCopy Free! signifies acceptance of these terms and c
 
 If you do not agree with the terms of this license you must remove SafeCopy Free! files from your storage
 devices and cease to use the product.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

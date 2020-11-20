@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sencha-app-floss-exception</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sencha-app-floss-exception.yml">yml</a> -
   <a href="sencha-app-floss-exception.json">json</a> -
   <a href="sencha-app-floss-exception.LICENSE">text</a> -
@@ -25,7 +34,7 @@ other_urls:
   - http://www.sencha.com/legal/open-source-faq/open-source-license-exception-for-applications/
 </pre>
   <hr>
-  <pre>
+  <pre id="license-text">
 Exception for Applications Version 1.04, January 18, 2013
 
 Exception Intent
@@ -90,6 +99,21 @@ Zimbra Public License    1.3
 Zlib/libpng License    -
 Zope Public License    2.0
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

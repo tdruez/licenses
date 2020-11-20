@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>gpl-2.0-kernel</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="gpl-2.0-kernel.yml">yml</a> -
   <a href="gpl-2.0-kernel.json">json</a> -
   <a href="gpl-2.0-kernel.LICENSE">text</a> -
@@ -22,7 +31,7 @@ notes: replaced by linux-syscall-exception-gpl
 is_exception: yes
 </pre>
   <hr>
-  <pre>NOTE! This copyright does *not* cover user programs that use kernel
+  <pre id="license-text">NOTE! This copyright does *not* cover user programs that use kernel
  services by normal system calls - this is merely considered normal use
  of the kernel, and does *not* fall under the heading of &#34;derived work&#34;.
  Also note that the GPL below is copyrighted by the Free Software
@@ -40,6 +49,21 @@ This library is free software; you can redistribute it and/or modify it under th
 This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with this library; see the file COPYING.  If not, write to the Free Software Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

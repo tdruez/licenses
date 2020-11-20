@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>cdla-permissive-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="cdla-permissive-1.0.yml">yml</a> -
   <a href="cdla-permissive-1.0.json">json</a> -
   <a href="cdla-permissive-1.0.LICENSE">text</a> -
@@ -23,7 +32,7 @@ other_urls:
   - https://cdla.io/permissive-1-0
 </pre>
   <hr>
-  <pre>Community Data License Agreement – Permissive – Version 1.0
+  <pre id="license-text">Community Data License Agreement – Permissive – Version 1.0
 
 This is the Community Data License Agreement – Permissive, Version 1.0 (&#34;Agreement&#34;).  Data is provided to You under this Agreement by each of the Data Providers.  Your exercise of any of the rights and permissions granted below constitutes Your acceptance and agreement to be bound by the terms and conditions of this Agreement.
 
@@ -108,6 +117,21 @@ Section 7.  Miscellaneous
 7.4 The Data Provider(s) reserve no right or expectation of privacy, data protection or confidentiality in any Data that they Publish under this Agreement.  If You choose to Publish Data under this Agreement, You similarly do so with no reservation or expectation of any rights of privacy or confidentiality in that Data.
 
 7.5 The Community Data License Agreement workgroup under The Linux Foundation is the steward of this Agreement (&#34;Steward&#34;).  No one other than the Steward has the right to modify or publish new versions of this Agreement.  Each version will be given a distinguishing version number.  You may Use and Publish Data Received hereunder under the terms of the version of the Agreement under which You originally Received the Data, or under the terms of any subsequent version published by the Steward.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

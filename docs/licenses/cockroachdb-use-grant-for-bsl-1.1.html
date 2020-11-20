@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>cockroachdb-use-grant-for-bsl-1.1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="cockroachdb-use-grant-for-bsl-1.1.yml">yml</a> -
   <a href="cockroachdb-use-grant-for-bsl-1.1.json">json</a> -
   <a href="cockroachdb-use-grant-for-bsl-1.1.LICENSE">text</a> -
@@ -28,7 +37,7 @@ ignorable_urls:
   - https://cockroachlabs.com/
 </pre>
   <hr>
-  <pre>Parameters
+  <pre id="license-text">Parameters
 Licensor:             Cockroach Labs, Inc.
 Licensed Work:        CockroachDB 19.2
                       The Licensed Work is (c) 2019 Cockroach Labs, Inc.
@@ -55,6 +64,21 @@ Notice
 The Business Source License (this document, or the “License”) is not an Open
 Source license. However, the Licensed Work will eventually be made available
 under an Open Source License, as stated in this License.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

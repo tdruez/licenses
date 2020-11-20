@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>torque-1.1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="torque-1.1.yml">yml</a> -
   <a href="torque-1.1.json">json</a> -
   <a href="torque-1.1.LICENSE">text</a> -
@@ -50,7 +59,7 @@ ignorable_emails:
   - torqueusers@supercluster.org
 </pre>
   <hr>
-  <pre>TORQUE v2.5+ Software License v1.1
+  <pre id="license-text">TORQUE v2.5+ Software License v1.1
 Copyright (c) 2010-2011 Adaptive Computing Enterprises, Inc. All rights reserved.
 
 Use this license to use or redistribute the TORQUE software v2.5+ and later versions. For free support for TORQUE users, questions should be emailed to the community of TORQUE users at torqueusers@supercluster.org. Users can also subscribe to the user mailing list at http://www.supercluster.org/mailman/listinfo/torqueusers. Customers using TORQUE that also are licensed users of Moab branded software from Adaptive Computing Inc. can get TORQUE support from Adaptive Computing via:
@@ -75,6 +84,21 @@ This license will be governed by the laws of Utah, without reference to its choi
 
 Note 1: TORQUE is developed from an earlier version v2.3 of OpenPBS. TORQUE has been developed beyond OpenPBS v2.3. The OpenPBS v2.3 license and OpenPBS software can be obtained at:
 http://www.pbsworks.com/ResLibSearchResult.aspx?keywords=openpbs&amp;industry=All&amp;pro duct_service=All&amp;category=Free%20Software%20Downloads&amp;order_by=title. Users of TORQUE should comply with the TORQUE license as well as the OpenPBS license.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

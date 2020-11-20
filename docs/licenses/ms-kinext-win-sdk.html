@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-kinext-win-sdk</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-kinext-win-sdk.yml">yml</a> -
   <a href="ms-kinext-win-sdk.json">json</a> -
   <a href="ms-kinext-win-sdk.LICENSE">text</a> -
@@ -25,7 +34,7 @@ ignorable_urls:
   - http://www.microsoft.com/exporting
 </pre>
   <hr>
-  <pre>Microsoft Kinect for Windows
+  <pre id="license-text">Microsoft Kinect for Windows
 Software Development Kit (SDK)
 
 These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. It also applies to any Microsoft
@@ -138,6 +147,21 @@ Cette limitation concerne:
 Elle s&#39;applique également, même si Microsoft connaissait ou devrait connaître l&#39;éventualité d&#39;un tel dommage. Si votre pays n&#39;autorise pas l&#39;exclusion ou la limitation de responsabilité pour les dommages indirects, accessoires ou de quelque nature que ce soit, il se peut que la limitation ou l&#39;exclusion ci-dessus ne s&#39;appliquera pas à votre égard.
 
 EFFET JURIDIQUE. Le présent contrat décrit certains droits juridiques. Vous pourriez avoir d&#39;autres droits prévus par les lois de votre pays. Le présent contrat ne modifie pas les droits que vous confèrent les lois de votre pays si celles-ci ne le permettent pas.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

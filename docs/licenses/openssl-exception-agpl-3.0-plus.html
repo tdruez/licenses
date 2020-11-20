@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>openssl-exception-agpl-3.0-plus</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="openssl-exception-agpl-3.0-plus.yml">yml</a> -
   <a href="openssl-exception-agpl-3.0-plus.json">json</a> -
   <a href="openssl-exception-agpl-3.0-plus.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Unspecified
 is_exception: yes
 </pre>
   <hr>
-  <pre>In addition, as a special exception, the copyright holders give
+  <pre id="license-text">In addition, as a special exception, the copyright holders give
 permission to link the code of portions of this program with the
 OpenSSL library under certain conditions as described in each
 individual source file, and distribute linked combinations
@@ -34,6 +43,21 @@ do so.  If you do not wish to do so, delete this exception statement from your
 version.  If you delete this exception statement from all source files in the
 program, then also delete it here.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

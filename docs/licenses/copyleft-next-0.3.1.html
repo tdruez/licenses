@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>copyleft-next-0.3.1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="copyleft-next-0.3.1.yml">yml</a> -
   <a href="copyleft-next-0.3.1.json">json</a> -
   <a href="copyleft-next-0.3.1.LICENSE">text</a> -
@@ -25,7 +34,7 @@ ignorable_urls:
   - https://github.com/copyleft-next/copyleft-next.git/
 </pre>
   <hr>
-  <pre>copyleft-next 0.3.1 (&#34;this License&#34;)
+  <pre id="license-text">copyleft-next 0.3.1 (&#34;this License&#34;)
 Release date: 2016-04-29
 
 1. License Grants; No Trademark License
@@ -245,6 +254,21 @@ Release date: 2016-04-29
 
     &#34;Source Code&#34; means the preferred form of a work for making
     modifications to it.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

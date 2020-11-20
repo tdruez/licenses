@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>smartlabs-freeware</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="smartlabs-freeware.yml">yml</a> -
   <a href="smartlabs-freeware.json">json</a> -
   <a href="smartlabs-freeware.LICENSE">text</a> -
@@ -22,7 +31,7 @@ text_urls:
   - http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/licenses/SmartLabs
 </pre>
   <hr>
-  <pre>Freeware Licence Agreement
+  <pre id="license-text">Freeware Licence Agreement
 This licence agreement only applies to the free version of this software.
 
 Terms and Conditions
@@ -62,6 +71,21 @@ IN NO EVENT SHALL SmartLabs LLC BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT 
 All rights of any kind in the Software which are not expressly granted in this Agreement are entirely and exclusively reserved to and by SmartLabs LLC. 
 
 This agreement contains the entire Agreement between the parties hereto with respect to the subject matter hereof, and supersedes all prior agreements and/or understandings (oral or written). Failure or delay by SmartLabs LLC in enforcing any right or provision hereof shall not be deemed a waiver of such provision or right with respect to the instant or any subsequent breach. If any provision of this Agreement shall be held by a court of competent jurisdiction to be contrary to law, that provision will be enforced to the maximum extent permissible, and the remaining provisions of this Agreement will remain in force and effect.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

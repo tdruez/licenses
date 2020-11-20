@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>yahoo-messenger-eula</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="yahoo-messenger-eula.yml">yml</a> -
   <a href="yahoo-messenger-eula.json">json</a> -
   <a href="yahoo-messenger-eula.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_urls:
   - https://info.yahoo.com/legal/us/yahoo/utos/utos-173.html
 </pre>
   <hr>
-  <pre>Yahoo Messenger Terms Of Service
+  <pre id="license-text">Yahoo Messenger Terms Of Service
 
 NO 911 OR EMERGENCY SERVICE. You acknowledge and understand that Yahoo does NOT currently allow you to access any 911 or similar emergency services (no traditional 911, E911, or similar access to emergency services). You should always have an alternative means of accessing 911 or similar emergency services. Please inform others who use your Yahoo Messenger and devices used to access Yahoo Messenger that they must access these numbers through a traditional landline or mobile phone. Yahoo Messenger is not intended to replace your primary phone service, such as traditional landline or mobile phone.
 
@@ -144,6 +153,21 @@ The section titles in this License are for convenience only and have no legal or
 VIOLATIONS
 
 Please report any violations of this License or TOS to our Customer Care group.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>indiana-extreme-1.2</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="indiana-extreme-1.2.yml">yml</a> -
   <a href="indiana-extreme-1.2.json">json</a> -
   <a href="indiana-extreme-1.2.LICENSE">text</a> -
@@ -32,7 +41,7 @@ ignorable_urls:
   - http://www.extreme.indiana.edu/
 </pre>
   <hr>
-  <pre>Indiana University Extreme! Lab Software License, Version 1.2
+  <pre id="license-text">Indiana University Extreme! Lab Software License, Version 1.2
 
 Copyright (C) 2004 The Trustees of Indiana University.
 All rights reserved.
@@ -88,6 +97,21 @@ DOORS&#34;, &#34;WORMS&#34;, OR OTHER HARMFUL CODE.  LICENSEE ASSUMES THE ENTIRE
 RISK AS TO THE PERFORMANCE OF SOFTWARE AND/OR ASSOCIATED MATERIALS,
 AND TO THE PERFORMANCE AND VALIDITY OF INFORMATION GENERATED USING
 SOFTWARE.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

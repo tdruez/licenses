@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>aravindan-premkumar</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="aravindan-premkumar.yml">yml</a> -
   <a href="aravindan-premkumar.json">json</a> -
   <a href="aravindan-premkumar.LICENSE">text</a> -
@@ -21,11 +30,26 @@ other_urls:
   - http://www.codeproject.com/script/Content/ViewAssociatedFile.aspx?rzp=%2FKB%2Flist%2FCustomizedReportListCtrl%2F%2Fcustomizedreportlistctrl_src.zip&amp;zep=ListCtrl%2FInPlaceEdit.cpp&amp;obid=5709&amp;obtid=2&amp;ovid=2
 </pre>
   <hr>
-  <pre>This piece of code does not have any registered copyright and is free to be 
+  <pre id="license-text">This piece of code does not have any registered copyright and is free to be 
 used as necessary. The user is free to modify as per the requirements. As a
 fellow developer, all that I expect and request for is to be given the 
 credit for intially developing this reusable code by not removing my name as 
 the author.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ecma-no-patent</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ecma-no-patent.yml">yml</a> -
   <a href="ecma-no-patent.json">json</a> -
   <a href="ecma-no-patent.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_urls:
   - http://www.ecma-international.org/memento/codeofconduct.htm
 </pre>
   <hr>
-  <pre>This Software may be subject to third party rights (rights from parties other than
+  <pre id="license-text">This Software may be subject to third party rights (rights from parties other than
 Ecma International), including patent rights, and no licenses under such third
 party rights are granted under this license even if the third party concerned is
 a member of Ecma International. 
@@ -33,6 +42,21 @@ AVAILABLE AT http://www.ecma-international.org/memento/codeofconduct.htm FOR
 INFORMATION REGARDING THE LICENSING OF PATENT CLAIMS THAT ARE REQUIRED TO
 IMPLEMENT ECMA INTERNATIONAL STANDARDS*. 
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

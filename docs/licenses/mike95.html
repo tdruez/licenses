@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>mike95</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="mike95.yml">yml</a> -
   <a href="mike95.json">json</a> -
   <a href="mike95.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_emails:
   - mike95@mike95.com
 </pre>
   <hr>
-  <pre>This library was downloaded from: http://www.mike95.com
+  <pre id="license-text">This library was downloaded from: http://www.mike95.com
 
 This library is copyright.  It may freely be used for personal purposes
 if the restriction listed below is adhered to.
@@ -48,6 +57,21 @@ code was obtained from: http://www.mike95.com
 //=============================
 //End of Restriction Definition
 //=============================</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

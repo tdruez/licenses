@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-windows-identity-foundation</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-windows-identity-foundation.yml">yml</a> -
   <a href="ms-windows-identity-foundation.json">json</a> -
   <a href="ms-windows-identity-foundation.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_urls:
   - http://www.support.microsoft.com/common/international.aspx
 </pre>
   <hr>
-  <pre>MICROSOFT SOFTWARE SUPPLEMENTAL LICENSE TERMS
+  <pre id="license-text">MICROSOFT SOFTWARE SUPPLEMENTAL LICENSE TERMS
 WINDOWS IDENTITY FOUNDATION FOR MICROSOFT WINDOWS OPERATING SYSTEMS 
 
 Microsoft Corporation (or based on where you live, one of its affiliates) licenses this supplement to you. If you are licensed to use Microsoft Windows operating systems software (for which this supplement is applicable) (the &#34;software&#34;), you may use this supplement. You may not use it if you do not have a license for the software. You may use this supplement with each validly licensed copy of the software.
@@ -85,6 +94,21 @@ c.	Restrictions de distribution. Vous n’êtes pas autorisé à :
 •	le code soit dévoilé ou distribué dans sa forme de code source, ou
 •	d’autres aient le droit de le modifier.
 2.	SERVICES D’ASSISTANCE TECHNIQUE POUR LE SUPPLÉMENT. Microsoft fournit des services d’assistance technique pour ce logiciel disponibles sur le site www.support.microsoft.com/common/international.aspx.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

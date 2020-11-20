@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>aptana-exception-3.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="aptana-exception-3.0.yml">yml</a> -
   <a href="aptana-exception-3.0.json">json</a> -
   <a href="aptana-exception-3.0.LICENSE">text</a> -
@@ -97,7 +106,7 @@ ignorable_urls:
   - http://www.aptana.com/legal/gpl
 </pre>
   <hr>
-  <pre>Appcelerator GPL Exception
+  <pre id="license-text">Appcelerator GPL Exception
 Section 7 Exception
 
 As a special exception to the terms and conditions of the GNU General Public License Version 3 (the &#34;GPL&#34;): You are free to convey a modified version that is formed entirely from this file (for purposes of this exception, the &#34;Program&#34; under the GPL) and the works identified at http://www.aptana.com/legal/gpl (each an &#34;Excepted Work&#34;), which are conveyed to you by Appcelerator, Inc. and licensed under one or more of the licenses identified in the Excepted License List below (each an &#34;Excepted License&#34;), as long as:
@@ -110,6 +119,21 @@ As a special exception to the terms and conditions of the GNU General Public Lic
    3. any works which are aggregated with the Program, or with a modified version on a volume of a storage or distribution medium in accordance with the GPL, are aggregates (as defined in Section 5 of the GPL) which can reasonably be considered independent and separate works in themselves and which are not modified versions of either the Program, a modified version, or an Excepted Work.
 
 If the above conditions are not met, then the Program may only be copied, modified, distributed or used under the terms and conditions of the GPL or another valid licensing option from Appcelerator, Inc. Terms used but not defined in the foregoing paragraph have the meanings given in the GPL.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

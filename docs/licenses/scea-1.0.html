@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>scea-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="scea-1.0.yml">yml</a> -
   <a href="scea-1.0.json">json</a> -
   <a href="scea-1.0.LICENSE">text</a> -
@@ -27,7 +36,7 @@ ignorable_urls:
   - http://research.scea.com/scea_shared_source_license.html
 </pre>
   <hr>
-  <pre>SCEA Shared Source License 1.0
+  <pre id="license-text">SCEA Shared Source License 1.0
 
 Terms and Conditions:
 
@@ -87,6 +96,21 @@ Licensed under the SCEA Shared Source License, Version 1.0 (the &#34;License&#34
 http://research.scea.com/scea_shared_source_license.html
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &#34;AS IS&#34; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

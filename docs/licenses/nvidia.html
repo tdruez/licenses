@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>nvidia</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="nvidia.yml">yml</a> -
   <a href="nvidia.json">json</a> -
   <a href="nvidia.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_holders:
   - NVIDIA, Corp.
 </pre>
   <hr>
-  <pre>NOTICE TO USER: The source code is copyrighted under U.S. and international laws. NVIDIA, Corp. of Sunnyvale, California owns the copyright and as design patents pending on the design and interface of the NV chips. 
+  <pre id="license-text">NOTICE TO USER: The source code is copyrighted under U.S. and international laws. NVIDIA, Corp. of Sunnyvale, California owns the copyright and as design patents pending on the design and interface of the NV chips. 
 Users and possessors of this source code are hereby granted a nonexclusive, royalty-free copyright and design patent license to use this code in individual and commercial software.
 
 Any use of this source code must include, in the user documentation and internal comments to the code, notices to the end user as follows:
@@ -34,6 +43,21 @@ Any use of this source code must include, in the user documentation and internal
 Copyright (c) 1996-1998 NVIDIA, Corp. NVIDIA design patents pending in the U.S. and foreign countries.
 
 NVIDIA, CORP. MAKES NO REPRESENTATION ABOUT THE SUITABILITY OF THIS SOURCE CODE FOR ANY PURPOSE. IT IS PROVIDED &#34;AS IS&#34; WITHOUT EXPRESS OR IMPLIED WARRANTY OF ANY KIND. NVIDIA, CORP. DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOURCE CODE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL NVIDIA, CORP. BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOURCE CODE.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>xming</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="xming.yml">yml</a> -
   <a href="xming.json">json</a> -
   <a href="xming.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Colin Harrison
 homepage_url: http://www.straightrunning.com/XmingNotes/terms.php
 </pre>
   <hr>
-  <pre>Xming Terms and Conditions
+  <pre id="license-text">Xming Terms and Conditions
 
 1. Component licenses
 
@@ -97,6 +106,21 @@ Htmlhelp.lib static libraries, from Microsoft&#39;s x86 and x64 Distributable Co
 Header files and runtime libraries from the [WWW]GNU Complier Collection are included in compiled code under the GCC runtime library exception.
 
 Output from the [WWW]GNU Bison utility, which includes the skeleton code for the parser&#39;s implementation, is compiled into some Project Xming components. This is licensed under the Bison special exception.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

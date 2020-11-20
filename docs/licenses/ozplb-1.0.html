@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ozplb-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ozplb-1.0.yml">yml</a> -
   <a href="ozplb-1.0.json">json</a> -
   <a href="ozplb-1.0.LICENSE">text</a> -
@@ -32,7 +41,7 @@ ignorable_urls:
   - http://www.ertos.nicta.com.au/
 </pre>
   <hr>
-  <pre>Australian Public Licence B Version 1-0
+  <pre id="license-text">Australian Public Licence B Version 1-0
     OZPLB Licence
 
 Version 1-0
@@ -76,6 +85,21 @@ i.  the supplying of the services again; or
 ii.  the payment of the cost of having the services supplied again.
 
 The construction, validity and performance of this licence is governed by the laws in force in New South Wales, Australia.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

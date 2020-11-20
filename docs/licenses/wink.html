@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>wink</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="wink.yml">yml</a> -
   <a href="wink.json">json</a> -
   <a href="wink.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Satish Sampath
 homepage_url: http://www.debugmode.com/
 </pre>
   <hr>
-  <pre>This software is provided &#39;as-is&#39;, without any express or implied warranty. In no event will the author be held liable for any consequences/damages arising from the use of this software.
+  <pre id="license-text">This software is provided &#39;as-is&#39;, without any express or implied warranty. In no event will the author be held liable for any consequences/damages arising from the use of this software.
 
 This program and the accompanied libraries/plugins/artwork are FREEWARE.  You can use it for personal, business, educational or any other need of yours, subject to the following restrictions:
 
@@ -31,6 +40,21 @@ This program and the accompanied libraries/plugins/artwork are FREEWARE.  You ca
 3. No form of decompilation/reverse engineering/disassembling parts or whole of the software be done.
 
 4. You may not misrepresent the origin of the software/artwork. If you are distributing the package/portions of the package, the files must be clearly indicated that they are part of DebugMode Wink software.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

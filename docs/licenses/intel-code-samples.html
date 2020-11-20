@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>intel-code-samples</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="intel-code-samples.yml">yml</a> -
   <a href="intel-code-samples.json">json</a> -
   <a href="intel-code-samples.LICENSE">text</a> -
@@ -22,7 +31,7 @@ text_urls:
   - http://web.archive.org/web/20061110164256/http://www.intel.com/cd/ids/developer/asmo-na/eng/19287.htm?desturl=276611.htm
 </pre>
   <hr>
-  <pre>Code Samples License
+  <pre id="license-text">Code Samples License
 	
 IMPORTANT - READ BEFORE COPYING, INSTALLING, OR USING.
 Do not copy, install, or use the &#34;Materials&#34; provided under this license agreement (&#34;Agreement&#34;), until you have carefully read the following terms and conditions.
@@ -69,6 +78,21 @@ The Materials are provided with &#34;RESTRICTED RIGHTS.&#34; Use, duplication, o
 
 APPLICABLE LAWS:
 Any claim arising under or relating to this Agreement shall be governed by the internal substantive laws of the State of Delaware or federal courts located in Delaware, without regard to principles of conflict of laws. You may not export the Materials in violation of applicable export laws.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

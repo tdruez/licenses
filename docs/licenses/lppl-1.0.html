@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>lppl-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="lppl-1.0.yml">yml</a> -
   <a href="lppl-1.0.json">json</a> -
   <a href="lppl-1.0.LICENSE">text</a> -
@@ -28,7 +37,7 @@ ignorable_holders:
   - LaTeX3 Project
 </pre>
   <hr>
-  <pre>LaTeX Project Public License
+  <pre id="license-text">LaTeX Project Public License
 ============================
  LPPL Version 1.0  1999-03-01
 
@@ -231,6 +240,21 @@ conditions would be files that contain the text of copyright notices.
    need meet only the conditions in this file; it is not necessary to
    check the header of every file in the distribution to check that a
    distribution meets these requirements.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

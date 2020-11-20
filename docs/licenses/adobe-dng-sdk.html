@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>adobe-dng-sdk</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="adobe-dng-sdk.yml">yml</a> -
   <a href="adobe-dng-sdk.json">json</a> -
   <a href="adobe-dng-sdk.LICENSE">text</a> -
@@ -25,7 +34,7 @@ ignorable_urls:
   - http://www.adobe.com/products/dng/license.html
 </pre>
   <hr>
-  <pre>DNG SDK License Agreement
+  <pre id="license-text">DNG SDK License Agreement
 
 NOTICE TO USER:
 Adobe Systems Incorporated provides the Software and Documentation for use under the terms of this Agreement. Any download, installation, use, reproduction, modification or distribution of the Software or Documentation, or any derivatives or portions thereof, constitutes your acceptance of this Agreement.
@@ -63,6 +72,21 @@ Your rights under this Agreement shall terminate if you fail to comply with any 
 This Agreement supersedes any prior agreement, oral or written, between Adobe and you with respect to the licensing to you of the Software and Documentation. No variation of the terms of this Agreement will be enforceable against Adobe unless Adobe gives its express consent in writing signed by an authorized signatory of Adobe. If any part of this Agreement is found void and unenforceable, it will not affect the validity of the balance of the Agreement, which shall remain valid and enforceable according to its terms.
 
 For licensing information on the DNG File Format Specification, which is not included in the DNG SDK, please visit: http://www.adobe.com/products/dng/license.html.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

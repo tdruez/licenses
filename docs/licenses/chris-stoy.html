@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>chris-stoy</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="chris-stoy.yml">yml</a> -
   <a href="chris-stoy.json">json</a> -
   <a href="chris-stoy.LICENSE">text</a> -
@@ -19,11 +28,26 @@ category: Permissive
 owner: Chris Stoy
 </pre>
   <hr>
-  <pre>You are free to use this code in all commercial and non-commercial applications
+  <pre id="license-text">You are free to use this code in all commercial and non-commercial applications
 as long as this copyright message is left intact.
 Use this code at your own risk.  I take no responsibility if it should fail to
 do anything you would expect it to do and it could, at any time, fail to function
 in any manner.  You have the source code, make it do what you want.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

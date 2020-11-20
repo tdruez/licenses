@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-permissive-1.1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-permissive-1.1.yml">yml</a> -
   <a href="ms-permissive-1.1.json">json</a> -
   <a href="ms-permissive-1.1.LICENSE">text</a> -
@@ -22,7 +31,7 @@ homepage_url: https://web.archive.org/web/20180120185447/http://entlibcontrib.co
 notes: dupe of ms-pl
 </pre>
   <hr>
-  <pre>Microsoft Permissive License (Ms-PL) v1.1
+  <pre id="license-text">Microsoft Permissive License (Ms-PL) v1.1
 
 Microsoft Permissive License (Ms-PL)
 
@@ -84,6 +93,21 @@ additional consumer rights under your local laws which this license cannot
 change. To the extent permitted under your local laws, the contributors exclude
 the implied warranties of merchantability, fitness for a particular purpose and
 non-infringement.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

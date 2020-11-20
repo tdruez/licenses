@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>fltk-exception-lgpl-2.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="fltk-exception-lgpl-2.0.yml">yml</a> -
   <a href="fltk-exception-lgpl-2.0.json">json</a> -
   <a href="fltk-exception-lgpl-2.0.LICENSE">text</a> -
@@ -55,7 +64,7 @@ ignorable_emails:
   - fltk-bugs@fltk.org
 </pre>
   <hr>
-  <pre>The FLTK library and included programs are provided under the terms of the GNU Library General Public License (LGPL) with the following exceptions:
+  <pre id="license-text">The FLTK library and included programs are provided under the terms of the GNU Library General Public License (LGPL) with the following exceptions:
 
 Modifications to the FLTK configure script, config header file, and makefiles by themselves to support a specific platform do not constitute a modified or derivative work.
 
@@ -72,6 +81,21 @@ You do not have to provide a copy of the FLTK license with programs that are lin
 However, programs must still identify their use of FLTK. The following example statement can be included in user documentation to satisfy this requirement:
 
 [program/widget] is based in part on the work of the FLTK project (http://www.fltk.org).</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

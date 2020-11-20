@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>dynamic-drive-tou</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="dynamic-drive-tou.yml">yml</a> -
   <a href="dynamic-drive-tou.json">json</a> -
   <a href="dynamic-drive-tou.LICENSE">text</a> -
@@ -25,7 +34,7 @@ ignorable_urls:
   - http://www.dynamicdrive.com/
 </pre>
   <hr>
-  <pre>Dynamic Drive DHTML scripts- Terms of Use
+  <pre id="license-text">Dynamic Drive DHTML scripts- Terms of Use
 
 Unless indicated otherwise by the credit, all scripts on this site are original
 scripts written by the authors of Dynamic Drive, and are protected by both US
@@ -109,6 +118,21 @@ scripts, as much as they are appreciated. :)
 By using any of the scripts on Dynamic Drive, you understand that you have read
 and agreed to the above usage terms. These terms will be strictly enforced, and
 violators will face criminal charges. Don&#39;t say our lawyer didn&#39;t warn you!</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

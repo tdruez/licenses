@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>kumar-robotics</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="kumar-robotics.yml">yml</a> -
   <a href="kumar-robotics.json">json</a> -
   <a href="kumar-robotics.LICENSE">text</a> -
@@ -32,12 +41,27 @@ standard_notice: |
   =====
 </pre>
   <hr>
-  <pre>This code is 100% free.  Use it anywhere you
+  <pre id="license-text">This code is 100% free.  Use it anywhere you
 want.  Rewrite it, restructure it, whatever.  If you can write software
 that makes money off of it, good for you.  I kinda like capitalism.
 Please don&#39;t blame me if it causes your $30 billion dollar satellite
 explode in orbit.  If you redistribute it in any form, I&#39;d appreciate it
 if you would leave this notice here.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

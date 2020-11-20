@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>linuxhowtos</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="linuxhowtos.yml">yml</a> -
   <a href="linuxhowtos.json">json</a> -
   <a href="linuxhowtos.LICENSE">text</a> -
@@ -21,12 +30,27 @@ homepage_url: http://www.linuxhowtos.org/category17/
 minimum_coverage: 80
 </pre>
   <hr>
-  <pre>All howtos and documents on this site are provided &#34;AS IS,&#34; with no
+  <pre id="license-text">All howtos and documents on this site are provided &#34;AS IS,&#34; with no
 express or implied warranties. Use the information on this site at your
 own risk.
 
 Linux is a registered trademark of Linus Torvalds. Other company,
 product, and service names may be trademarks or service marks of others.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

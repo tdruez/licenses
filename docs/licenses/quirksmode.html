@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>quirksmode</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="quirksmode.yml">yml</a> -
   <a href="quirksmode.json">json</a> -
   <a href="quirksmode.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_urls:
   - http://www.quirksmode.org/about/copyright.html
 </pre>
   <hr>
-  <pre>Quirksmode Copyright Notice
+  <pre id="license-text">Quirksmode Copyright Notice
 http://www.quirksmode.org/about/copyright.html 
 
 Copyright
@@ -41,6 +50,21 @@ You may not
 You may not copy complete pages or this entire site and put them online on a publicly accessible web space. The only public URL of this site is http://www.quirksmode.org 
 The Usable Forms script is copyrighted. It is perhaps the most important script I ever wrote, not for what it does but for the way it does it. Therefore I wish to claim the credits.
 Use it in any way you like as long as you leave my copyright notice intact.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

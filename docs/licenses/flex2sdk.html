@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>flex2sdk</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="flex2sdk.yml">yml</a> -
   <a href="flex2sdk.json">json</a> -
   <a href="flex2sdk.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_urls:
   - http://www.adobe.com/type/browser/legal/embeddingeula.html
 </pre>
   <hr>
-  <pre>ADOBE FLEX 2.0.1 SOFTWARE DEVELOPMENT KIT (Non Open Source Version)
+  <pre id="license-text">ADOBE FLEX 2.0.1 SOFTWARE DEVELOPMENT KIT (Non Open Source Version)
 Software License Agreement
 
 NOTICE TO USER: THIS LICENSE AGREEMENT GOVERNS INSTALLATION AND USE OF THE ADOBE SOFTWARE DESCRIBED HEREIN BY LICENSEES OF SUCH SOFTWARE. LICENSEE AGREES THAT THIS AGREEMENT IS LIKE ANY WRITTEN NEGOTIATED AGREEMENT SIGNED BY LICENSEE. BY CLICKING TO ACKNOWLEDGE AGREEMENT TO BE BOUND DURING REVIEW OF AN ELECTRONIC VERSION OF THIS LICENSE, OR DOWNLOADING, COPYING, INSTALLING OR USING THE SOFTWARE, LICENSEE ACCEPTS ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT. THIS AGREEMENT IS ENFORCEABLE AGAINST ANY PERSON OR ENTITY THAT INSTALLS AND USES THE SOFTWARE AND ANY PERSON OR ENTITY (E.G., SYSTEM INTEGRATOR, CONSULTANT OR CONTRACTOR) THAT INSTALLS OR USES THE SOFTWARE ON ANOTHER PERSON’S OR ENTITY’S BEHALF.
@@ -196,6 +205,21 @@ Adobe grants Licensee a non-exclusive license to use the Adobe Flex Charting Sof
 If Licensee has any questions regarding this agreement or if Licensee wishes to request any information from Adobe please use the address and contact information included with this product to contact the Adobe office serving Licensee’s jurisdiction.
 
 Adobe is either a registered trademark or trademark of Adobe Systems Incorporated in the United States and/or other countries.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

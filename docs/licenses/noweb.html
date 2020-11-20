@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>noweb</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="noweb.yml">yml</a> -
   <a href="noweb.json">json</a> -
   <a href="noweb.LICENSE">text</a> -
@@ -23,7 +32,7 @@ other_urls:
   - https://fedoraproject.org/wiki/Licensing/Noweb
 </pre>
   <hr>
-  <pre>Noweb is protected by copyright.  It is not public-domain
+  <pre id="license-text">Noweb is protected by copyright.  It is not public-domain
 software or shareware, and it is not protected by a ``copyleft&#39;&#39;
 agreement like the one used by the Free Software Foundation.
 
@@ -43,6 +52,21 @@ source code to be used and modified under the terms of this license.
 You must state clearly that your work uses or is based on noweb and
 that noweb is available free of change.  You must also request that
 bug reports on your work be reported to you.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

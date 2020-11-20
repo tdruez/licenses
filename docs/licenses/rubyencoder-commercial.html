@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>rubyencoder-commercial</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="rubyencoder-commercial.yml">yml</a> -
   <a href="rubyencoder-commercial.json">json</a> -
   <a href="rubyencoder-commercial.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_emails:
   - support@rubyencoder.com
 </pre>
   <hr>
-  <pre>Terms &amp; Conditions
+  <pre id="license-text">Terms &amp; Conditions
 PLEASE READ THIS CAREFULLY BEFORE USING MATERIALS:
 A IMPORTANT PROVISIONS
 YOUR ATTENTION IS DRAWN PARTICULARLY TO THE PROVISIONS OF CLAUSE 10.2 OF THE FOLLOWING LICENCE AGREEMENT.
@@ -143,6 +152,21 @@ You will comply with all applicable laws, rules, and regulations governing expor
 14.6. This Licence Agreement and any claim or matter arising under or in connection with this Licence Agreement and the legal relationships established by this Licence Agreement shall be governed by and construed in all respects in accordance with the law of England and Wales, and the parties agree to submit to the non-exclusive jurisdiction of the English courts.
 
 Should you have any questions concerning this Licence Agreement you may contact SourceGuardian Limited at Rotterdam House, 116 Quayside, Newcastle upon Tyne. NE16 5EG. United Kingdom. Tel: 0845 155 2455. Email: support@rubyencoder.com.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

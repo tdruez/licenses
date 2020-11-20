@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>pftijah-1.1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="pftijah-1.1.yml">yml</a> -
   <a href="pftijah-1.1.json">json</a> -
   <a href="pftijah-1.1.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_urls:
   - http://dbappl.cs.utwente.nl/Legal/PfTijah-1.1.html
 </pre>
   <hr>
-  <pre>PfTijah Public License Version 1.1
+  <pre id="license-text">PfTijah Public License Version 1.1
 
 This License is a derivative of the MonetDB Public License Version 1.1, where the difference is that all references to &#34;MonetDB&#34; and &#34;CWI&#34; have been changed to &#34;PfTijah&#34; and &#34;University of Twente&#34;
 
@@ -192,6 +201,21 @@ the notice and other provisions required by the [   ] License. If you
 do not delete the provisions above, a recipient may use your version
 of this file under either the PfTijah Public License or the [   ] License.&#34;
 NOTE: The text of this Exhibit A may differ slightly from the text of the notices in the Source Code files of the Original Code. You should use the text of this Exhibit A rather than the text found in the Original Code Source Code for Your Modifications.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

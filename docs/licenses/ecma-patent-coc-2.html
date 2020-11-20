@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ecma-patent-coc-2</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ecma-patent-coc-2.yml">yml</a> -
   <a href="ecma-patent-coc-2.json">json</a> -
   <a href="ecma-patent-coc-2.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Ecma International
 homepage_url: http://www.ecma-international.org/memento/codeofconduct.htm
 </pre>
   <hr>
-  <pre>Ecma Code of Conduct in Patent Matters*
+  <pre id="license-text">Ecma Code of Conduct in Patent Matters*
 Version 2 (approved by the Ecma GA in June 2016)
 
 1. Ecma considers it is desirable that fullest available information should be disclosed to those selecting technology for Ecma International Standards and those interested in adopting Ecma International Standards1. Ecma desires to develop standards for which licenses for any essential patents are available on a non-discriminatory basis and on reasonable terms and conditions. Therefore, Ecma desires that any party participating in a technical committee of Ecma International promptly disclose any patent or pending patent application that it believes contain claims that may be required to implement an Ecma International Standard, in accordance with the following provisions.
@@ -61,6 +70,21 @@ ___________________________
 * The old Ecma Code of Conduct in Patent Matters that was valid until 3 December 2009 is to be found here and Version 1 approved in December 2009 is to be found here.
 
 1 Ecma International Standards hereafter means Ecma International Standards as well as Ecma International Technical Reports.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>activestate-komodo-edit</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="activestate-komodo-edit.yml">yml</a> -
   <a href="activestate-komodo-edit.json">json</a> -
   <a href="activestate-komodo-edit.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_emails:
   - license@activestate.com
 </pre>
   <hr>
-  <pre>ACTIVESTATE® KOMODO® EDIT LICENSE AGREEMENT
+  <pre id="license-text">ACTIVESTATE® KOMODO® EDIT LICENSE AGREEMENT
 
 Please read carefully: THIS IS A LICENSE AND NOT AN AGREEMENT FOR SALE. By using and installing ActiveState&#39;s Software or, where applicable, choosing the &#34;I ACCEPT...&#34; option at the end of the License you indicate that you have read, understood, and accepted the terms and conditions of the License. IF YOU DO NOT AGREE WITH THE TERMS AND CONDITIONS, YOU SHOULD NOT ATTEMPT TO INSTALL THE SOFTWARE. If the Software is already downloaded or installed, you should promptly cease using the Software in any manner and destroy all copies of the Software in your possession. You, the user, assume all responsibility for the selection of the Software to achieve your intended results and for the installation, use and results obtained from the Software. If you have any questions concerning this, you may contact ActiveState  via license@activestate.com.
 
@@ -53,6 +62,21 @@ EXPORT CONTROLS. This license is subject to all applicable export restrictions. 
 U.S. GOVERNMENT END-USERS. This Product is a &#34;commercial item,&#34; as that term is defined in 48 C.F.R. 2.101, consisting of &#34;commercial computer software&#34; and &#34;commercial computer software documentation,&#34; as such terms are used in 48 C.F.R. 12.212 (Sept. 1995) and 48 C.F.R. 227.7202 (June 1995). Consistent with 48 C.F.R. 12.212, 48 C.F.R. 27.405(b)(2) (June 1998) and 48 C.F.R. 227.7202, all U.S. Government End Users acquire the Product with only those rights as set forth therein.
 
 MISCELLANEOUS. (a) This Agreement constitutes the entire agreement between ActiveState and you concerning the subject matter hereof, and it may only be modified by a written amendment signed by an authorized executive of ActiveState. (b) Except to the extent applicable law, if any, provides otherwise, this Agreement will be governed by the laws of the state of California, U.S.A., excluding its conflict of law provisions. (c) This Agreement will not be governed by the United Nations Convention on Contracts for the International Sale of Goods. (d) If any part of this Agreement is held invalid or unenforceable, that part will be construed to reflect the parties&#39; original intent, and the remaining portions will remain in full force and effect. (e) A waiver by either party of any term or condition of this Agreement or any breach thereof, in any one instance, will not waive such term or condition or any subsequent breach thereof. (f) Except as required by law, the controlling language of this Agreement is English. (g) You may assign your rights under this Agreement to any party that consents to, and agrees to be bound by, its terms; ActiveState may assign its rights under this Agreement without condition. (h) This Agreement will be binding upon and inure to the benefit of the parties, their successors and permitted assigns.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

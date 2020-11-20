@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>owal-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="owal-1.0.yml">yml</a> -
   <a href="owal-1.0.json">json</a> -
   <a href="owal-1.0.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_holders:
   - Opera Software ASA.
 </pre>
   <hr>
-  <pre>OPERA Web Applications License Version 1.0
+  <pre id="license-text">OPERA Web Applications License Version 1.0
 © Copyright 2006 Opera Software ASA. All rights reserved.
 OPERA SOFTWARE ASA (&#34;OPERA&#34;) IS WILLING TO PERMIT USE OF THIS SOFTWARE
 BY YOU, ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS
@@ -180,6 +189,21 @@ Terms of Agreement
   arising out of the rights and obligations in this Agreement shall be
   submitted to ordinary court proceedings. You accept the Oslo City Court
   as legal venue under this Agreement.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>squeak</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="squeak.yml">yml</a> -
   <a href="squeak.json">json</a> -
   <a href="squeak.LICENSE">text</a> -
@@ -22,7 +31,7 @@ text_urls:
   - https://squeak.org/SqueakLicense/
 </pre>
   <hr>
-  <pre>Apple Computer, Inc. Software License
+  <pre id="license-text">Apple Computer, Inc. Software License
 
 PLEASE READ THIS SOFTWARE LICENSE AGREEMENT &#34;LICENSE&#34; CAREFULLY BEFORE DOWNLOADING THIS SOFTWARE. BY DOWNLOADING THIS SOFTWARE YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS LICENSE. IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENSE, DO NOT DOWNLOAD.
 
@@ -49,6 +58,21 @@ Where the Licensee is located in the province of Quebec, Canada, the following c
 EXHIBIT A
 
 License. You may copy, install, use, modify and create derivative works of the (Modified Software) &#34;Changed Software&#34; (but you may not modify or create derivative works of the (Fonts)) and distribute and sublicense such Changed Software, provided however, that if the Changed Software contains modifications, overwrites, replacements, deletions, additions, or ports to new platforms of: (1) the methods of existing classes objects or their existing relationships, or (2) any part of the virtual machine, then for so long as the Changed Software is distributed or sublicensed to others, such modified, overwritten, replaced, deleted, added and ported portions of the Changed Software must be made publicly available, preferably by means of download from a website, at no charge under the terms of a license that makes no representations or warranties on behalf of any third party, is no less protective of (the licensors of the Modified Software) and its licensors, and contains the terms set forth in Exhibit A below (which should contain the terms of this Exhibit A). You may distribute and sublicense the (Fonts) only as a part of and for use with Changed Software, and not as a part of or for use with Changed Software that is distributed or sublicensed for a fee or for other valuable consideration.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

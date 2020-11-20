@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>shavlik-eula</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="shavlik-eula.yml">yml</a> -
   <a href="shavlik-eula.json">json</a> -
   <a href="shavlik-eula.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_emails:
   - info@shavlik.com
 </pre>
   <hr>
-  <pre>Shavlik Technologies, LLC
+  <pre id="license-text">Shavlik Technologies, LLC
 END USER LICENSE AGREEMENT
 CAREFULLY READ THE FOLLOWING TERMS AND CONDITIONS BEFORE LOADING THE SOFTWARE. THIS 
 AGREEMENT GOVERNS THE USE OF THE PRODUCT (AS DEFINED BELOW). BY CLICKING &#34;I ACCEPT&#34; 
@@ -123,6 +132,21 @@ Should you have any questions concerning the Product or this License, contact Sh
 LLC, 2665 Long Lake Road, Suite 400, Roseville, Minnesota 55113 Telephone: +1 (800) 690 6911 or +1 (651) 
 426-6624; fax: (651) 426-3345; e-mail: info@shavlik.com
 SHAVLIK EULA #H4Q2 VERSION 2.3</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>blitz-artistic</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="blitz-artistic.yml">yml</a> -
   <a href="blitz-artistic.json">json</a> -
   <a href="blitz-artistic.LICENSE">text</a> -
@@ -23,7 +32,7 @@ text_urls:
   - https://raw.githubusercontent.com/blitzpp/blitz/e3c973d68e5ee17aec779bf9711b38fd4afc355f/LICENSE
 </pre>
   <hr>
-  <pre>The `Blitz++ Artistic License&#39;
+  <pre id="license-text">The `Blitz++ Artistic License&#39;
 (with thanks and apologies to authors of the Perl Artistic License)
 
 Preamble
@@ -107,6 +116,21 @@ specific prior written permission.
 IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
 WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

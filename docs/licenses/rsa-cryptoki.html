@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>rsa-cryptoki</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="rsa-cryptoki.yml">yml</a> -
   <a href="rsa-cryptoki.json">json</a> -
   <a href="rsa-cryptoki.LICENSE">text</a> -
@@ -22,7 +31,7 @@ text_urls:
   - http://www.rsa.com/rsalabs/node.asp?id=2133
 </pre>
   <hr>
-  <pre>DISCLAIMER
+  <pre id="license-text">DISCLAIMER
 Regarding the header / include files:
 License to copy and use this software is granted provided that it is identified as &#34;RSA Security Inc. PKCS #11 Cryptographic Token Interface (Cryptoki)&#34; in all material mentioning or referencing this software or this function.
 
@@ -32,6 +41,21 @@ This software is provided &#34;AS IS&#34; and RSA Security, Inc. disclaims all w
 
 Regarding reference implementations:
 RSA Laboratories is providing links to external reference implementations for the benefit of PKCS #11 developers. RSA Laboratories has not verified or reviewed these implementations and therefore can make no statement regarding their conformance to the current PKCS #11 specification. RSA Laboratories also makes no representations regarding intellectual property coverage or ownership of the reference implementations. The implementations may also be subject to regulations on the import, export and/or use of cryptography. Resolution of these issues is the responsibility of the user.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

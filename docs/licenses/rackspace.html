@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>rackspace</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="rackspace.yml">yml</a> -
   <a href="rackspace.json">json</a> -
   <a href="rackspace.LICENSE">text</a> -
@@ -19,7 +28,7 @@ category: Free Restricted
 owner: Rackspace
 </pre>
   <hr>
-  <pre>Subject to the terms of this notice, Rackspace, Inc. grants you a
+  <pre id="license-text">Subject to the terms of this notice, Rackspace, Inc. grants you a
 nonexclusive, nontransferable license, without the right to
 sublicense, to (a) install and execute one copy of these files on any
 number of workstations owned or controlled by you and (b) distribute
@@ -50,6 +59,21 @@ As a condition to your use of these files, you are solely responsible for
 such use. Rackspace, Inc. will have no liability to you for direct,
 indirect, consequential, incidental, special, or punitive damages or
 for lost profits or data.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

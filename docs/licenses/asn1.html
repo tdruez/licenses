@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>asn1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="asn1.yml">yml</a> -
   <a href="asn1.json">json</a> -
   <a href="asn1.LICENSE">text</a> -
@@ -43,7 +52,7 @@ ignorable_emails:
   - ronald@trustpoint.com
 </pre>
   <hr>
-  <pre>ASN.1 Object Dumping Code License
+  <pre id="license-text">ASN.1 Object Dumping Code License
 
 ASN.1 object dumping code, copyright Peter Gutmann &lt;pgut001@cs.auckland.ac.nz&gt;, based on ASN.1 dump program by David Kemp &lt;dpkemp@missi.ncsc.mil&gt;, with contributions from various people including Matthew Hamrick &lt;hamrick@rsa.com&gt;, Bruno Couillard &lt;bcouillard@chrysalis-its.com&gt;, Hallvard Furuseth &lt;h.b.furuseth@usit.uio.no&gt;, Geoff Thorpe &lt;geoff@raas.co.nz&gt;, David Boyce &lt;d.boyce@isode.com&gt;, John Hughes &lt;john.hughes@entegrity.com&gt;, Life is hard, and then you die &lt;ronald@trustpoint.com&gt;, Hans-Olof Hermansson &lt;hans-olof.hermansson@postnet.se&gt;, Tor Rustad &lt;Tor.Rustad@bbs.no&gt;, Kjetil Barvik &lt;kjetil.barvik@bbs.no&gt;, James Sweeny &lt;jsweeny@us.ibm.com&gt;, Chris Ridd &lt;chris.ridd@isode.com&gt;, and several other people whose names I&#39;ve misplaced (a number of those email addresses probably no longer work, since this code has been around for awhile).
 
@@ -58,6 +67,21 @@ This code assumes that the input data is binary, having come from a MIME-aware m
 You can use this code in whatever way you want, as long as you don&#39;t try to claim you wrote it.
 
 Editing notes: Tabs to 4, phasers to stun (and in case anyone wants to complain about that, see &#34;Program Indentation and Comprehensiblity&#34;, Richard Miara, Joyce Musselman, Juan Navarro, and Ben Shneiderman, Communications of the ACM, Vol.26, No.11 (November 1983), p.861)</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>lgpl-2.1-nokia-qt</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="lgpl-2.1-nokia-qt.yml">yml</a> -
   <a href="lgpl-2.1-nokia-qt.json">json</a> -
   <a href="lgpl-2.1-nokia-qt.LICENSE">text</a> -
@@ -25,7 +34,7 @@ other_urls:
   - http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 </pre>
   <hr>
-  <pre>This library is free software; you can redistribute it and/or modify it under
+  <pre id="license-text">This library is free software; you can redistribute it and/or modify it under
 the terms of the GNU Lesser General Public License as published by the Free
 Software Foundation; either version 2.1 of the License, or (at your option) any
 later version.
@@ -61,6 +70,21 @@ five lines or less in length.
 Furthermore, you are not required to apply this additional permission to a
 modified version of the Library.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

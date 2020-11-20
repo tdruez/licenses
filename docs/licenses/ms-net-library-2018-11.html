@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-net-library-2018-11</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-net-library-2018-11.yml">yml</a> -
   <a href="ms-net-library-2018-11.json">json</a> -
   <a href="ms-net-library-2018-11.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_urls:
   - https://go.microsoft.com/fwlink/?LinkID=824704
 </pre>
   <hr>
-  <pre>MICROSOFT SOFTWARE LICENSE TERMS
+  <pre id="license-text">MICROSOFT SOFTWARE LICENSE TERMS
 
 MICROSOFT .NET LIBRARY
 
@@ -137,6 +146,21 @@ Elle s&#39;applique également, même si Microsoft connaissait ou devrait conna�
 
 EFFET JURIDIQUE. Le présent contrat décrit certains droits juridiques. Vous pourriez avoir d&#39;autres droits prévus par les lois de votre pays. Le présent contrat ne modifie pas les droits que vous confèrent les lois de votre pays si celles-ci ne le permettent pas.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

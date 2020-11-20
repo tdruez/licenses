@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-directx-sdk-eula</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-directx-sdk-eula.yml">yml</a> -
   <a href="ms-directx-sdk-eula.json">json</a> -
   <a href="ms-directx-sdk-eula.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_authors:
   - permission from Microsoft Corporation
 </pre>
   <hr>
-  <pre>DirectX Software Development Kit END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE 
+  <pre id="license-text">DirectX Software Development Kit END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE 
 
 IMPORTANT-READ CAREFULLY: This Microsoft End-User License Agreement (&#34;EULA&#34;) is a legal agreement between you (either an individual or a single entity) and Microsoft Corporation (&#34;Microsoft&#34;) for the Microsoft software product identified above, which includes computer software and may include associated media and printed materials, and &#34;online&#34; or electronic documentation (&#34;SOFTWARE PRODUCT).  The SOFTWARE PRODUCT also includes any updates and supplements to the original SOFTWARE PRODUCT that is associated with a separate end-user license agreement is licensed to you under the terms of that license agreement. By installing, copying, downloading, accessing or otherwise using the SOFTWARE PRODUCT, you agree to be bound by the terms of this EULA.  If you do not agree to the terms of this EULA, do not install or use the SOFTWARE PRODUCT. 
 
@@ -87,6 +96,21 @@ If you acquired this product in Canada, this Agreement is governed by the laws o
 If this product was acquired outside the United States, then local law may apply.
 
 Should you have any questions concerning this Agreement, or if you desire to contact Microsoft for any reason, please contact the Microsoft subsidiary serving your country, or write: Microsoft Customer Sales and Service/One Microsoft Way/Redmond, WA  98052-6399.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

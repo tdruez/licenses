@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>amazon-redshift-jdbc</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="amazon-redshift-jdbc.yml">yml</a> -
   <a href="amazon-redshift-jdbc.json">json</a> -
   <a href="amazon-redshift-jdbc.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Amazon Web Services
 homepage_url: https://s3.amazonaws.com/redshift-downloads/drivers/Amazon+Redshift+JDBC+Driver+License+Agreement.pdf
 </pre>
   <hr>
-  <pre>Amazon Redshift JDBC Driver License Agreement
+  <pre id="license-text">Amazon Redshift JDBC Driver License Agreement
 
 THIS IS AN AGREEMENT BETWEEN YOU AND AMAZON WEB SERVICES, INC. (WITH ITS AFFILIATES, &#34;AWS&#34; OR &#34;WE&#34;)
 THAT GOVERNS YOUR USE OF THE AMAZON REDSHIFT JDBC DRIVER SOFTWARE (TOGETHER WITH ANY UPDATES
@@ -130,6 +139,21 @@ date evidences your agreement to be bound by it.
 The terms of this License Agreement govern the Software and any updates or upgrades to the Software that we
 may provide that replace or supplement the original Software, unless the update or upgrade is accompanied by a
 separate license, in which case the terms of that license will govern.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

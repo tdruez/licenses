@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>apple-runtime-library-exception</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="apple-runtime-library-exception.yml">yml</a> -
   <a href="apple-runtime-library-exception.json">json</a> -
   <a href="apple-runtime-library-exception.LICENSE">text</a> -
@@ -42,12 +51,27 @@ standard_notice: |
   otherwise be required by Sections 4(a), 4(b) and 4(d) of the License.
 </pre>
   <hr>
-  <pre>Runtime Library Exception to the Apache 2.0 License
+  <pre id="license-text">Runtime Library Exception to the Apache 2.0 License
 
 As an exception, if you use this Software to compile your source code and
 portions of this Software are embedded into the binary product as a result,
 you may redistribute such product without providing attribution as would
 otherwise be required by Sections 4(a), 4(b) and 4(d) of the License.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>scsl-3.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="scsl-3.0.yml">yml</a> -
   <a href="scsl-3.0.json">json</a> -
   <a href="scsl-3.0.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_urls:
   - http://sun.com/software/communitysource
 </pre>
   <hr>
-  <pre>Sun Community Source License v3.0
+  <pre id="license-text">Sun Community Source License v3.0
 					
 II. PURPOSES
 Original Contributor is licensing the Reference Code and Technology Specifications and is permitting implementation of Technology under and subject to this Sun Community Source License (the &#34;License&#34;) to promote research, education, innovation and product development using the Technology.
@@ -132,6 +141,21 @@ b) All proceedings will be in English and conducted by a single arbitrator selec
 (b) You must not distribute Reference Code or Technology Specifications into countries other than those listed on the Technology Site by Original Contributor, from time to time.
 
 READ ALL THE TERMS OF THIS LICENSE CAREFULLY BEFORE ACCEPTING. IF YOU ARE AGREEING TO THIS LICENSE ON BEHALF OF A COMPANY, YOU REPRESENT THAT YOU ARE AUTHORIZED TO BIND THE COMPANY TO THE LICENSE. WHETHER YOU ARE ACTING ON YOUR OWN BEHALF OR THAT OF A COMPANY, YOU MUST BE OF MAJORITY AGE AND OTHERWISE COMPETENT TO ENTER INTO CONTRACTS.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

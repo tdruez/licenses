@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>unpbook</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="unpbook.yml">yml</a> -
   <a href="unpbook.json">json</a> -
   <a href="unpbook.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: UNIX Network Programming Book Authors
 homepage_url: http://www.unixnetworkprogramming.com/src.html
 </pre>
   <hr>
-  <pre>Permission to use or modify this software for educational or
+  <pre id="license-text">Permission to use or modify this software for educational or
 for commercial purposes, and without fee, is hereby granted,
 provided that the above copyright notice appears in connection
 with any and all uses, with clear indication as to any
@@ -33,6 +42,21 @@ medium, must be granted in writing by W. Richard Stevens.
 The author makes no representations about the suitability of this
 software for any purpose.  It is provided &#34;as is&#34; without express
 or implied warranty.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

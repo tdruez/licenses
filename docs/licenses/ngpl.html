@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ngpl</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ngpl.yml">yml</a> -
   <a href="ngpl.json">json</a> -
   <a href="ngpl.LICENSE">text</a> -
@@ -33,7 +42,7 @@ ignorable_holders:
   - Richard M. Stallman
 </pre>
   <hr>
-  <pre>Nethack General Public License
+  <pre id="license-text">Nethack General Public License
 Copyright (c) 1989 M. Stephenson
 (Based on the BISON general public license, copyright 1988 Richard M. Stallman)
 Everyone is permitted to copy and distribute verbatim copies of this license, but changing it is not allowed. You can also use this wording to make the terms for other programs.
@@ -67,6 +76,21 @@ COPYING POLICIES
    4. You may not copy, sublicense, distribute or transfer NetHack except as expressly provided under this License Agreement. Any attempt otherwise to copy, sublicense, distribute or transfer NetHack is void and your rights to use the program under this License agreement shall be automatically terminated. However, parties who have received computer software programs from you with this License Agreement will not have their licenses terminated so long as such parties remain in full compliance.
 
 Stated plainly: You are permitted to modify NetHack, or otherwise use parts of NetHack, provided that you comply with the conditions specified above; in particular, your modified NetHack or program containing parts of NetHack must remain freely available as provided in this License Agreement. In other words, go ahead and share NetHack, but don&#39;t try to stop anyone else from sharing it farther.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>newlib-historical</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="newlib-historical.yml">yml</a> -
   <a href="newlib-historical.json">json</a> -
   <a href="newlib-historical.LICENSE">text</a> -
@@ -21,7 +30,7 @@ notes: this is a short historical permissive license seen in the newlib C librar
   text is also fully contained in the tcl license.
 </pre>
   <hr>
-  <pre>The authors hereby grant permission to use, copy, modify, distribute,
+  <pre id="license-text">The authors hereby grant permission to use, copy, modify, distribute,
 and license this software and its documentation for any purpose, provided
 that existing copyright notices are retained in all copies and that this
 notice is included verbatim in any distributions. No written agreement,
@@ -31,6 +40,21 @@ and need not follow the licensing terms described here, provided that
 the new terms are clearly indicated on the first page of each file where
 they apply. 
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

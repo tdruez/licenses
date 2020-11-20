@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>pftus-1.1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="pftus-1.1.yml">yml</a> -
   <a href="pftus-1.1.json">json</a> -
   <a href="pftus-1.1.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Unspecified
 notes: From https://github.com/ErikMcClure/bad-licenses
 </pre>
   <hr>
-  <pre>The P.F.T.U.S(Protected Free To Use Software) License
+  <pre id="license-text">The P.F.T.U.S(Protected Free To Use Software) License
 
 Version 1.1x
 Unless required by applicable law or agreed to in writing, software
@@ -72,6 +81,21 @@ original software).
 Changing is not permitted,
 redistribution is allowed. Some rights reserved.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

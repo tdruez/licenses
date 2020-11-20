@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block title %}{{ license.key }}{% endblock %}
+{% block extrahead %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+{% endblock %}
 {% block content %}
+  <a href="../index.html">back to list</a> -
   <a href="{{ license.key }}.yml">yml</a> -
   <a href="{{ license.key }}.json">json</a> -
   <a href="{{ license.key }}.LICENSE">text</a> -
@@ -9,5 +13,21 @@
   <hr>
   <pre>{{ license_data }}</pre>
   <hr>
-  <pre>{{ license.text }}</pre>
+  <pre id="license-text">{{ license.text }}</pre>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 {% endblock %}

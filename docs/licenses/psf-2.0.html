@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>psf-2.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="psf-2.0.yml">yml</a> -
   <a href="psf-2.0.json">json</a> -
   <a href="psf-2.0.LICENSE">text</a> -
@@ -25,7 +34,7 @@ ignorable_holders:
   - Python Software Foundation
 </pre>
   <hr>
-  <pre>PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
+  <pre id="license-text">PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
 
 1. This LICENSE AGREEMENT is between the Python Software Foundation (&#34;PSF&#34;), and the Individual or Organization (&#34;Licensee&#34;) accessing and otherwise using this software (&#34;Python&#34;) in source or binary form and its associated documentation.
 2. Subject to the terms and conditions of this License Agreement, PSF hereby grants Licensee a nonexclusive, royalty-free, world-wide license to reproduce, analyze, test, perform and/or display publicly, prepare derivative works, distribute, and otherwise use Python alone or in any derivative version, provided, however, that PSF&#39;s License Agreement and PSF&#39;s notice of copyright, i.e., &#34;Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Python Software Foundation; All Rights Reserved&#34; are retained in Python alone or in any derivative version prepared by Licensee.
@@ -35,6 +44,21 @@ ignorable_holders:
 6. This License Agreement will automatically terminate upon a material breach of its terms and conditions.
 7. Nothing in this License Agreement shall be deemed to create any relationship of agency, partnership, or joint venture between PSF and Licensee. This License Agreement does not grant permission to use PSF trademarks or trade name in a trademark sense to endorse or promote products or services of Licensee, or any third party.
 8. By copying, installing or otherwise using Python, Licensee agrees to be bound by the terms and conditions of this License Agreement.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

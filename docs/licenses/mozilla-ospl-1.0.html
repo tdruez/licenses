@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>mozilla-ospl-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="mozilla-ospl-1.0.yml">yml</a> -
   <a href="mozilla-ospl-1.0.json">json</a> -
   <a href="mozilla-ospl-1.0.LICENSE">text</a> -
@@ -23,7 +32,7 @@ other_urls:
   - https://www.mozilla.org/en-US/about/patents/guide/
 </pre>
   <hr>
-  <pre>Mozilla Open Software Patent License Agreement v1
+  <pre id="license-text">Mozilla Open Software Patent License Agreement v1
 This Open Software Patent License Agreement (&#34;Agreement&#34;) is made between you and the Licensor identified below. For purposes of this Agreement, you means you and your Affiliates, and Licensor means the Mozilla Corporation, Mozilla Foundation and any of their Affiliates.
 
 1.	Definitions
@@ -59,6 +68,21 @@ If you would like to show your intention to be bound by this Agreement, you may 
 
 If you would like to use the text of this agreement for your own patent licensing, you may feel free to do so. However, to avoid confusion please remove all references to &#34;Mozilla&#34; from your version of the agreement. You may wish to say that your agreement is &#34;based on the Mozilla Open Software Patent License Agreement,&#34; for informational purposes, but you are not required to do so.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

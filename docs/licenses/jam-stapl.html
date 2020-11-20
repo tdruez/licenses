@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>jam-stapl</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="jam-stapl.yml">yml</a> -
   <a href="jam-stapl.json">json</a> -
   <a href="jam-stapl.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Altera Corporation
 homepage_url: https://www.intel.com/content/www/us/en/programmable/support/support-resources/download/licensing/lic-jam.html
 </pre>
   <hr>
-  <pre>Jam STAPL Software License
+  <pre id="license-text">Jam STAPL Software License
 SOFTWARE DISTRIBUTION AGREEMENT
 
 THE JAM SOFTWARE PROGRAM AND EXECUTABLE FILES, AND RELATED SPECIFICATION DOCUMENTATION (&#34;PROGRAMS&#34;) (AVAILABLE FOR DOWNLOADING FROM THIS WEB SITE OR ENCLOSED WITH THE COMPUTER DISK ACCOMPANYING THIS NOTICE), ARE MADE FREELY AVAILABLE FOR USE BY ANYONE, SUBJECT TO CERTAIN TERMS AND CONDITIONS SET FORTH BELOW. PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE DOWNLOADING OR USING THE PROGRAMS. BY DOWNLOADING OR USING THE PROGRAMS YOU INDICATE YOUR ACCEPTANCE OF THESE TERMS AND CONDITIONS, WHICH CONSTITUTE THE LICENSE AGREEMENT (the &#34;AGREEMENT&#34;) BETWEEN YOU AND ALTERA CORPORATION (&#34;ALTERA&#34;) WITH REGARD TO THE PROGRAMS. IN THE EVENT THAT YOU DO NOT AGREE WITH ANY OF THESE TERMS AND CONDITIONS, DO NOT DOWNLOAD THE PROGRAMS OR PROMPTLY RETURN THE PROGRAMS TO ALTERA UNUSED. 
@@ -51,6 +60,21 @@ BY USING THE PROGRAMS YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERST
 
 U.S. Government Restricted Rights 
 The Programs and any accompanying documentation are provided with RESTRICTED RIGHTS. Use, duplication, or disclosure by the Government is subject to restrictions as set forth in subparagraph (c)(1)(ii) of The Rights in Technical Data and Computer Software clause at DFARS 252.227-7013 or subparagraphs (c)(1) and (2) of Commercial Computer Software--Restricted Rights at 48 CFR 52.227-19, as applicable. Contractor/manufacturer is Altera Corporation, 101 Innovation Drive, San Jose, CA 95134 and its licensors.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>itc-eula</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="itc-eula.yml">yml</a> -
   <a href="itc-eula.json">json</a> -
   <a href="itc-eula.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_emails:
   - info@itcfonts.com
 </pre>
   <hr>
-  <pre>This Agreement constitutes the complete agreement between you and International Typeface Corporation (ITC) (except for multi-CPU licenses, where another document supplements this one and outlines and confirms the scope of the your upgraded license). If you do not agree to the terms stated in this Agreement, you may obtain a full refund by contacting ITC at the address below within 15 days with your proof of payment.
+  <pre id="license-text">This Agreement constitutes the complete agreement between you and International Typeface Corporation (ITC) (except for multi-CPU licenses, where another document supplements this one and outlines and confirms the scope of the your upgraded license). If you do not agree to the terms stated in this Agreement, you may obtain a full refund by contacting ITC at the address below within 15 days with your proof of payment.
 
 International Typeface Corporation
 Department: DRL
@@ -48,6 +57,21 @@ LIMITED WARRANTY. For a period of 90 days after delivery, ITC warrants that the 
 LIMITATION OF LIABILITY. Your exclusive remedy and the sole liability of ITC in connection with the Software is repair or replacement of defective parts. ITC’S CUMULATIVE LIABILITY FOR ANY LOSS OR DAMAGE RELATING TO THIS AGREEMENT SHALL NOT EXCEED THE PURCHASE PRICE THAT YOU PAID FOR THE LICENSE. IN NO EVENT WILL ITC BE LIABLE FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES SUCH AS LOST PROFITS, OR LOST DATA, OR ANY DAMAGES CAUSED BY THE ABUSE OR MISAPPLICATION OF THE SOFTWARE.
 
 GENERAL. This Agreement will be governed by the law of New York. YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTAND, AND AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

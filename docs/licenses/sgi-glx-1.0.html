@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sgi-glx-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sgi-glx-1.0.yml">yml</a> -
   <a href="sgi-glx-1.0.json">json</a> -
   <a href="sgi-glx-1.0.LICENSE">text</a> -
@@ -30,7 +39,7 @@ ignorable_urls:
   - http://www.sgi.com/software/opensource/glx/license.html
 </pre>
   <hr>
-  <pre>GLX PUBLIC LICENSE Version 1.0 2/11/99 License
+  <pre id="license-text">GLX PUBLIC LICENSE Version 1.0 2/11/99 License
 
 Subject to any third party claims, Silicon Graphics, Inc. (&#34;SGI&#34;) hereby
 grants permission to Recipient (defined below), under Recipient&#39;s copyrights
@@ -223,6 +232,21 @@ The Original Software is GLX version 1.2 source code, released February,
 1999. The developer of the Original Software is Silicon Graphics, Inc.  Those
 portions of the Subject Software created by Silicon Graphics, Inc.  are Copy-
 right (c) 1991-9 Silicon Graphics, Inc. All Rights Reserved.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

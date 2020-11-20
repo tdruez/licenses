@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-office-system-programs-eula</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-office-system-programs-eula.yml">yml</a> -
   <a href="ms-office-system-programs-eula.json">json</a> -
   <a href="ms-office-system-programs-eula.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_urls:
   - http://www.microsoft.com/
 </pre>
   <hr>
-  <pre>SUPPLEMENTAL END USER LICENSE AGREEMENT FOR 
+  <pre id="license-text">SUPPLEMENTAL END USER LICENSE AGREEMENT FOR 
 MICROSOFT OFFICE SYSTEM PROGRAMS SOFTWARE
 
 PLEASE READ THIS SUPPLEMENTAL END-USER LICENSE AGREEMENT (&#34;SUPPLEMENTAL EULA&#34;) CAREFULLY.  BY INSTALLING OR USING THE SOFTWARE THAT ACCOMPANIES THIS SUPPLEMENTAL EULA, YOU AGREE TO THE TERMS OF THIS SUPPLEMENTAL EULA.  IF YOU DO NOT AGREE, DO NOT INSTALL OR USE THE SOFTWARE.
@@ -71,6 +80,21 @@ LIMITATION DE RESPONSABILITÉ ET RECOURS. NONOBSTANT TOUT DOMMAGE QUE VOUS POURR
 Au cas où vous auriez des questions concernant cette licence ou que vous désiriez vous mettre en rapport avec Microsoft pour quelque raison que ce soit, veuillez utiliser l’information contenue dans le Logiciel pour contacter la filiale de Microsoft desservant votre pays, ou visitez Microsoft sur le World Wide Web à http://www.microsoft.com.
 
 PIA EULA</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

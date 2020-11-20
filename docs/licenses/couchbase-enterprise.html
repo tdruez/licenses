@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>couchbase-enterprise</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="couchbase-enterprise.yml">yml</a> -
   <a href="couchbase-enterprise.json">json</a> -
   <a href="couchbase-enterprise.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_urls:
   - http://www.couchbase.org/forums
 </pre>
   <hr>
-  <pre>COUCHBASE INC. ENTERPRISE LICENSE AGREEMENT - FREE EDITION
+  <pre id="license-text">COUCHBASE INC. ENTERPRISE LICENSE AGREEMENT - FREE EDITION
 
 IMPORTANT-READ CAREFULLY: BY CLICKING THE &#34;I ACCEPT&#34; BOX OR INSTALLING,
 DOWNLOADING OR OTHERWISE USING THIS SOFTWARE AND ANY ASSOCIATED
@@ -264,6 +273,21 @@ applicable elastic data management server software provided by Couchbase
 Inc. and ordered by Licensee during the ordering process on the
 Couchbase Website.  If you have any questions regarding this Agreement,
 please contact us at 650-417-7500.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

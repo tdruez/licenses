@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-pl</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-pl.yml">yml</a> -
   <a href="ms-pl.json">json</a> -
   <a href="ms-pl.LICENSE">text</a> -
@@ -30,7 +39,7 @@ other_urls:
   - https://opensource.org/licenses/MS-PL
 </pre>
   <hr>
-  <pre>Microsoft Public License (Ms-PL)
+  <pre id="license-text">Microsoft Public License (Ms-PL)
 
 This license governs use of the accompanying software. If you use the software,
 you accept this license. If you do not accept the license, do not use the
@@ -90,6 +99,21 @@ additional consumer rights under your local laws which this license cannot
 change. To the extent permitted under your local laws, the contributors exclude
 the implied warranties of merchantability, fitness for a particular purpose and
 non-infringement.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

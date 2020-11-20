@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>aptana-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="aptana-1.0.yml">yml</a> -
   <a href="aptana-1.0.json">json</a> -
   <a href="aptana-1.0.LICENSE">text</a> -
@@ -22,7 +31,7 @@ text_urls:
   - http://aptana.com/legal/apl/
 </pre>
   <hr>
-  <pre>Aptana Public License - 1.0
+  <pre id="license-text">Aptana Public License - 1.0
 
 THE PROGRAM (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS APTANA PUBLIC LICENSE (&#34;LICENSE&#34;). THE PROGRAM IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. BY EXERCISING ANY RIGHTS TO THE PROGRAM PROVIDED HERE, YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE.
 
@@ -73,6 +82,21 @@ If You institute patent litigation against any entity (including a cross-claim o
 All Your rights under this License shall terminate if You fail to comply with any of the terms or conditions of this License and do not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If all Your rights under this License terminate, You agree to cease use of the Program as soon as reasonably practicable. However, Your obligations under this License, and this Section 6, shall continue and survive.
 
 This Agreement is governed by the laws of the State of California and the intellectual property laws of the United States of America, without reference to conflicts of laws principles that would require the application of the laws of any other jurisdiction. The United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. No party to this License will bring a legal action under this License more than one year after the cause of action arose. Any law or regulation which provides that the language of a contract shall be construed against the drafter shall not apply to this License. You agree that You alone are responsible for compliance with the United States export administration regulations (and the export control laws and regulation of any other countries) when You exercise rights under this License.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

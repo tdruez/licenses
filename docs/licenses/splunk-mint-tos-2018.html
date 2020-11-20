@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>splunk-mint-tos-2018</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="splunk-mint-tos-2018.yml">yml</a> -
   <a href="splunk-mint-tos-2018.json">json</a> -
   <a href="splunk-mint-tos-2018.LICENSE">text</a> -
@@ -28,7 +37,7 @@ ignorable_emails:
   - mobilesupport@splunk.com
 </pre>
   <hr>
-  <pre>Splunk MINT Terms of Service
+  <pre id="license-text">Splunk MINT Terms of Service
 Last revised: April 16, 2018
 
 These Splunk MINT Terms of Service between you and Splunk Inc., a Delaware corporation (“Splunk”), as updated from time to time, and together with the documents and policies referred to herein (collectively, the “Agreement”), govern your access to and use of the Service. By accessing or using the Service in any manner, you are agreeing to the Agreement.
@@ -198,6 +207,21 @@ Customer’s access to and use of the Splunk Materials are subject to the custom
 20.19. “Software” means the Splunk SDK and any other software, add-on, application or program created, owned or licensed by Splunk that Splunk makes available for download for use in connection with the Service or for the purposes of enabling use of the Service. Software also includes any related Documentation.
 
 20.20. “User” means “Customer” if an individual, or if an entity, Customer’s individual employee(s), consultant, contractor, agent or representative whom Customer authorizes to use the Service and whom Customer (or Splunk, at Customer’s request) have supplied a user identification and password.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>isotope-cla</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="isotope-cla.yml">yml</a> -
   <a href="isotope-cla.json">json</a> -
   <a href="isotope-cla.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Metafizzy
 homepage_url: http://isotope.metafizzy.co/license.html
 </pre>
   <hr>
-  <pre>This Commercial License Agreement is a binding legal agreement between you and Metafizzy LLC (Metafizzy). By installing, copying, or using Isotope (the Software), you agree to be bound by these terms of this Agreement.
+  <pre id="license-text">This Commercial License Agreement is a binding legal agreement between you and Metafizzy LLC (Metafizzy). By installing, copying, or using Isotope (the Software), you agree to be bound by these terms of this Agreement.
 
 Grant of License
 
@@ -43,6 +52,21 @@ You may use the Software only to create Applications that are significantly diff
 Warranties and Remedies
 
 The Software is provided &#34;as is&#34;, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. Metafizzy’s entire liability and your exclusive remedy under this agreement shall be return of the price paid for the Software.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

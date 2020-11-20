@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>us-govt-unlimited-rights</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="us-govt-unlimited-rights.yml">yml</a> -
   <a href="us-govt-unlimited-rights.json">json</a> -
   <a href="us-govt-unlimited-rights.LICENSE">text</a> -
@@ -24,7 +33,7 @@ other_urls:
   - https://github.com/AppliedIS/tau-ui/blob/b6af0deb755b412e7d24e9f3d78a6173180d3619/COPYRIGHT.txt
 </pre>
   <hr>
-  <pre>                        Grant of Unlimited Rights
+  <pre id="license-text">                        Grant of Unlimited Rights
 
 Under contracts , the U.S. Government obtained 
 unlimited rights in the software and documentation contained herein.
@@ -44,6 +53,21 @@ WARRANTY AS TO ANY MATTER WHATSOEVER, INCLUDING THE CONDITIONS OF THE
 SOFTWARE, DOCUMENTATION OR OTHER INFORMATION RELEASED, MADE AVAILABLE 
 OR DISCLOSED, OR THE OWNERSHIP, MERCHANTABILITY, OR FITNESS FOR A
 PARTICULAR PURPOSE OF SAID MATERIAL.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

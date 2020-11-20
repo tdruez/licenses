@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>jetbrains-purchase-terms</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="jetbrains-purchase-terms.yml">yml</a> -
   <a href="jetbrains-purchase-terms.json">json</a> -
   <a href="jetbrains-purchase-terms.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_urls:
   - https://account.jetbrains.com/
 </pre>
   <hr>
-  <pre>Terms and Conditions of Purchase
+  <pre id="license-text">Terms and Conditions of Purchase
 
 GENERAL
 In these Terms and Conditions of Purchase (&#34;Purchase Terms&#34;):
@@ -80,6 +89,21 @@ Customer declares having had sufficient opportunity to review this Agreement, un
 If Customer places an order for Product directly with JetBrains, these Purchase Terms will be governed by the laws of Czech Republic, without reference to conflict of laws principles, and the parties agree that any litigation relating to this these Purchase Terms may only be brought in, and will be subject to the jurisdiction of, any Court of Czech
 If Customer places an order for Product with any JetBrains Affiliate, these Purchase Terms will be governed by laws applicable in the country of the relevant Affiliate.
 For any questions regarding these Purchase Terms, please contact JetBrains or its Affiliate.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

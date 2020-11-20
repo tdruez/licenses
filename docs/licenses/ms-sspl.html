@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-sspl</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-sspl.yml">yml</a> -
   <a href="ms-sspl.json">json</a> -
   <a href="ms-sspl.LICENSE">text</a> -
@@ -19,7 +28,7 @@ category: Permissive
 owner: Microsoft
 </pre>
   <hr>
-  <pre>Microsoft Shared Source Permissive License (SS-PL) 
+  <pre id="license-text">Microsoft Shared Source Permissive License (SS-PL) 
 Published: October 18, 2005 
 
 This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software. 
@@ -49,6 +58,21 @@ The terms &#34;reproduce,&#34; &#34;reproduction&#34; and &#34;distribution&#34;
 (D) If you distribute the software or derivative works in source code form you may do so only under this license (i.e., you must include a complete copy of this license with your distribution), and if you distribute the software or derivative works in compiled or object code form you may only do so under a license that complies with this license. 
 
 (E) The software is licensed &#34;as-is.&#34; You bear the risk of using it. The Licensor gives no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the Licensor excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

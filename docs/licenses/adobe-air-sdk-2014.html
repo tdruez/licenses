@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>adobe-air-sdk-2014</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="adobe-air-sdk-2014.yml">yml</a> -
   <a href="adobe-air-sdk-2014.json">json</a> -
   <a href="adobe-air-sdk-2014.LICENSE">text</a> -
@@ -29,7 +38,7 @@ ignorable_urls:
   - http://www.mpegla.com/
 </pre>
   <hr>
-  <pre>Adobe AIR SDK - Warranty disclaimer and license agreement
+  <pre id="license-text">Adobe AIR SDK - Warranty disclaimer and license agreement
 ADOBE SYSTEMS INCORPORATED
 SDK LICENSE AGREEMENT
 ADOBE® AIR® SDK
@@ -135,6 +144,21 @@ If you are a consumer who uses the SDK for only personal non-business purposes, 
 If any part of this agreement is found void and unenforceable, it will not affect the validity of the balance of this agreement, which will remain valid and enforceable according to its terms. Updates may be licensed to you by Adobe with additional or different terms. The use of &#34;includes&#34; or &#34;including&#34; in this agreement shall mean &#34;including without limitation.&#34; This is the entire agreement between Adobe and you relating to the SDK and it supersedes any prior representations, discussions, undertakings, communications or advertising relating to the SDK.
 
 AdobeAIR_SDK License-en_US-20140814_0852</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>haskell-report</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="haskell-report.yml">yml</a> -
   <a href="haskell-report.json">json</a> -
   <a href="haskell-report.LICENSE">text</a> -
@@ -21,12 +30,27 @@ homepage_url: https://fedoraproject.org/wiki/Licensing/Haskell_Language_Report_L
 spdx_license_key: HaskellReport
 </pre>
   <hr>
-  <pre>The authors intend this Report to belong to the entire Haskell community, and
+  <pre id="license-text">The authors intend this Report to belong to the entire Haskell community, and
 so we grant permission to copy and distribute it for any purpose, provided that
 it is reproduced in its entirety, including this Notice.  Modified versions of
 this Report may also be copied and distributed for any purpose, provided that
 the modified version is clearly presented as such, and that it does not claim
 to be a definition of the Haskell 2010 Language.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

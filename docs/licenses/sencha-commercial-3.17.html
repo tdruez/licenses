@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sencha-commercial-3.17</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sencha-commercial-3.17.yml">yml</a> -
   <a href="sencha-commercial-3.17.json">json</a> -
   <a href="sencha-commercial-3.17.LICENSE">text</a> -
@@ -23,7 +32,7 @@ other_urls:
   - https://www.sencha.com/legal/
 </pre>
   <hr>
-  <pre>Sencha Software License Agreement
+  <pre id="license-text">Sencha Software License Agreement
 Version 3.17
 
 THIS DOCUMENT IS A LEGAL AGREEMENT (the “Agreement”) BETWEEN SENCHA INC. (“We,” “Us”) AND YOU OR THE ORGANIZATION ON WHOSE BEHALF YOU ARE ENTERING INTO THIS AGREEMENT (“You”) IN RELATION TO SENCHA SOFTWARE GENERALLY MADE AVAILABLE IN SOURCE CODE FORMAT (“Sencha SDKs”) AND/OR SENCHA SOFTWARE GENERALLY MADE AVAILABLE IN OBJECT CODE FORMAT (“Sencha Tools”). (The Sencha SDKs and the Sencha Tools are sometimes hereinafter collectively referred to as the “Software”.)
@@ -160,6 +169,21 @@ Sencha ExtReact Pro includes Sencha ExtReact, Sencha Cmd, Sencha Themer, Sencha 
 
 Sencha ExtAngular Standard includes Sencha ExtAngular, and Sencha Cmd.
 Sencha ExtAngular Premium includes all the Sencha ExtAngular Standard Software and Sencha Themer, Sencha Tree Grid, Sencha Pivot Grid, Sencha Calendar Component, Sencha Exporter, and Sencha D3 Adapter.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

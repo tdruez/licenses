@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>arm-cortex-mx</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="arm-cortex-mx.yml">yml</a> -
   <a href="arm-cortex-mx.json">json</a> -
   <a href="arm-cortex-mx.LICENSE">text</a> -
@@ -21,7 +30,7 @@ text_urls:
   - https://github.com/bitcraze/crazyflie-bootloader/blob/master/stlib/CMSIS/Core/CM3/core_cm3.c
 </pre>
   <hr>
-  <pre>ARM Limited (ARM) is supplying this software for use with Cortex-Mx 
+  <pre id="license-text">ARM Limited (ARM) is supplying this software for use with Cortex-Mx 
 processor based microcontrollers.  This file can be freely distributed 
 within development tools that are supporting such ARM based processors. 
 
@@ -30,6 +39,21 @@ OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
 MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
 ARM SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR
 CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

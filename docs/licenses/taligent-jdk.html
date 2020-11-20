@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>taligent-jdk</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="taligent-jdk.yml">yml</a> -
   <a href="taligent-jdk.json">json</a> -
   <a href="taligent-jdk.LICENSE">text</a> -
@@ -21,7 +30,7 @@ homepage_url: https://github.com/typetools/checker-framework/blob/3c427f380f61f2
 notes: This notice is common is OpenJDK and related Java code.
 </pre>
   <hr>
-  <pre>The original version of this source code and documentation
+  <pre id="license-text">The original version of this source code and documentation
 is copyrighted and owned by Taligent, Inc., a wholly-owned
 subsidiary of IBM. These materials are provided under terms
 of a License Agreement between Taligent and Sun. This technology
@@ -29,6 +38,21 @@ is protected by multiple US and International patents.
 
 This notice and attribution to Taligent may not be removed.
 Taligent is a registered trademark of Taligent, Inc.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

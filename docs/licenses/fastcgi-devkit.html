@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>fastcgi-devkit</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="fastcgi-devkit.yml">yml</a> -
   <a href="fastcgi-devkit.json">json</a> -
   <a href="fastcgi-devkit.LICENSE">text</a> -
@@ -32,7 +41,7 @@ ignorable_holders:
   - Open Market, Inc &#39;Open Market
 </pre>
   <hr>
-  <pre>This FastCGI application library source and object code (the
+  <pre id="license-text">This FastCGI application library source and object code (the
 &#34;Software&#34;) and its documentation (the &#34;Documentation&#34;) are
 copyrighted by Open Market, Inc (&#34;Open Market&#34;).  The following terms
 apply to all files associated with the Software and Documentation
@@ -60,6 +69,21 @@ LOST DATA, EVEN IF OPEN MARKET HAS BEEN ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGES.  THE SOFTWARE AND DOCUMENTATION ARE PROVIDED &#34;AS IS&#34;.
 OPEN MARKET HAS NO LIABILITY IN CONTRACT, TORT, NEGLIGENCE OR
 OTHERWISE ARISING OUT OF THIS SOFTWARE OR THE DOCUMENTATION.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

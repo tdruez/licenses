@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>nokos-1.0a</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="nokos-1.0a.yml">yml</a> -
   <a href="nokos-1.0a.json">json</a> -
   <a href="nokos-1.0a.LICENSE">text</a> -
@@ -32,7 +41,7 @@ ignorable_holders:
   - Nokia and others
 </pre>
   <hr>
-  <pre>Nokia Open Source License (NOKOS License) Version 1.0a
+  <pre id="license-text">Nokia Open Source License (NOKOS License) Version 1.0a
 
  1. DEFINITIONS.
 
@@ -418,6 +427,21 @@ The Original Software is
  .
 
 Copyright © &lt;year&gt; Nokia and others. All Rights Reserved.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

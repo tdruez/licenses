@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>simpl-2.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="simpl-2.0.yml">yml</a> -
   <a href="simpl-2.0.json">json</a> -
   <a href="simpl-2.0.LICENSE">text</a> -
@@ -28,7 +37,7 @@ other_urls:
   - https://opensource.org/licenses/SimPL-2.0
 </pre>
   <hr>
-  <pre>Preamble
+  <pre id="license-text">Preamble
 This Simple Public License 2.0 (SimPL 2.0 for short) is a plain language implementation of GPL 2.0.  The words are different, but the goal is the same - to guarantee for all users the freedom to share and change software.  If anyone wonders about the meaning of the SimPL, they should interpret it as consistent with GPL 2.0.
 
 Simple Public License (SimPL) 2.0
@@ -56,6 +65,21 @@ Anyone prevents you from distributing the software under the terms of the SimPL.
 
 License for the License
 You may do anything that you want with the SimPL text; it&#39;s a license form to use in any way that you find helpful.  To avoid confusion, however, if you change the terms in any way then you may not call your license the Simple Public License or the SimPL (but feel free to acknowledge that your license is &#34;based on the Simple Public License&#34;).</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

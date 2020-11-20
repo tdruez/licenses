@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>msppl</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="msppl.yml">yml</a> -
   <a href="msppl.json">json</a> -
   <a href="msppl.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Microsoft
 homepage_url: http://msdn.microsoft.com/en-us/library/gg405489(v=pandp.40).aspx
 </pre>
   <hr>
-  <pre>Microsoft patterns &amp; practices License
+  <pre id="license-text">Microsoft patterns &amp; practices License
 patterns &amp; practices Developer Center
 This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.
 1. Definitions
@@ -81,6 +90,21 @@ c. If any provision of this License is invalid or unenforceable under applicable
 d. No term or provision of this License shall be deemed waived and no breach consented to unless such waiver or consent shall be in writing and signed by the party to be charged with such waiver or consent.
 e. This License constitutes the entire agreement between the parties with respect to the Work licensed here. There are no understandings, agreements or representations with respect to the Work not specified here. Licensor shall not be bound by any additional provisions that may appear in any communication from You. This License may not be modified without the mutual written agreement of the Licensor and You.
 201011</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

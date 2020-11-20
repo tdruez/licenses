@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>geoserver-exception-2.0-plus</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="geoserver-exception-2.0-plus.yml">yml</a> -
   <a href="geoserver-exception-2.0-plus.json">json</a> -
   <a href="geoserver-exception-2.0-plus.LICENSE">text</a> -
@@ -56,7 +65,7 @@ standard_notice: |
   Foundation, Inc., 51 Franklin Street, Suite 500, Boston, MA 02110-1335 USA
 </pre>
   <hr>
-  <pre>As an exception to the terms of the GPL, you may copy, modify,
+  <pre id="license-text">As an exception to the terms of the GPL, you may copy, modify,
 propagate, and distribute a work formed by combining GeoServer with the
 Eclipse Libraries, or a work derivative of such a combination, even if
 such copying, modification, propagation, or distribution would otherwise
@@ -73,6 +82,21 @@ Modeling Framework Project and XML Schema Definition software
 distributed by the Eclipse Foundation and licensed under the Eclipse
 Public License Version 1.0 (&#34;EPL&#34;), or a work based on such software and
 licensed under the EPL.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

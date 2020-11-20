@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>clisp-exception-2.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="clisp-exception-2.0.yml">yml</a> -
   <a href="clisp-exception-2.0.json">json</a> -
   <a href="clisp-exception-2.0.LICENSE">text</a> -
@@ -26,7 +35,7 @@ other_urls:
   - http://www.gnu.org/licenses/gpl-2.0.txt
 </pre>
   <hr>
-  <pre>This copyright does NOT cover user programs that run in CLISP and third-party
+  <pre id="license-text">This copyright does NOT cover user programs that run in CLISP and third-party
 packages not part of CLISP, if a) They only reference external symbols in
 CLISP&#39;s public packages that define API also provided by many other Common Lisp
 implementations (namely the packages COMMON-LISP, COMMON-LISP-USER, KEYWORD,
@@ -56,6 +65,21 @@ memory image from these.
 Foreign non-Lisp code that is linked with CLISP or loaded into CLISP through
 dynamic linking is not exempted from this copyright. I.e. such code, when
 distributed for use with CLISP, must be distributed under the GPL.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

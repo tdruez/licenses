@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>eupl-1.2</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="eupl-1.2.yml">yml</a> -
   <a href="eupl-1.2.json">json</a> -
   <a href="eupl-1.2.LICENSE">text</a> -
@@ -38,7 +47,7 @@ ignorable_holders:
   - the European Union
 </pre>
   <hr>
-  <pre>EUROPEAN UNION PUBLIC LICENCE v. 1.2 
+  <pre id="license-text">EUROPEAN UNION PUBLIC LICENCE v. 1.2 
 EUPL © the European Union 2007, 2016 
 
 This European Union Public Licence (the ‘EUPL’) applies to the Work (as defined below) which is provided under the terms of this Licence. Any use of the Work, other than as authorised under this Licence is prohibited (to the extent such use is covered by a right of the copyright holder of the Work). 
@@ -150,6 +159,21 @@ Without prejudice to specific agreement between parties,
 Without prejudice to specific agreement between parties, 
 — this Licence shall be governed by the law of the European Union Member State where the Licensor has his seat, resides or has his registered office, 
 — this licence shall be governed by Belgian law if the Licensor has no seat, residence or registered office inside a European Union Member State.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

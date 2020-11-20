@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>oracle-bcl-javase-platform-javafx-2013</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="oracle-bcl-javase-platform-javafx-2013.yml">yml</a> -
   <a href="oracle-bcl-javase-platform-javafx-2013.json">json</a> -
   <a href="oracle-bcl-javase-platform-javafx-2013.LICENSE">text</a> -
@@ -28,7 +37,7 @@ ignorable_urls:
   - http://www.oracle.com/us/products/export
 </pre>
   <hr>
-  <pre>Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX
+  <pre id="license-text">Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX
 
 ORACLE AMERICA, INC. (&#34;ORACLE&#34;), FOR AND ON BEHALF OF ITSELF AND ITS SUBSIDIARIES AND AFFILIATES UNDER COMMON CONTROL, IS WILLING TO LICENSE THE SOFTWARE TO YOU ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN THIS BINARY CODE LICENSE AGREEMENT AND SUPPLEMENTAL LICENSE TERMS (COLLECTIVELY &#34;AGREEMENT&#34;). PLEASE READ THE AGREEMENT CAREFULLY. BY SELECTING THE &#34;ACCEPT LICENSE AGREEMENT&#34; (OR THE EQUIVALENT) BUTTON AND/OR BY USING THE SOFTWARE YOU ACKNOWLEDGE THAT YOU HAVE READ THE TERMS AND AGREE TO THEM. IF YOU ARE AGREEING TO THESE TERMS ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE LEGAL AUTHORITY TO BIND THE LEGAL ENTITY TO THESE TERMS. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT WISH TO BE BOUND BY THE TERMS, THEN SELECT THE &#34;DECLINE LICENSE AGREEMENT&#34; (OR THE EQUIVALENT) BUTTON AND YOU MUST NOT USE THE SOFTWARE ON THIS SITE OR ANY OTHER MEDIA ON WHICH THE SOFTWARE IS CONTAINED.
 
@@ -96,6 +105,21 @@ For inquiries please contact: Oracle America, Inc., 500 Oracle Parkway,
 Redwood Shores, California 94065, USA.
 
 Last updated 02 April 2013</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

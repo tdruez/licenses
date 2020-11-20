@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>cpp-core-guidelines</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="cpp-core-guidelines.yml">yml</a> -
   <a href="cpp-core-guidelines.json">json</a> -
   <a href="cpp-core-guidelines.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_emails:
   - admin@isocpp.org
 </pre>
   <hr>
-  <pre>Standard C++ Foundation grants you a worldwide, nonexclusive, royalty-free,
+  <pre id="license-text">Standard C++ Foundation grants you a worldwide, nonexclusive, royalty-free,
 perpetual license to copy, use, modify, and create derivative works from this
 project for your personal or internal business use only. The above copyright
 notice and this permission notice shall be included in all copies or
@@ -60,6 +69,21 @@ If you believe that anything in the project infringes your copyright, please
 contact us at admin@isocpp.org with your contact information and a detailed
 description of your intellectual property, including a specific URL where you
 believe your intellectual property is being infringed.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

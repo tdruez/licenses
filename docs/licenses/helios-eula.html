@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>helios-eula</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="helios-eula.yml">yml</a> -
   <a href="helios-eula.json">json</a> -
   <a href="helios-eula.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_urls:
   - http://www.textpad.com/
 </pre>
   <hr>
-  <pre>END USER LICENSE AGREEMENT FOR HELIOS SOFTWARE SOLUTIONS SOFTWARE.
+  <pre id="license-text">END USER LICENSE AGREEMENT FOR HELIOS SOFTWARE SOLUTIONS SOFTWARE.
 
 IMPORTANT - READ CAREFULLY: This Helios Software Solutions End-User License Agreement (&#34;EULA&#34;) is a legal agreement between you (either an individual person or a single legal entity, who will be referred to in this EULA as &#34;You&#34;) and Helios Software Solutions (&#34;Helios&#34;) for the Helios software product that accompanies this EULA, including any associated media, printed materials and electronic documentation (the &#34;Software Product&#34;).  The Software Product also includes any software updates, add-on components, web services and/or supplements that Helios may provide to You or make available to You after the date You obtain Your initial copy of the Software Product to the extent that such items are not accompanied by a separate license agreement or terms of use.  By installing, copying, downloading, accessing or otherwise using the Software Product, You agree to be bound by the terms of this EULA. If You do not agree to the terms of this EULA, do not install, access or use the Software Product; instead, You should return it, with proof of purchase, to Your place of purchase for a full refund.
 
@@ -83,6 +92,21 @@ YOUR EXCLUSIVE REMEDY.  Helios&#39; and its suppliers&#39; entire liability and 
 12.   LIMITATION OF LIABILITY AND REMEDIES.  NOTWITHSTANDING ANY DAMAGES THAT YOU MIGHT INCUR FOR ANY REASON WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ALL DAMAGES REFERENCED ABOVE AND ALL DIRECT OR GENERAL DAMAGES), THE ENTIRE LIABILITY OF HELIOS AND ANY OF ITS SUPPLIERS UNDER ANY PROVISION OF THIS EULA AND YOUR EXCLUSIVE REMEDY FOR ALL OF THE FOREGOING (EXCEPT FOR ANY REMEDY OF REPAIR OR REPLACEMENT ELECTED BY HELIOS WITH RESPECT TO ANY BREACH OF THE LIMITED WARRANTY) SHAL BE LIMITED TO THE GREATER OF THE AMOUNT ACTUALLY PAID BY YOU FOR THE SOFTWARE OR U.S. $5.00.  THE FOREGOING LIMITATIONS, EXCLUSIONS AND DISCLAIMERS (INCLUDING SECTIONS 7, 8, AND 9 ABOVE) SHALL APPLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, EVEN IF ANY REMEDY FAILS ITS ESSENTIAL PURPOSE.
 
 13.   ENTIRE AGREEMENT.  This EULA (including any addendum or amendment to this EULA which is included with the Software Product) is the entire agreement between you and Helios relating to the Software Product and the support services (if any) and they supersede all prior or contemporaneous oral or written communications, proposals and representations with respect to the Software Product or any other subject matter covered by this EULA.  To the extent the terms of any Helios policies or programs for support services conflict with the terms of this EULA, the terms of this EULA shall control.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

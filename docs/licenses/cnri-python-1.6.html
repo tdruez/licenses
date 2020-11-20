@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>cnri-python-1.6</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="cnri-python-1.6.yml">yml</a> -
   <a href="cnri-python-1.6.json">json</a> -
   <a href="cnri-python-1.6.LICENSE">text</a> -
@@ -36,7 +45,7 @@ ignorable_urls:
   - http://www.python.org/
 </pre>
   <hr>
-  <pre>CNRI OPEN SOURCE LICENSE AGREEMENT
+  <pre id="license-text">CNRI OPEN SOURCE LICENSE AGREEMENT
 
 IMPORTANT: PLEASE READ THE FOLLOWING AGREEMENT CAREFULLY. BY CLICKING ON &#34;ACCEPT&#34; WHERE INDICATED BELOW, OR BY COPYING, INSTALLING OR OTHERWISE USING PYTHON 1.6 SOFTWARE, YOU ARE DEEMED TO HAVE AGREED TO THE TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT.
 
@@ -57,6 +66,21 @@ Licensee. Alternately, in lieu of CNRI&#39;s License Agreement, Licensee may sub
 7. This License Agreement shall be governed by and interpreted in all respects by the law of the State of Virginia, excluding conflict of law provisions. Nothing in this License Agreement shall be deemed to create any relationship of agency, partnership, or joint venture between CNRI and Licensee. This License Agreement does not grant permission to use CNRI trademarks or trade name in a trademark sense to endorse or promote products or services of Licensee, or any third party.
 
 8. By clicking on the &#34;ACCEPT&#34; button where indicated, or by copying, installing or otherwise using Python 1.6, Licensee agrees to be bound by the terms and conditions of this License Agreement.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

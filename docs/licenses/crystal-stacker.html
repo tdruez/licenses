@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>crystal-stacker</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="crystal-stacker.yml">yml</a> -
   <a href="crystal-stacker.json">json</a> -
   <a href="crystal-stacker.LICENSE">text</a> -
@@ -22,13 +31,28 @@ spdx_license_key: CrystalStacker
 minimum_coverage: 20
 </pre>
   <hr>
-  <pre>Crystal Stacker is freeware. This means you can pass copies around freely provided you include this document in it&#39;s original form in your distribution. Please see the &#34;Contacting Us&#34; section of this document if you need to contact us for any reason.
+  <pre id="license-text">Crystal Stacker is freeware. This means you can pass copies around freely provided you include this document in it&#39;s original form in your distribution. Please see the &#34;Contacting Us&#34; section of this document if you need to contact us for any reason.
 
 Disclaimer
 
 NewCreature Design makes no guarantees regarding the Crystal Stacker software. We are not responsible for damages caused by it, though the software is not known to cause any problems. If you have trouble with the software, see the &#34;Contacting Us&#34; section of this document.
 
 The source code is provided as-is and you may do with it whatsoever you please provided that you include this file in its unmodified form with any new distribution. NewCreature Design makes no gaurantees regarding the usability of the source but are willing to help with any problems you might run into. Please see the &#34;Contacting Us&#34; section of this document if you need to get in touch with us about any issues you have regarding the source.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

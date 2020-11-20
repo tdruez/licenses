@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>mit-export-control</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="mit-export-control.yml">yml</a> -
   <a href="mit-export-control.json">json</a> -
   <a href="mit-export-control.LICENSE">text</a> -
@@ -26,7 +35,7 @@ other_urls:
   - https://fedoraproject.org/wiki/Licensing/Xerox
 </pre>
   <hr>
-  <pre>Use and copying of this software and preparation of derivative works
+  <pre id="license-text">Use and copying of this software and preparation of derivative works
 based upon this software are permitted. Any copy of this software or of
 any derivative work must include the above copyright notice of
 {copyright-holder}, this paragraph and the one after it. Any
@@ -41,6 +50,21 @@ LIABILITY FOR DAMAGES RESULTING FROM THE SOFTWARE OR ITS USE IS
 EXPRESSLY DISCLAIMED, WHETHER ARISING IN CONTRACT, TORT (INCLUDING
 NEGLIGENCE) OR STRICT LIABILITY, EVEN IF {copyright-holder} IS ADVISED
 OF THE POSSIBILITY OF SUCH DAMAGES.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

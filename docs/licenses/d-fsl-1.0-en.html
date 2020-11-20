@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>d-fsl-1.0-en</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="d-fsl-1.0-en.yml">yml</a> -
   <a href="d-fsl-1.0-en.json">json</a> -
   <a href="d-fsl-1.0-en.LICENSE">text</a> -
@@ -38,7 +47,7 @@ ignorable_urls:
   - http://www.ifross.de/
 </pre>
   <hr>
-  <pre>German Free Software License
+  <pre id="license-text">German Free Software License
 
 (c) Ministry of Science and Research, State of 
 North-Rhine Westphalia 2004
@@ -476,6 +485,21 @@ with the terms of the German Free Software
 License
 
 The License may be obtained under &lt;http://www.d-fsl.org&gt;.&#34;</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

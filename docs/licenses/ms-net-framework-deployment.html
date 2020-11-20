@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-net-framework-deployment</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-net-framework-deployment.yml">yml</a> -
   <a href="ms-net-framework-deployment.json">json</a> -
   <a href="ms-net-framework-deployment.LICENSE">text</a> -
@@ -19,7 +28,7 @@ category: Commercial
 owner: Microsoft
 </pre>
   <hr>
-  <pre>.NET Framework Deployment 
+  <pre id="license-text">.NET Framework Deployment 
 Microsoft .NET Framework Redistributable EULA
 
 IMPORTANT: READ CAREFULLY—These Microsoft Corporation (&#34;Microsoft&#34;) operating system components, including any &#34;online&#34; or electronic documentation (&#34;OS Components&#34;) are subject to the terms and conditions of the agreement under which you have licensed the applicable Microsoft operating system product (&#34;OS Product&#34;) described below (each an &#34;End User License Agreement&#34; or &#34;EULA&#34;) and the terms and conditions of this Supplemental EULA. BY INSTALLING, COPYING OR OTHERWISE USING THE OS COMPONENTS, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THE APPLICABLE OS PRODUCT EULA AND THIS SUPPLEMENTAL EULA. IF YOU DO NOT AGREE TO THESE TERMS AND CONDITIONS, DO NOT INSTALL, COPY OR USE THE OS COMPONENTS.
@@ -51,6 +60,21 @@ EXCLUSION OF INCIDENTAL, CONSEQUENTIAL AND CERTAIN OTHER DAMAGES. To the maximum
 LIMITATION OF LIABILITY AND REMEDIES. NOTWITHSTANDING ANY DAMAGES THAT YOU MIGHT INCUR FOR ANY REASON WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ALL DAMAGES REFERENCED ABOVE AND ALL DIRECT OR GENERAL DAMAGES), THE ENTIRE LIABILITY OF MICROSOFT AND ANY OF ITS SUPPLIERS UNDER ANY PROVISION OF THIS SUPPLEMENTAL EULA AND YOUR EXCLUSIVE REMEDY FOR ALL OF THE FOREGOING SHALL BE LIMITED TO THE GREATER OF THE AMOUNT ACTUALLY PAID BY YOU FOR THE OS COMPONENTS OR U.S.$5.00. THE FOREGOING LIMITATIONS, EXCLUSIONS AND DISCLAIMERS SHALL APPLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, EVEN IF ANY REMEDY FAILS ITS ESSENTIAL PURPOSE.
 
 (French text omitted)</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

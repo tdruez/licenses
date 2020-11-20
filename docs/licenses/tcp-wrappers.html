@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>tcp-wrappers</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="tcp-wrappers.yml">yml</a> -
   <a href="tcp-wrappers.json">json</a> -
   <a href="tcp-wrappers.LICENSE">text</a> -
@@ -27,7 +36,7 @@ ignorable_holders:
   - Wietse Venema
 </pre>
   <hr>
-  <pre>-----BEGIN PGP SIGNED MESSAGE-----
+  <pre id="license-text">-----BEGIN PGP SIGNED MESSAGE-----
 
 As of June 1, 2001, the text below constitutes the TCP Wrappers license.
 
@@ -58,6 +67,21 @@ v8BeBE0bdjeVmOQYRQfXgt3J2q0b8x8Q5a/LCLVLh8k6DFGg8AfEbLDQWhi1JiXC
 0JsaB8crR3M=
 =0AMW
 -----END PGP SIGNATURE-----</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

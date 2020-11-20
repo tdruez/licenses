@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>notre-dame</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="notre-dame.yml">yml</a> -
   <a href="notre-dame.json">json</a> -
   <a href="notre-dame.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_holders:
   - University of Notre Dame
 </pre>
   <hr>
-  <pre>COPYRIGHT NOTICE:
+  <pre id="license-text">COPYRIGHT NOTICE:
 Copyright 1997-2000, University of Notre Dame.
 Authors: Jeremy G. Siek, Jeffery M. Squyres, Michael P. McNally, and
          Andrew Lumsdaine
@@ -75,6 +84,21 @@ Indiana.  LICENSEE hereby consents to the jurisdiction of the Indiana
 courts and waives the right to challenge the jurisdiction thereof in
 any dispute arising out of this Agreement or Licensee&#39;s use of the
 software.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

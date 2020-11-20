@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>cal-1.0-combined-work-exception</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="cal-1.0-combined-work-exception.yml">yml</a> -
   <a href="cal-1.0-combined-work-exception.json">json</a> -
   <a href="cal-1.0-combined-work-exception.LICENSE">text</a> -
@@ -27,7 +36,7 @@ standard_notice: |
   Combined Work Exception
 </pre>
   <hr>
-  <pre>The Cryptographic Autonomy License, v. 1.0, with Combined Work Exception
+  <pre id="license-text">The Cryptographic Autonomy License, v. 1.0, with Combined Work Exception
 
 1. Purpose
 This License gives You unlimited permission to use and modify the software to which it applies (the “Work”), either as-is or in modified form, for Your private purposes, while protecting the owners and contributors to the software from liability.
@@ -152,6 +161,21 @@ If any provision of this License is held to be unenforceable, such provision sha
 
 7.7. License for the Text of this License
 The text of this license is released under the Creative Commons Attribution-ShareAlike 4.0 International License, with the caveat that any modifications of this license may not use the name “Cryptographic Autonomy License” or any name confusingly similar thereto to describe any derived work of this License.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ti-restricted</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ti-restricted.yml">yml</a> -
   <a href="ti-restricted.json">json</a> -
   <a href="ti-restricted.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: TI - Texas Instruments
 minimum_coverage: 50
 </pre>
   <hr>
-  <pre>Permission is hereby granted to licensees of Texas Instruments
+  <pre id="license-text">Permission is hereby granted to licensees of Texas Instruments
 Incorporated (TI) products to use this computer program for the sole
 purpose of implementing a licensee product based on TI products.
 No other rights to reproduce, use, or disseminate this computer 
@@ -31,6 +40,21 @@ performance of this computer program, and specifically disclaims
 any responsibility for any damages, special or consequential, 
 connected with the use of this program. 
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>stlport-4.5</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="stlport-4.5.yml">yml</a> -
   <a href="stlport-4.5.json">json</a> -
   <a href="stlport-4.5.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: STLport Consulting
 notes: stlport-4.5 and mozilla-gc are mostly the same
 </pre>
   <hr>
-  <pre>This material is provided &#34;as is&#34;, with absolutely no warranty expressed
+  <pre id="license-text">This material is provided &#34;as is&#34;, with absolutely no warranty expressed
 or implied. Any use is at your own risk.
 
 Permission to use or copy this software for any purpose is hereby
@@ -30,6 +39,21 @@ copies.
 Permission to modify the code and to distribute modified code is
 granted, provided the above notices are retained, and a notice that
 the code was modified is included with the above copyright notice.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

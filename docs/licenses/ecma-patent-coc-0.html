@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ecma-patent-coc-0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ecma-patent-coc-0.yml">yml</a> -
   <a href="ecma-patent-coc-0.json">json</a> -
   <a href="ecma-patent-coc-0.LICENSE">text</a> -
@@ -21,7 +30,7 @@ homepage_url: http://www.ecma-international.org/memento/historical%20codeofcondu
 notes: valid until December 3, 2009
 </pre>
   <hr>
-  <pre>Historical Code of Conduct in Patent Matters (valid until December 3, 2009)
+  <pre id="license-text">Historical Code of Conduct in Patent Matters (valid until December 3, 2009)
 
 1.
 Policy
@@ -62,6 +71,21 @@ Replies to this request will be circulated in due time before the General Assemb
 
 2.4
 When an answer is not received from a Company, the General Assembly may proceed to a vote on the assumption that this Company will act in accordance with the General Declaration, that is to license possible relevant issued patents on a reasonable and non-discriminatory basis.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

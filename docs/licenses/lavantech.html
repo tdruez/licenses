@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>lavantech</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="lavantech.yml">yml</a> -
   <a href="lavantech.json">json</a> -
   <a href="lavantech.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_urls:
   - http://www.lavantech.com/license.shtml
 </pre>
   <hr>
-  <pre>LavanTech License
+  <pre id="license-text">LavanTech License
 http://www.lavantech.com/license.shtml 
 
 License
@@ -66,6 +75,21 @@ This License Agreement shall be governed by and construed in accordance with the
 The failure by either party at any time to enforce any of the provisions of this License Agreement or any right or remedy available hereunder or at law or in equity, or to exercise any option herein provided, shall not constitute a waiver of such provision, right, remedy or option or in any way affect the validity of this License Agreement. The waiver of any default by either party shall not be deemed a continuing waiver, but shall apply solely to the instance to which such waiver is directed.
 8. Return Policy 
 All returns must be received within 30 days of purchase.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

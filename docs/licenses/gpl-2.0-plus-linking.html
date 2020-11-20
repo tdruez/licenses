@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>gpl-2.0-plus-linking</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="gpl-2.0-plus-linking.yml">yml</a> -
   <a href="gpl-2.0-plus-linking.json">json</a> -
   <a href="gpl-2.0-plus-linking.LICENSE">text</a> -
@@ -22,7 +31,7 @@ notes: replaced by linking-exception-2.0-plus
 is_exception: yes
 </pre>
   <hr>
-  <pre>This library is free software; you can redistribute it and/or modify it under the
+  <pre id="license-text">This library is free software; you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free Software Foundation;
 either version 2, or (at your option) any later version.
 
@@ -40,6 +49,21 @@ this library does not by itself cause the resulting executable to
 be covered by the GNU General Public License.  This exception does
 not however invalidate any other reasons why the executable file
 might be covered by the GNU General Public License.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

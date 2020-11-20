@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>xinetd</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="xinetd.yml">yml</a> -
   <a href="xinetd.json">json</a> -
   <a href="xinetd.LICENSE">text</a> -
@@ -31,7 +40,7 @@ ignorable_holders:
   - Steve Grubb
 </pre>
   <hr>
-  <pre>xinetd License
+  <pre id="license-text">xinetd License
 
 ORIGINAL LICENSE:
 This software is
@@ -78,6 +87,21 @@ So, if you want, you may use any 2.N.* (N &gt;= 3) version string for future xin
 versions that you release. Note that I am excluding the 2.2.* line; using that
 would only create confusion. Naming the next release 2.3.0 would put to rest the
 confusion about 2.2.1 and 2.1.8.*.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

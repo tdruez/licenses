@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>jmagnetic</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="jmagnetic.yml">yml</a> -
   <a href="jmagnetic.json">json</a> -
   <a href="jmagnetic.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_holders:
   - Stefan Meier
 </pre>
   <hr>
-  <pre>JMAGNETIC Licence Agreement
+  <pre id="license-text">JMAGNETIC Licence Agreement
 
 This is a legal agreement between you and Stefan Meier covering your use of JMagnetic. Be sure to read the following agreement before using the software. IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, DO NOT USE THE SOFTWARE AND DESTROY ALL COPIES OF IT.
 
@@ -34,6 +43,21 @@ The JMagnetic application, the JMagnetic class package, all accompanying documen
 With that said, anyone who wishes to include any of my code in their own or who wishes to base a new application on this code is encouraged to contact me. Commercial usage or redistribution of the JMagnetic software is strictly prohibited. Inquiries on commercial distribution of Magnetic Scrolls related products should be directly send to Ken Gordon.
 
 The JMagnetic software and related documentation are provided &#34;AS IS&#34; and without warranty of any kind and the author expressly disclaims all other warranties, express or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. Under no circumstances shall Stefan Meier be liable for any incidental, special or consequential damages that result from the use or inability to use the software or related documentation, even if Stefan Meier has been advised of the possibility of such damages.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

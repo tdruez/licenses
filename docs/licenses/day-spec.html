@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>day-spec</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="day-spec.yml">yml</a> -
   <a href="day-spec.json">json</a> -
   <a href="day-spec.LICENSE">text</a> -
@@ -28,7 +37,7 @@ ignorable_holders:
   - Day Management AG Barfusserplatz 6, 4001 Basel, Switzerland
 </pre>
   <hr>
-  <pre>[Day Specification License]
+  <pre id="license-text">[Day Specification License]
 
 Day Management AG (&#34;Licensor&#34;) is willing to license this specification
 to you ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED
@@ -176,6 +185,21 @@ that are or would be infringed by all technically feasible
 implementations of the Specification to develop, distribute
 and use a Compliant Implementation.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

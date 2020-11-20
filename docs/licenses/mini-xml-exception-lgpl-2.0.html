@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>mini-xml-exception-lgpl-2.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="mini-xml-exception-lgpl-2.0.yml">yml</a> -
   <a href="mini-xml-exception-lgpl-2.0.json">json</a> -
   <a href="mini-xml-exception-lgpl-2.0.LICENSE">text</a> -
@@ -54,7 +63,7 @@ ignorable_urls:
   - http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
 </pre>
   <hr>
-  <pre>Mini-XML License (LGPL 2.0 with Exception)
+  <pre id="license-text">Mini-XML License (LGPL 2.0 with Exception)
 
 The Mini-XML library and included programs are provided under the terms of the
 GNU Library General Public License (LGPL) with the following exceptions:
@@ -66,6 +75,21 @@ If you link the application to a modified version of Mini-XML, then the changes 
 
 GNU Library General Public License (LGPL 2.0)
 http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html - TOC1</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

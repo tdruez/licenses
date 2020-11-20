@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>afl-2.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="afl-2.0.yml">yml</a> -
   <a href="afl-2.0.json">json</a> -
   <a href="afl-2.0.LICENSE">text</a> -
@@ -28,7 +37,7 @@ other_urls:
   - http://www.gnu.org/licenses/license-list.html#AcademicFreeLicense
 </pre>
   <hr>
-  <pre>Academic Free License
+  <pre id="license-text">Academic Free License
 v. 2.0
 
 This Academic Free License (the &#34;License&#34;) applies to any original work of authorship (the &#34;Original Work&#34;) whose owner (the &#34;Licensor&#34;) has placed the following notice immediately following the copyright notice for the Original Work:
@@ -73,6 +82,21 @@ This Academic Free License (the &#34;License&#34;) applies to any original work 
 14) Definition of &#34;You&#34; in This License. &#34;You&#34; throughout this License, whether in upper or lower case, means an individual or a legal entity exercising rights under, and complying with all of the terms of, this License. For legal entities, &#34;You&#34; includes any entity that controls, is controlled by, or is under common control with you. For purposes of this definition, &#34;control&#34; means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.
 
 15) Right to Use. You may use the Original Work in all ways not otherwise restricted or conditioned by this License or by law, and Licensor promises not to interfere with or be responsible for such uses by You.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>u-boot-exception-2.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="u-boot-exception-2.0.yml">yml</a> -
   <a href="u-boot-exception-2.0.json">json</a> -
   <a href="u-boot-exception-2.0.LICENSE">text</a> -
@@ -55,7 +64,7 @@ ignorable_holders:
   - the Free Software Foundation
 </pre>
   <hr>
-  <pre>The U-Boot Exception:
+  <pre id="license-text">The U-Boot Exception:
 
 NOTE! This copyright does *not* cover the so-called &#34;standalone&#34; applications that use U-Boot services by means of the jump table provided by U-Boot exactly for this purpose - this is merely considered normal use of U-Boot, and does *not* fall under the heading of &#34;derived work&#34;.
 
@@ -64,6 +73,21 @@ The header files &#34;include/image.h&#34; and &#34;include/asm-*/u-boot.h&#34; 
 Also note that the GPL below is copyrighted by the Free Software Foundation, but the instance of code that it refers to (the U-Boot source code) is copyrighted by me and others who actually wrote it. 
 
 -- Wolfgang Denk</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

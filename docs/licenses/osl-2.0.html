@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>osl-2.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="osl-2.0.yml">yml</a> -
   <a href="osl-2.0.json">json</a> -
   <a href="osl-2.0.LICENSE">text</a> -
@@ -31,7 +40,7 @@ ignorable_holders:
   - Lawrence E. Rosen
 </pre>
   <hr>
-  <pre>Open Software License v. 2.0
+  <pre id="license-text">Open Software License v. 2.0
 
 This Open Software License (the &#34;License&#34;) applies to any original work of authorship (the &#34;Original Work&#34;) whose owner (the &#34;Licensor&#34;) has placed the following notice immediately following the copyright notice for the Original Work:
 Licensed under the Open Software License version 2.0
@@ -76,6 +85,21 @@ e) to display the Original Work publicly.
 15) Right to Use. You may use the Original Work in all ways not otherwise restricted or conditioned by this License or by law, and Licensor promises not to interfere with or be responsible for such uses by You.
 
 This license is Copyright (C) 2003 Lawrence E. Rosen.  All rights reserved.  Permission is hereby granted to copy and distribute this license without modification.  This license may not be modified without the express written permission of its copyright owner.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

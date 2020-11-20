@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-nt-resource-kit</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-nt-resource-kit.yml">yml</a> -
   <a href="ms-nt-resource-kit.json">json</a> -
   <a href="ms-nt-resource-kit.LICENSE">text</a> -
@@ -19,7 +28,7 @@ category: Commercial
 owner: Microsoft
 </pre>
   <hr>
-  <pre>Microsoft NT Resource Kit License
+  <pre id="license-text">Microsoft NT Resource Kit License
 MICROSOFT WINDOWS NT RESOURCE KIT SUPPORT TOOLS
 END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE 
 
@@ -65,6 +74,21 @@ NO WARRANTIES. MICROSOFT EXPRESSLY DISCLAIMS ANY WARRANTY FOR THE SOFTWARE. THE 
 LIMITATION OF LIABILITY. To the maximum extent permitted by applicable law, in no event shall Microsoft or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out of the use of or inability to use the SOFTWARE or the provision of or failure to provide Support Services, even if Microsoft has been advised of the possibility of such damages. In any case, Microsoft&#39;s entire liability under any provision of this EULA shall be limited to the greater of the amount actually paid by you for the SOFTWARE or US$5.00; provided however, if you have entered into a Microsoft Support Services agreement, Microsoft&#39;s entire liability regarding Support Services shall be governed by the terms of that agreement. Because some states and jurisdictions do not allow the exclusion or limitation of liability, the above limitation may not apply to you.
 
 (French text omitted)</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

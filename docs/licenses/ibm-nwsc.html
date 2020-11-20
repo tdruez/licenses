@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ibm-nwsc</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ibm-nwsc.yml">yml</a> -
   <a href="ibm-nwsc.json">json</a> -
   <a href="ibm-nwsc.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: IBM
 homepage_url: http://www.ibm.com/developerworks/data/zones/informix/library/techarticle/nair/0204nairlicense.html
 </pre>
   <hr>
-  <pre>IBM International License Agreement for Non-Warranted  Sample Code
+  <pre id="license-text">IBM International License Agreement for Non-Warranted  Sample Code
 
 Part 1 - General Terms
 -----------------------------------------------------------
@@ -108,6 +117,21 @@ Where  Sample Code is  not acquired for the purposes of a business as defined in
 
 UNITED KINGDOM: Limitation  of Liability (Section 3 ):  The following paragraph is added to this Section:
 The limitation of liability will not apply to any breach of IBM&#39;s obligations implied by Section 12 of the Sales of Goods Act 1979 or Section 2 of the Supply of Goods and Services Act 1982.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

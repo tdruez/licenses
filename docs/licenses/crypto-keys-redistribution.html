@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>crypto-keys-redistribution</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="crypto-keys-redistribution.yml">yml</a> -
   <a href="crypto-keys-redistribution.json">json</a> -
   <a href="crypto-keys-redistribution.LICENSE">text</a> -
@@ -27,12 +36,27 @@ text_urls:
   - http://git.savannah.gnu.org/cgit/dmidecode.git/tree/dmidecode.c?id=ee07a1b4249560d620d05194eb8ff61b40d3ce23
 </pre>
   <hr>
-  <pre>For the avoidance of doubt the &#34;preferred form&#34; of this code is one which
+  <pre id="license-text">For the avoidance of doubt the &#34;preferred form&#34; of this code is one which
 is in an open non patent encumbered format. Where cryptographic key signing
 forms part of the process of creating an executable the information
 including keys needed to generate an equivalently functional executable
 are deemed to be part of the source code.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

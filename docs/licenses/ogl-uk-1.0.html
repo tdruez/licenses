@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ogl-uk-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ogl-uk-1.0.yml">yml</a> -
   <a href="ogl-uk-1.0.json">json</a> -
   <a href="ogl-uk-1.0.LICENSE">text</a> -
@@ -23,7 +32,7 @@ other_urls:
   - http://www.nationalarchives.gov.uk/doc/open-government-licence/
 </pre>
   <hr>
-  <pre>You are encouraged to use and re-use the Information that is available under this
+  <pre id="license-text">You are encouraged to use and re-use the Information that is available under this
  licence, the Open Government Licence, freely and flexibly, with only a few conditions.
 
 Using information under this licence
@@ -128,6 +137,21 @@ which covers copyright, and Open Data Commons Attribution License, which covers 
 
 Further context, best practice and guidance can be found in the UK Government Licensing Framework section on The National Archives website.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

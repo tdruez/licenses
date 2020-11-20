@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>info-zip</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="info-zip.yml">yml</a> -
   <a href="info-zip.json">json</a> -
   <a href="info-zip.LICENSE">text</a> -
@@ -29,7 +38,7 @@ ignorable_urls:
   - ftp://ftp.cdrom.com/pub/infozip/license.html
 </pre>
   <hr>
-  <pre>Info-Zip License
+  <pre id="license-text">Info-Zip License
 
 This is version 1999-Oct-05 of the Info-ZIP copyright and license. The definitive version of this document should be available at ftp://ftp.cdrom.com/pub/infozip/license.html indefinitely.
 
@@ -50,6 +59,21 @@ Permission is granted to anyone to use this software for any purpose, including 
 3. Altered versions--including, but not limited to, ports to new operating systems, existing ports with new graphical interfaces, and dynamic, shared, or static library versions--must be plainly marked as such and must not be misrepresented as being the original source. Such altered versions also must not be misrepresented as being Info-ZIP releases--including, but not limited to, labeling of the altered versions with the names &#34;Info-ZIP&#34; (or any variation thereof, including, but not limited to, different capitalizations), &#34;Pocket UnZip,&#34; &#34;WiZ&#34; or &#34;MacZip&#34; without the explicit permission of Info-ZIP. Such altered versions are further prohibited from misrepresentative use of theZip-Bugs or Info-ZIP e-mail addresses or of the Info-ZIP URL(s).
 
 4. Info-ZIP retains the right to use the names &#34;Info-ZIP,&#34; &#34;Zip,&#34; &#34;UnZip,&#34; &#34;WiZ,&#34; &#34;Pocket UnZip,&#34; &#34;Pocket Zip,&#34; and &#34;MacZip&#34; for its own source and binary releases.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

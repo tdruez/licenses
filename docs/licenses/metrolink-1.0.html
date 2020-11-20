@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>metrolink-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="metrolink-1.0.yml">yml</a> -
   <a href="metrolink-1.0.json">json</a> -
   <a href="metrolink-1.0.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_holders:
   - May, The Open Group, Metro Link, Incorporated and others
 </pre>
   <hr>
-  <pre>METRO LINK PUBLIC LICENSE
+  <pre id="license-text">METRO LINK PUBLIC LICENSE
 MOTIF GRAPHICAL USER INTERFACE SOFTWARE
 Version 1.00
 
@@ -130,6 +139,21 @@ METRO LINK may publish new versions (including revisions) of this Agreement from
 This Agreement is governed by the laws of the State of Florida and the intellectual property laws of the United States of America.
 
 No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

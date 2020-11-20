@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>uofu-rfpl</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="uofu-rfpl.yml">yml</a> -
   <a href="uofu-rfpl.json">json</a> -
   <a href="uofu-rfpl.LICENSE">text</a> -
@@ -28,7 +37,7 @@ ignorable_holders:
   - University of Utah
 </pre>
   <hr>
-  <pre>UNIVERSITY OF UTAH RESEARCH FOUNDATION PUBLIC LICENSE
+  <pre id="license-text">UNIVERSITY OF UTAH RESEARCH FOUNDATION PUBLIC LICENSE
 	
 1. Definitions
 
@@ -279,6 +288,21 @@ The Original Source Code is &#34;teem&#34;, released March 23, 2001.
 The Original Source Code was developed by the University of Utah.
 Portions created by UNIVERSITY are Copyright (C) 2001, 1998 University
 of Utah. All Rights Reserved.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

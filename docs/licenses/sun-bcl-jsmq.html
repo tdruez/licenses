@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sun-bcl-jsmq</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sun-bcl-jsmq.yml">yml</a> -
   <a href="sun-bcl-jsmq.json">json</a> -
   <a href="sun-bcl-jsmq.LICENSE">text</a> -
@@ -21,7 +30,7 @@ ignorable_urls:
   - http://www.sun.com/policies/trademarks
 </pre>
   <hr>
-  <pre>SUN Java System Message Queue License
+  <pre id="license-text">SUN Java System Message Queue License
 Sun Microsystems, Inc. Binary Code License Agreement
 
 READ THE TERMS OF THIS AGREEMENT AND ANY PROVIDED SUPPLEMENTAL LICENSE TERMS (COLLECTIVELY &#34;AGREEMENT&#34;) CAREFULLY BEFORE OPENING THE SOFTWARE MEDIA PACKAGE. BY OPENING THE SOFTWARE MEDIA PACKAGE, YOU AGREE TO THE TERMS OF THIS AGREEMENT. IF YOU ARE ACCESSING THE SOFTWARE ELECTRONICALLY, INDICATE YOUR ACCEPTANCE OF THESE TERMS BY SELECTING THE &#34;ACCEPT&#34; BUTTON AT THE END OF THIS AGREEMENT. IF YOU DO NOT AGREE TO ALL THESE TERMS, PROMPTLY RETURN THE UNUSED SOFTWARE TO YOUR PLACE OF PURCHASE FOR A REFUND OR, IF THE SOFTWARE IS ACCESSED ELECTRONICALLY, SELECT THE &#34;DECLINE&#34; BUTTON AT THE END OF THIS AGREEMENT.
@@ -105,6 +114,21 @@ All other files distributed with the product are NOT redistributable.
 7. Termination for Infringement. Either party may terminate this Agreement immediately should any Software become, or in either party&#39;s opinion be likely to become, the subject of a claim of infringement of any intellectual property right.
 
 8. Additional Restrictions. You may not publish or provide the results of any benchmark or comparison tests run on Software to any third party without the prior written consent of Sun.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

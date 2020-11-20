@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ypl-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ypl-1.0.yml">yml</a> -
   <a href="ypl-1.0.json">json</a> -
   <a href="ypl-1.0.LICENSE">text</a> -
@@ -23,7 +32,7 @@ text_urls:
   - http://www.zimbra.com/license/yahoo_public_license_1.0.html
 </pre>
   <hr>
-  <pre>Yahoo! Public License, Version 1.0 (YPL)
+  <pre id="license-text">Yahoo! Public License, Version 1.0 (YPL)
 
 This Yahoo! Public License (this &#34;Agreement&#34;) is a legal agreement that
 describes the terms under which Yahoo! Inc., a Delaware corporation having its
@@ -191,6 +200,21 @@ forth below, the parties agree as follows:
           party&#39;s rights under this Agreement and will not in any way affect the
           validity of the whole or any part of this Agreement or prejudice such
           party&#39;s right to take subsequent action.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

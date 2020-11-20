@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ntpl</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ntpl.yml">yml</a> -
   <a href="ntpl.json">json</a> -
   <a href="ntpl.LICENSE">text</a> -
@@ -29,7 +38,7 @@ other_urls:
   - http://www.pgpool.net/mediawiki/index.php/pgpool-II_License
 </pre>
   <hr>
-  <pre>Permission to use, copy, modify, and distribute this software and its
+  <pre id="license-text">Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose with or without fee is hereby granted,
 provided that the above copyright notice appears in all copies and
 that both the copyright notice and this permission notice appear in
@@ -38,6 +47,21 @@ used in advertising or publicity pertaining to distribution of the
 software without specific, written prior permission. The authors
 makes no representations about the suitability this software for any
 purpose. It is provided &#34;as is&#34; without express or implied warranty.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

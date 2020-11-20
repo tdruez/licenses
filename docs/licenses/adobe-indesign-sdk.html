@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>adobe-indesign-sdk</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="adobe-indesign-sdk.yml">yml</a> -
   <a href="adobe-indesign-sdk.json">json</a> -
   <a href="adobe-indesign-sdk.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_urls:
   - http://www.adobe.com/go/thirdparty
 </pre>
   <hr>
-  <pre>ADOBE SOFTWARE DEVELOPMENT KIT LICENSE FOR INDESIGN, INDESIGN SERVER AND INCOPY SOFTWARE.
+  <pre id="license-text">ADOBE SOFTWARE DEVELOPMENT KIT LICENSE FOR INDESIGN, INDESIGN SERVER AND INCOPY SOFTWARE.
 
 NOTICE TO USER: THIS IS A LICENSE BETWEEN YOU AND ADOBE. BY INDICATING YOUR ACCEPTANCE BELOW, YOU ACCEPT ALL THE TERMS AND CONDITIONS OF THIS LICENSE. THIS LICENSE ACCOMPANIES THE SOFTWARE DEVELOPMENT KIT(S) FOR ADOBE INDESIGN, INDESIGN SERVER AND/OR INCOPY SOFTWARE AND RELATED EXPLANATORY MATERIALS (COLLECTIVELY, THE &#34;SDK&#34;) AND INCLUDES ANY UPGRADES, MODIFIED VERSIONS, UPDATES, ADDITIONS, AND COPIES OF THE SDK LICENSED TO YOU BY ADOBE.
 
@@ -143,6 +152,21 @@ This License governs installation and use of the SDK. You agree that this Licens
 You may have a separate written agreement with Adobe that supplements or supersedes all or portions of this License. Your use of some third party materials included in the SDK may be subject to other terms and conditions typically found in a separate license agreement or a &#34;ReadMe&#34; file located near such materials or in the &#34;Third Party Software Notices and/or Additional Terms and Conditions&#34; found at http://www.adobe.com/go/thirdparty. Such other terms and conditions may require You to pass through notices to Your end users. Such other terms and conditions will supersede all or portions of this License in the event of a conflict with the terms and conditions of this License.
 
 InDesign_InCopy_InDesignServerSDK_IHC-en_US-20110502</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

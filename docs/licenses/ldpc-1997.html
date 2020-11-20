@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ldpc-1997</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ldpc-1997.yml">yml</a> -
   <a href="ldpc-1997.json">json</a> -
   <a href="ldpc-1997.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_emails:
   - mdw@metalab.unc.edu
 </pre>
   <hr>
-  <pre>Linux Documentation Project Copying License
+  <pre id="license-text">Linux Documentation Project Copying License
 Last modified 6 January 1997
 
 The following copyright license applies to all works by the Linux Documentation Project.
@@ -57,6 +66,21 @@ We do not require to be paid royalties for any profit earned from selling LDP ma
 We would like to be informed of any plans to publish or distribute LDP manuals, just so we know how they&#39;re becoming available. If you are publishing or planning to publish any LDP manuals, please send email to Matt Welsh (email mdw@metalab.unc.edu).
 
 We encourage Linux software distributors to distribute the LDP manuals (such as the Installation and Getting Started Guide) with their software. The LDP manuals are intended to be used as the &#34;official&#34; Linux documentation, and we&#39;d like to see mail-order distributors bundling the LDP manuals with the software. As the LDP manuals mature, hopefully they will fulfill this goal more adequately. </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

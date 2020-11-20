@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>mcafee-tou</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="mcafee-tou.yml">yml</a> -
   <a href="mcafee-tou.json">json</a> -
   <a href="mcafee-tou.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Intel Corporation
 homepage_url: http://www.mcafee.com/us/downloads/free-tools/termsofuse.aspx
 </pre>
   <hr>
-  <pre>McAfee Software royalty-Free License
+  <pre id="license-text">McAfee Software royalty-Free License
 
 Definitions.
 
@@ -59,6 +68,21 @@ High Risk Activities. The Software is not fault-tolerant and is not designed or 
 Governing Law. This Agreement will be governed by and construed in accordance with the substantive laws of the State of California.
 
 Miscellaneous. This Agreement, including all documents incorporated by reference, represents the entire agreement between the parties, and expressly supersedes and cancels any other communication, representation or advertising whether oral or written, on the subjects herein. This Agreement may not be modified except by a written addendum issued by a duly authorized representative of McAfee.  No provision hereof shall be deemed waived unless such waiver shall be in writing and signed by McAfee. If any provision of this Agreement is held invalid, the remainder of this Agreement shall continue in full force and effect.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

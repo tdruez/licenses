@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>hp-netperf</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="hp-netperf.yml">yml</a> -
   <a href="hp-netperf.json">json</a> -
   <a href="hp-netperf.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_holders:
   - Hewlett-Packard Co.
 </pre>
   <hr>
-  <pre>The enclosed software and documentation includes copyrighted works of Hewlett-Packard Co. For as long as you comply with the following limitations, you are hereby authorized to (i) use, reproduce, and modify the software and documentation, and to (ii) distribute the software and documentation, including modifications, for non-commercial purposes only.
+  <pre id="license-text">The enclosed software and documentation includes copyrighted works of Hewlett-Packard Co. For as long as you comply with the following limitations, you are hereby authorized to (i) use, reproduce, and modify the software and documentation, and to (ii) distribute the software and documentation, including modifications, for non-commercial purposes only.
 
 1. The enclosed software and documentation is made available at no charge in order to advance the general development of high-performance networking products.
 
@@ -37,6 +46,21 @@ ignorable_holders:
 4. THE SOFTWARE AND DOCUMENTATION IS PROVIDED &#34;AS IS&#34;. HEWLETT-PACKARD COMPANY DOES NOT WARRANT THAT THE USE, REPRODUCTION, MODIFICATION OR DISTRIBUTION OF THE SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE A THIRD PARTY&#39;S INTELLECTUAL PROPERTY RIGHTS. HP DOES NOT WARRANT THAT THE SOFTWARE OR DOCUMENTATION IS ERROR FREE. HP DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, WITH REGARD TO THE SOFTWARE AND THE DOCUMENTATION. HP SPECIFICALLY DISCLAIMS ALL WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 5. HEWLETT-PACKARD COMPANY WILL NOT IN ANY EVENT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES (INCLUDING LOST PROFITS) RELATED TO ANY USE, REPRODUCTION, MODIFICATION, OR DISTRIBUTION OF THE SOFTWARE OR DOCUMENTATION.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

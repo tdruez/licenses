@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>apple-mpeg-4</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="apple-mpeg-4.yml">yml</a> -
   <a href="apple-mpeg-4.json">json</a> -
   <a href="apple-mpeg-4.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_authors:
   - Apple Computer, Inc.
 </pre>
   <hr>
-  <pre>This software module was originally developed by Apple Computer, Inc. in the
+  <pre id="license-text">This software module was originally developed by Apple Computer, Inc. in the
 course of development of MPEG-4. This software module is an implementation of
 a part of one or more MPEG-4 tools as specified by MPEG-4. ISO/IEC gives users
 of MPEG-4 free license to this software module or modifications thereof for
@@ -39,6 +48,21 @@ inhibit third parties from using the code for non MPEG-4 conforming products.
 This copyright notice must be included in all copies or	derivative works.
 Copyright (c) 1999.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

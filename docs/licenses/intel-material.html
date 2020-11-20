@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>intel-material</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="intel-material.yml">yml</a> -
   <a href="intel-material.json">json</a> -
   <a href="intel-material.LICENSE">text</a> -
@@ -19,7 +28,7 @@ category: Commercial
 owner: Intel Corporation
 </pre>
   <hr>
-  <pre>The source code, information and material (&#34;Material&#34;) contained herein is
+  <pre id="license-text">The source code, information and material (&#34;Material&#34;) contained herein is
 owned by Intel Corporation or its suppliers or licensors, and title to such
 Material remains with Intel Corporation or its suppliers or licensors.
 
@@ -40,6 +49,21 @@ intellectual property rights must be express and approved by Intel in writing.
 Unless otherwise agreed by Intel in writing, you may not remove or alter this
 notice or any other notice embedded in Materials by Intel or Intel&#39;s suppliers
 or licensors in any way.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

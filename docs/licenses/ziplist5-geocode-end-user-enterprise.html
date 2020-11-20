@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ziplist5-geocode-end-user-enterprise</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ziplist5-geocode-end-user-enterprise.yml">yml</a> -
   <a href="ziplist5-geocode-end-user-enterprise.json">json</a> -
   <a href="ziplist5-geocode-end-user-enterprise.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_emails:
   - support@zipinfo.com
 </pre>
   <hr>
-  <pre>ZIPList5 Geocode End-User Enterprise License Agreement
+  <pre id="license-text">ZIPList5 Geocode End-User Enterprise License Agreement
 
 LICENSE AGREEMENT
 Please read this License Agreement before using ZIPList5 Geocode. This is a contract with important legal consequences. You and your organization, as the Licensee, indicate your acceptance of the Terms and Conditions of this Agreement by using or copying ZIPList5 Geocode. If you do not agree to the terms of this License Agreement, you are not permitted to use ZIPList5 Geocode, and you must immediately delete all downloaded files of ZIPList5 Geocode from your computer(s) and/or promptly return the ZIPList5 Geocode media to CD Light, LLC for a refund of the purchase price.
@@ -89,6 +98,21 @@ GENERAL
 This Agreement is governed and interpreted in accordance with the laws of the State of Texas, USA, except for that body of law dealing with conflicts of law. If any provision of this Agreement is held by a court of competent jurisdiction to be contrary to law, that provision will be enforced to the maximum extent permissible and the remaining provisions of this Agreement will remain in full force and effect.
 
 If Licensee has any questions concerning this Agreement, please send email to support@zipinfo.com or write to CD Light, LLC, 230 N Tranquil Path Dr, The Woodlands, TX 77380-2758, USA.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

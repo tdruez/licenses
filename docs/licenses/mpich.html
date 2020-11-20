@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>mpich</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="mpich.yml">yml</a> -
   <a href="mpich.json">json</a> -
   <a href="mpich.LICENSE">text</a> -
@@ -28,7 +37,7 @@ other_urls:
   - https://fedoraproject.org/wiki/Licensing/MIT
 </pre>
   <hr>
-  <pre>COPYRIGHT
+  <pre id="license-text">COPYRIGHT
 
     The following is a notice of limited availability of the code, and disclaimer
     which must be included in the prologue of the code and in all source listings
@@ -66,6 +75,21 @@ GOVERNMENT LICENSE
     for the accuracy, completeness, or usefulness of any information, apparatus,
     product, or process disclosed, or represents that its use would not infringe
     privately owned rights.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>paulo-soares</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="paulo-soares.yml">yml</a> -
   <a href="paulo-soares.json">json</a> -
   <a href="paulo-soares.LICENSE">text</a> -
@@ -21,9 +30,24 @@ ignorable_authors:
   - Paulo Soares
 </pre>
   <hr>
-  <pre>These specific metrics files were created by Paulo Soares and may be used,
+  <pre id="license-text">These specific metrics files were created by Paulo Soares and may be used,
 copied, and distributed for any purpose and without charge, with or without
 modification.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

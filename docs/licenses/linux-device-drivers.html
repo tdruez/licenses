@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>linux-device-drivers</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="linux-device-drivers.yml">yml</a> -
   <a href="linux-device-drivers.json">json</a> -
   <a href="linux-device-drivers.LICENSE">text</a> -
@@ -19,13 +28,28 @@ category: Permissive
 owner: O&#39;Reilly Media, Inc.
 </pre>
   <hr>
-  <pre>The source code in this file can be freely used, adapted,
+  <pre id="license-text">The source code in this file can be freely used, adapted,
 and redistributed in source or binary form, so long as an
 acknowledgment appears in derived source files.  The citation
 should list that the code comes from the book &#34;&#34;Linux Device
 Drivers&#34;&#34; by Alessandro Rubini and Jonathan Corbet, published
 by O&#39;Reilly &amp; Associates.   No warranty is attached;
 we cannot take responsibility for errors or fitness for use.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>atmel-firmware</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="atmel-firmware.yml">yml</a> -
   <a href="atmel-firmware.json">json</a> -
   <a href="atmel-firmware.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Atmel
 homepage_url: http://atmelwlandriver.sourceforge.net/license.txt
 </pre>
   <hr>
-  <pre>Redistribution and use of the microcode software ( Firmware ) is                  
+  <pre id="license-text">Redistribution and use of the microcode software ( Firmware ) is                  
 permitted provided that the following conditions are met:                         
                                                                                   
         1. Firmware is redistributed in object code only;                         
@@ -49,6 +58,21 @@ LICENSE BY IMPLICATION, ESTOPPEL, OR OTHERWISE IN ANY INTELLECTUAL
 PROPERTY RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER             
 PROPRIETARY RIGHT) EMBODIED IN ANY OTHER ATMEL HARDWARE OR FIRMWARE               
 EITHER SOLELY OR IN COMBINATION WITH THE FIRMWARE.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

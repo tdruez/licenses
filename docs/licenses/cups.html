@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>cups</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="cups.yml">yml</a> -
   <a href="cups.json">json</a> -
   <a href="cups.LICENSE">text</a> -
@@ -33,7 +42,7 @@ ignorable_urls:
   - http://www.cups.org/
 </pre>
   <hr>
-  <pre>Software License Agreement
+  <pre id="license-text">Software License Agreement
 
 Copyright 2007-2009 by Apple Inc.
 1 Infinite Loop
@@ -87,6 +96,21 @@ This notice may not be removed or altered from any source distribution.
 Trademarks
 
 CUPS and the CUPS logo (the &#34;CUPS Marks&#34;) are trademarks of Apple Inc. Apple grants you a non-exclusive and non-transferable right to use the CUPS Marks in any direct port or binary distribution incorporating CUPS software and in any promotional material therefor. You agree that your products will meet the highest levels of quality and integrity for similar goods, not be unlawful, and be developed, manufactured, and distributed in compliance with this license. You will not interfere with Apple&#39;s rights in the CUPS Marks, and all use of the CUPS Marks shall inure to the benefit of Apple. This license does not apply to use of the CUPS Marks in a derivative products, which requires prior written permission from Apple Inc.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

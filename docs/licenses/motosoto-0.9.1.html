@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>motosoto-0.9.1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="motosoto-0.9.1.yml">yml</a> -
   <a href="motosoto-0.9.1.json">json</a> -
   <a href="motosoto-0.9.1.LICENSE">text</a> -
@@ -28,7 +37,7 @@ other_urls:
   - https://opensource.org/licenses/Motosoto
 </pre>
   <hr>
-  <pre>MOTOSOTO OPEN SOURCE LICENSE - Version 0.9.1
+  <pre id="license-text">MOTOSOTO OPEN SOURCE LICENSE - Version 0.9.1
 
 This Motosoto Open Source License (the &#34;License&#34;) applies to &#34;Community Portal Server&#34; and related software products as well as any updatesor maintenance releases of that software (&#34;Motosoto Products&#34;) that are distributed by Motosoto.Com B.V. (&#34;Licensor&#34;). Any Motosoto Product licensed pursuant to this License is a &#34;Licensed Product.&#34; Licensed Product, in its entirety, is protected by Dutch copyright law. This License identifies the terms under which you may use, copy, distribute or modify Licensed Product and has been submitted to the Open Software Initiative (OSI) for approval.
 
@@ -173,6 +182,21 @@ Modifications: Any additions to or deletions from the substance or structure of 
 Notice: The notice contained in Exhibit A. (See Section 4(e))
 
 Source Code: The preferred form for making modifications to the Licensed Product, including all modules contained therein, plus any associated interface definition files, scripts used to control compilation and installation of an executable program, or a list of differential comparisons against the Source Code of the Licensed Product.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

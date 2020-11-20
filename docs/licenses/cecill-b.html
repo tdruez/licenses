@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>cecill-b</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="cecill-b.yml">yml</a> -
   <a href="cecill-b.json">json</a> -
   <a href="cecill-b.LICENSE">text</a> -
@@ -30,7 +39,7 @@ other_urls:
   - http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html
 </pre>
   <hr>
-  <pre>&#34;CONTRAT DE LICENCE DE LOGICIEL LIBRE CeCILL-B
+  <pre id="license-text">&#34;CONTRAT DE LICENCE DE LOGICIEL LIBRE CeCILL-B
 
 Avertissement
 
@@ -275,6 +284,21 @@ Article 13 - LOI APPLICABLE ET COMPETENCE TERRITORIALE
 1 CeCILL est pour Ce(a) C(nrs) I(nria) L(ogiciel) L(ibre)
 
 Version 1.0 du 2006-09-05.&#34;</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

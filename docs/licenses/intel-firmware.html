@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>intel-firmware</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="intel-firmware.yml">yml</a> -
   <a href="intel-firmware.json">json</a> -
   <a href="intel-firmware.LICENSE">text</a> -
@@ -24,7 +33,7 @@ other_urls:
   - ftp://ftp.supermicro.com/CDR-X9_1.30_for_Intel_X9_platform/Intel/ME/INTEL_SOFTWARE_LICENSE_AGREEMENT.pdf
 </pre>
   <hr>
-  <pre>TERMS AND CONDITIONS
+  <pre id="license-text">TERMS AND CONDITIONS
     IMPORTANT - PLEASE READ BEFORE INSTALLING OR USING THIS INTEL(C) SOFTWARE
 
 Do not use or load this firmware (the &#34;Software&#34;) until you have carefully read
@@ -228,6 +237,21 @@ set forth in FAR52.227-14 and DFAR252.227-7013 et seq. or their successors. Use
 of the Software by the Government constitutes acknowledgment of Intel&#39;s
 proprietary rights therein. Contractor or Manufacturer is Intel Corporation,
 2200 Mission College Blvd., Santa Clara, CA 95052.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

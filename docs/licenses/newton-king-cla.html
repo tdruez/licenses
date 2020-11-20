@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>newton-king-cla</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="newton-king-cla.yml">yml</a> -
   <a href="newton-king-cla.json">json</a> -
   <a href="newton-king-cla.LICENSE">text</a> -
@@ -21,7 +30,7 @@ homepage_url: https://github.com/JamesNK/Newtonsoft.Json/blob/ce7f283b94c8634103
 notes: this is a CLA
 </pre>
   <hr>
-  <pre>Contributor License Agreement
+  <pre id="license-text">Contributor License Agreement
 
 By contributing your code to Json.NET you grant James Newton-King a non-exclusive, irrevocable, worldwide,
 royalty-free, sublicenseable, transferable license under all of Your relevant intellectual property rights
@@ -44,6 +53,21 @@ James Newton-King acknowledges that, except as explicitly described in this Agre
 you provide is on an &#34;AS IS&#34; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED,
 INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS
 FOR A PARTICULAR PURPOSE.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

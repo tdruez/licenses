@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>unicode-mappings</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="unicode-mappings.yml">yml</a> -
   <a href="unicode-mappings.json">json</a> -
   <a href="unicode-mappings.LICENSE">text</a> -
@@ -19,7 +28,7 @@ category: Permissive
 owner: Unicode Consortium
 </pre>
   <hr>
-  <pre>This file is provided as-is by Unicode, Inc. (The Unicode Consortium).
+  <pre id="license-text">This file is provided as-is by Unicode, Inc. (The Unicode Consortium).
 No claims are made as to fitness for any particular purpose.  No
 warranties of any kind are expressed or implied.  The recipient
 agrees to determine applicability of information provided.  If this
@@ -32,6 +41,21 @@ supplied in this file in the creation of products supporting the
 Unicode Standard, and to make copies of this file in any form for
 internal or external distribution as long as this notice remains
 attached.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

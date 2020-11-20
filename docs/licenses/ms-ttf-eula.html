@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-ttf-eula</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-ttf-eula.yml">yml</a> -
   <a href="ms-ttf-eula.json">json</a> -
   <a href="ms-ttf-eula.LICENSE">text</a> -
@@ -19,7 +28,7 @@ category: Commercial
 owner: Microsoft
 </pre>
   <hr>
-  <pre>Microsoft TrueType Fonts 
+  <pre id="license-text">Microsoft TrueType Fonts 
 END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE 
 ---------------------------------------------------
 IMPORTANT - READ CAREFULLY: This Microsoft End-User License Agreement (&#34;EULA&#34;) is a legal agreement between you (either an individual or a single entity) and Microsoft Corporation for the Microsoft software accompanying this EULA, which includes computer software and may include associated media, printed materials, and &#34;on-line&#34; or electronic documentation (&#34;SOFTWARE PRODUCT&#34; or &#34;SOFTWARE&#34;). By exercising your rights to make and use copies of the SOFTWARE PRODUCT, you agree to be bound by the terms of this EULA. If you do not agree to the terms of this EULA, you may not use the SOFTWARE PRODUCT.
@@ -46,6 +55,21 @@ NO WARRANTIES. Microsoft expressly disclaims any warranty for the SOFTWARE PRODU
 NO LIABILITY FOR CONSEQUENTIAL DAMAGES. In no event shall Microsoft or its suppliers be liable for any damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out of the use of or inability to use this Microsoft product, even if Microsoft has been advised of the possibility of such damages. Because some states/jurisdictions do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply to you.
 
 MISCELLANEOUS If you acquired this product in the United States, this EULA is governed by the laws of the State of Washington. If this product was acquired outside the United States, then local laws may apply. Should you have any questions concerning this EULA, or if you desire to contact Microsoft for any reason, please contact the Microsoft subsidiary serving your country, or write: Microsoft Sales Information Center/One Microsoft Way/Redmond, WA 98052-6399.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>openpub</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="openpub.yml">yml</a> -
   <a href="openpub.json">json</a> -
   <a href="openpub.LICENSE">text</a> -
@@ -30,7 +39,7 @@ ignorable_emails:
   - opal@opencontent.org
 </pre>
   <hr>
-  <pre>Open Publication License
+  <pre id="license-text">Open Publication License
 v1.0, 8 June 1999
 
 I. REQUIREMENTS ON BOTH UNMODIFIED AND MODIFIED VERSIONS
@@ -115,6 +124,21 @@ Send E-mail to opal@opencontent.org or simply reply to a previous post.
 
 To unsubscribe from the Open Publication Authors&#39; List:
 Send E-mail to opal-request@opencontent.org with the word &#34;unsubscribe&#34; in the body.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

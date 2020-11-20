@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>gpl-3.0-cygwin</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="gpl-3.0-cygwin.yml">yml</a> -
   <a href="gpl-3.0-cygwin.json">json</a> -
   <a href="gpl-3.0-cygwin.LICENSE">text</a> -
@@ -28,7 +37,7 @@ other_urls:
   - http://www.redhat.com/software/cygwin/
 </pre>
   <hr>
-  <pre>Cygwin is free software.  Red Hat, Inc. licenses Cygwin to you under the
+  <pre id="license-text">Cygwin is free software.  Red Hat, Inc. licenses Cygwin to you under the
 terms of the GNU General Public License as published by the Free Software
 Foundation; you can redistribute it and/or modify it under the terms of
 the GNU General Public License either version 3 of the license, or (at your
@@ -98,6 +107,21 @@ information, please see: http://www.redhat.com/software/cygwin/, or call
 
 Outside the US call your regional Red Hat office, see
 http://www.redhat.com/about/contact/ww/</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>naist-2003</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="naist-2003.yml">yml</a> -
   <a href="naist-2003.json">json</a> -
   <a href="naist-2003.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Nara Institute of Science and Technology
 notes: this is references the icot-free license
 </pre>
   <hr>
-  <pre>Use, reproduction, and distribution of this software is permitted.
+  <pre id="license-text">Use, reproduction, and distribution of this software is permitted.
 Any copy of this software, whether in its original form or modified,
 must include both the above copyright notice and the following
 paragraphs.
@@ -87,6 +96,21 @@ grants independently of ICOT any specific warranty to the user in
 writing, such person, organization or entity, will also be exempted
 from and not be held liable to the user for any such damages as noted
 above as far as the program is concerned.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

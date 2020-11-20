@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>google-patent-license-golang</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="google-patent-license-golang.yml">yml</a> -
   <a href="google-patent-license-golang.json">json</a> -
   <a href="google-patent-license-golang.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Google
 homepage_url: https://golang.org/PATENTS
 </pre>
   <hr>
-  <pre>Additional IP Rights Grant (Patents)
+  <pre id="license-text">Additional IP Rights Grant (Patents)
 
 &#34;This implementation&#34; means the copyrightable works distributed by
 Google as part of the Go project.
@@ -43,6 +52,21 @@ infringement, or inducement of patent infringement, then any patent
 rights granted to you under this License for this implementation of Go
 shall terminate as of the date such litigation is filed.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

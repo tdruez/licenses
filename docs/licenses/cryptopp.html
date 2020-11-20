@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>cryptopp</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="cryptopp.yml">yml</a> -
   <a href="cryptopp.json">json</a> -
   <a href="cryptopp.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_holders:
   - Wei Dai
 </pre>
   <hr>
-  <pre>Compilation Copyright (c) 1995-2010 by Wei Dai. All rights reserved.
+  <pre id="license-text">Compilation Copyright (c) 1995-2010 by Wei Dai. All rights reserved.
 
 This copyright applies only to this software distribution package as a
 compilation, and does not imply a copyright on any particular file in the
@@ -75,6 +84,21 @@ If this compilation is used in object code form in an application software,
 acknowledgement of the author is not required but would be appreciated. The
 contribution of any useful modifications or extensions to Wei Dai is not
 required but would also be appreciated.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

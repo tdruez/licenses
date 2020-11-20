@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>qhull</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="qhull.yml">yml</a> -
   <a href="qhull.json">json</a> -
   <a href="qhull.LICENSE">text</a> -
@@ -32,7 +41,7 @@ ignorable_emails:
   - qhull_bug@qhull.org
 </pre>
   <hr>
-  <pre>Qhull, Copyright (c) 1993-2003
+  <pre id="license-text">Qhull, Copyright (c) 1993-2003
 
 The National Science and Technology Research Center for Computation and Visualization of Geometric Structures (The Geometry Center) University of Minnesota
 
@@ -49,6 +58,21 @@ This software includes Qhull from The Geometry Center. Qhull is copyrighted as n
 4. When distributing modified versions of Qhull, or other software products that include Qhull, you must provide notice that the original source code may be obtained as noted above.
 
 5. There is no warranty or other guarantee of fitness for Qhull, it is provided solely &#34;as is&#34;. Bug reports or fixes may be sent to qhull_bug@qhull.org; the authors may or may not act on them as they desire.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

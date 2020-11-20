@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sun-java-transaction-api</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sun-java-transaction-api.yml">yml</a> -
   <a href="sun-java-transaction-api.json">json</a> -
   <a href="sun-java-transaction-api.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_urls:
   - http://java.sun.com/trademarks.html
 </pre>
   <hr>
-  <pre>License Agreement
+  <pre id="license-text">License Agreement
 
 SUN MICROSYSTEMS, INC. (``SUN&#39;&#39;) IS WILLING TO LICENSE ITS Java Transaction API
 SOFTWARE (``SOFTWARE&#39;&#39;) TO YOU (&#34;CUSTOMER&#34;) ONLY UPON THE CONDITION 
@@ -110,6 +119,21 @@ such jurisdiction.   However, if in Sun&#39;s opinion deletion or amendment
 of any provisions of the Agreement by operation of this paragraph
 unreasonably compromises the rights or increase the liabilities of Sun
 or its licensors, Sun reserves the right to terminate the Agreement.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

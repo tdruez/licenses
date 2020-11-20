@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>unicode</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="unicode.yml">yml</a> -
   <a href="unicode.json">json</a> -
   <a href="unicode.LICENSE">text</a> -
@@ -33,7 +42,7 @@ ignorable_urls:
   - http://www.unicode.org/reports
 </pre>
   <hr>
-  <pre>UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
+  <pre id="license-text">UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
 
 Unicode Data Files include all data files under the directories
 http://www.unicode.org/Public/, http://www.unicode.org/reports/, and
@@ -91,6 +100,21 @@ authorization of the copyright holder.
 Unicode and the Unicode logo are trademarks of Unicode, Inc., and may be
 registered in some jurisdictions. All other trademarks and registered
 trademarks mentioned herein are the property of their respective owners.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

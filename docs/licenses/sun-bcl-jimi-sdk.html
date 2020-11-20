@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sun-bcl-jimi-sdk</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sun-bcl-jimi-sdk.yml">yml</a> -
   <a href="sun-bcl-jimi-sdk.json">json</a> -
   <a href="sun-bcl-jimi-sdk.LICENSE">text</a> -
@@ -21,7 +30,7 @@ ignorable_urls:
   - http://java.sun.com/
 </pre>
   <hr>
-  <pre>SUN JIMI SDK
+  <pre id="license-text">SUN JIMI SDK
 
 JIMI SDK Version 2.0 Sun Microsystems, Inc. Please see the file classes/LICENSE_JIMI.txt
 
@@ -75,6 +84,21 @@ b. License to Distribute Runtime. Subject to your obligation to indemnify Sun pu
 3.Indemnity to Sun. As a condition precedent to each license grant in this Agreement, you agree to indemnify, hold harmless, and defend Sun and its licensors from and against any and all claims, lawsuits, liabilities, demands and expenses (including attorneys&#39; fees), that arise or result from the use or distribution of the Software or the Program, including without limitation, those brought by Unisys Corporation, its successors and assigns, with respect to U.S. Patent Number 4,558,302 and all foreign counterparts thereto which Unisys Corporation may now have or acquire in the future (the &#34;LZW Patents&#34;) relating to your making, using, selling, licensing, importing, offering to sell, or otherwise transferring the GIF encoding and/or decoding feature of the Software or the Program. This Agreement does not grant any rights to you with respect to the LZW Patents.
 
 4. Trademarks and Logos. This Agreement does not authorize you to use any Sun name, trademark or logo. Licensee acknowledges as between it and Sun that Sun owns the Java trademark and all Java-related trademarks, logos and icons including the Coffee Cup and Duke (&#34;Java Marks&#34;) and agrees to comply with the Java Trademark Guidelines at http://java.sun.com</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

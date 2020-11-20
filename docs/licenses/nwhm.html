@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>nwhm</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="nwhm.yml">yml</a> -
   <a href="nwhm.json">json</a> -
   <a href="nwhm.LICENSE">text</a> -
@@ -21,8 +30,23 @@ homepage_url: https://nonwhiteheterosexualmalelicense.org/
 notes: From https://github.com/ErikMcClure/bad-licenses
 </pre>
   <hr>
-  <pre>If you are not a white heterosexual male you are permitted to copy, sell and use this work in any manner you choose without need to include any attribution you do not see fit. You are asked as a courtesy to retain this license in any derivatives but you are not required. If you are a white heterosexual male you are provided the same permissions (reuse, modification, resale) but are required to include this license in any documentation and any public facing derivative. You are also required to include attribution to the original author or to an author responsible for redistribution of a derivative.
+  <pre id="license-text">If you are not a white heterosexual male you are permitted to copy, sell and use this work in any manner you choose without need to include any attribution you do not see fit. You are asked as a courtesy to retain this license in any derivatives but you are not required. If you are a white heterosexual male you are provided the same permissions (reuse, modification, resale) but are required to include this license in any documentation and any public facing derivative. You are also required to include attribution to the original author or to an author responsible for redistribution of a derivative.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

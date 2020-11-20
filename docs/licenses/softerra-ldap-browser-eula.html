@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>softerra-ldap-browser-eula</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="softerra-ldap-browser-eula.yml">yml</a> -
   <a href="softerra-ldap-browser-eula.json">json</a> -
   <a href="softerra-ldap-browser-eula.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Softerra
 homepage_url: http://www.ldapadministrator.com/softerra-ldap-browser.htm
 </pre>
   <hr>
-  <pre>END-USER LICENSE AGREEMENT
+  <pre id="license-text">END-USER LICENSE AGREEMENT
 
 This end-user software license agreement is a legal agreement (&#34;Agreement&#34;) between you (&#34;Licensee&#34;) and Softerra, LLC (&#34;Softerra&#34;), which is the owner of the LDAP Browser Software (&#34;Software&#34;). This Agreement specifies the terms and conditions under which Licensee may use the Software.
 
@@ -73,6 +82,21 @@ IN NO CASE SHALL SOFTERRA BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL OR CON
 Miscellaneous
 
 This Agreement is the complete agreement between you and Softerra concerning the Software and related documentation. The failure or delay of Softerra to exercise any of its rights under this Agreement or upon any breach of this Agreement shall not be deemed a waiver of those rights or of the breach.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

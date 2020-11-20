@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>activestate-community</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="activestate-community.yml">yml</a> -
   <a href="activestate-community.json">json</a> -
   <a href="activestate-community.LICENSE">text</a> -
@@ -29,7 +38,7 @@ ignorable_holders:
   - Stichting Mathematisch Centrum, Amsterdam
 </pre>
   <hr>
-  <pre>ActiveState Community License 
+  <pre id="license-text">ActiveState Community License 
 Preamble:
 The intent of this document is to state the conditions under which the Package may be copied and distributed, such that ActiveState maintains control over the development and distribution of the Package, while allowing the users of the Package to use the Package in a variety of ways.
 
@@ -60,6 +69,21 @@ The Package may contain software covered by other licenses and copyrights.
  Copyright © 2000 BeOpen.com. All Rights Reserved. 
  Copyright © 1995-2001 Corporation for National Research Initiatives. All Rights Reserved. 
  Copyright © 1991-1995 Stichting Mathematisch Centrum, Amsterdam. All Rights Reserved.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

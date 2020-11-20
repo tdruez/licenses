@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>facebook-patent-rights-2</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="facebook-patent-rights-2.yml">yml</a> -
   <a href="facebook-patent-rights-2.json">json</a> -
   <a href="facebook-patent-rights-2.LICENSE">text</a> -
@@ -30,7 +39,7 @@ text_urls:
 faq_url: https://code.facebook.com/posts/1639473982937255/updating-our-open-source-patent-grant/
 </pre>
   <hr>
-  <pre>Additional Grant of Patent Rights Version 2
+  <pre id="license-text">Additional Grant of Patent Rights Version 2
 
 &#34;Software&#34; means the &lt;fastText&gt; software distributed by Facebook, Inc.
 
@@ -64,6 +73,21 @@ A &#34;Patent Assertion&#34; is any lawsuit or other action alleging direct, ind
 or contributory infringement or inducement to infringe any patent, including a
 cross-claim or counterclaim.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

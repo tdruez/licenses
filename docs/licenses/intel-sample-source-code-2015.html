@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>intel-sample-source-code-2015</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="intel-sample-source-code-2015.yml">yml</a> -
   <a href="intel-sample-source-code-2015.json">json</a> -
   <a href="intel-sample-source-code-2015.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_urls:
   - http://www.intel.com/content/www/us/en/legal/export-compliance.html
 </pre>
   <hr>
-  <pre>Intel Sample Source Code License Agreement
+  <pre id="license-text">Intel Sample Source Code License Agreement
 
 Code Samples License Agreement (Version December 2015)
 
@@ -113,6 +122,21 @@ Intel may make changes to the Materials, or to items referenced therein, at any 
 12. EXPORT: You must comply with all laws and regulations of the United States and other countries governing the export, re-export, import, transfer, distribution, use, and servicing of Software. In particular, You must not: (a) sell or transfer Software to a country subject to sanctions, or to any entity listed on a denial order published by the United States government or any other relevant government; or (b) use, sell, or transfer Software for the development, design, manufacture, or production of nuclear, missile, chemical or biological weapons, or for any other purpose prohibited by the United States government or other applicable government; without first obtaining all authorizations required by all applicable laws. For more details on Your export obligations, please visit http://www.intel.com/content/www/us/en/legal/export-compliance.html.
 
 13. ENTIRE AGREEMENT: This Agreement contains the complete and exclusive agreement and understanding between the parties concerning the subject matter of this Agreement, and supersedes all prior and contemporaneous proposals, agreements, understanding, negotiations, representations, warranties, conditions, and communications, oral or written, between the parties relating to the same subject matter. No modification or amendment to this Agreement will be effective unless in writing and signed by authorized representatives of each party, and must specifically identify this Agreement.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

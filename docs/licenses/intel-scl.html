@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>intel-scl</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="intel-scl.yml">yml</a> -
   <a href="intel-scl.json">json</a> -
   <a href="intel-scl.LICENSE">text</a> -
@@ -21,7 +30,7 @@ other_urls:
   - http://software.intel.com/en-us/articles/intel-64-architecture-processor-topology-enumeration
 </pre>
   <hr>
-  <pre>Intel Source Code License Agreement
+  <pre id="license-text">Intel Source Code License Agreement
 
 This license governs use of the accompanying software. By installing or copying all or any part of the software components in this package, you (&#34;you&#34; or &#34;Licensee&#34;) agree to the terms of this agreement.  Do not install or copy the software until you have carefully read and agreed to the following terms and conditions.  If you do not agree to the terms of this agreement, promptly return the software to Intel Corporation (&#34;Intel&#34;).
 
@@ -67,6 +76,21 @@ C.	You may NOT:  (i) use or copy the Materials except as provided in this Agreem
 8.	U.S. GOVERNMENT RESTRICTED RIGHTS: The Materials are provided with &#34;RESTRICTED RIGHTS&#34;. Use, duplication or disclosure by the Government is subject to restrictions set forth in FAR52.227-14 and DFAR252.227-7013 et seq. or its successor.  Use of the Materials by the Government constitutes acknowledgment of Intel&#39;s rights in them.
 
 9.	APPLICABLE LAWS: Any claim arising under or relating to this Agreement shall be governed by the internal substantive laws of the State of Delaware, without regard to principles of conflict of laws.  You may not export the Materials in violation of applicable export laws.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

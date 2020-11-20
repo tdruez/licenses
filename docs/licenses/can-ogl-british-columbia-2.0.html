@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>can-ogl-british-columbia-2.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="can-ogl-british-columbia-2.0.yml">yml</a> -
   <a href="can-ogl-british-columbia-2.0.json">json</a> -
   <a href="can-ogl-british-columbia-2.0.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Government of British Columbia
 homepage_url: https://www2.gov.bc.ca/gov/content/data/open-data/open-government-license-bc
 </pre>
   <hr>
-  <pre>Open Government Licence - British Columbia
+  <pre id="license-text">Open Government Licence - British Columbia
 
 Note: as per B.C. Government Copyright, the following licence only applies to records in the B.C. Data Catalogue that specify it.
 
@@ -95,6 +104,21 @@ Versioning
 
     This is version 2.0 of the Open Government Licence for Government of British Columbia Information. The Information Provider may make changes to the terms of this licence from time to time and issue a new version of the licence. Your use of the Information will be governed by the terms of the licence in force as of the date you accessed the Information.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ogc</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ogc.yml">yml</a> -
   <a href="ogc.json">json</a> -
   <a href="ogc.LICENSE">text</a> -
@@ -22,7 +31,7 @@ other_urls:
   - http://www.opengeospatial.org/ogc/legal
 </pre>
   <hr>
-  <pre>This OGC work (including software, documents, or other related items) is being
+  <pre id="license-text">This OGC work (including software, documents, or other related items) is being
 provided by the copyright holders under the following license. By obtaining,
 using and/or copying this work, you (the licensee) agree that you have read,
 understood, and will comply with the following terms and conditions:
@@ -52,6 +61,21 @@ The name and trademarks of copyright holders may NOT be used in advertising or
 publicity pertaining to the software without specific, written prior permission.
 Title to copyright in this software and any associated documentation will at all
 times remain with copyright holders.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ecma-documentation</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ecma-documentation.yml">yml</a> -
   <a href="ecma-documentation.json">json</a> -
   <a href="ecma-documentation.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Ecma International
 homepage_url: http://www.ecma-international.org/publications/DISCLAIMER.pdf
 </pre>
   <hr>
-  <pre>
+  <pre id="license-text">
 This document and possible translations of it may be copied and furnished to
 others, and derivative works that comment on or otherwise explain it or assist
 in its implementation may be prepared, copied, published, and distributed, in
@@ -39,6 +48,21 @@ WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP
 RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR
 PURPOSE.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

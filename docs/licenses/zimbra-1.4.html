@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>zimbra-1.4</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="zimbra-1.4.yml">yml</a> -
   <a href="zimbra-1.4.json">json</a> -
   <a href="zimbra-1.4.LICENSE">text</a> -
@@ -21,7 +30,7 @@ homepage_url: http://www.zimbra.com/legal/zimbra-public-license-1-4
 spdx_license_key: Zimbra-1.4
 </pre>
   <hr>
-  <pre>Zimbra Public License, Version 1.4 (ZPL)
+  <pre id="license-text">Zimbra Public License, Version 1.4 (ZPL)
 This Zimbra Public License (this &#34;Agreement&#34;) is a legal agreement that describes the terms under which Zimbra, Inc., a Texas corporation (&#34;Zimbra&#34;) will provide software to you via download or otherwise (&#34;Software&#34;). By using the Software, you, an individual or an entity (&#34;You&#34;) agree to the terms of this Agreement.
 
 In consideration of the mutual promises and upon the terms and conditions set forth below, the parties agree as follows:
@@ -67,6 +76,21 @@ IN NO EVENT WILL ZIMBRA BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
 
 7. Miscellaneous 
 This Agreement contains the entire agreement of the parties with respect to the subject matter of this Agreement and supersedes all previous communications, representations, understandings, and agreements, either oral or written, between the parties with respect to said subject matter. The relationship of the parties hereunder is that of independent contractors, and this Agreement will not be construed as creating an agency, partnership, joint venture, or any other form of legal association between the parties. If any term, condition, or provision in this Agreement is found to be invalid, unlawful, or unenforceable to any extent, this Agreement will be construed in a manner that most closely effectuates the intent of this Agreement. Such invalid term, condition or provision will be severed from the remaining terms, conditions, and provisions, which will continue to be valid and enforceable to the fullest extent permitted by law. This Agreement will be interpreted and construed in accordance with the laws of the State of Delaware and the United States of America, without regard to conflict of law principles. The U.N. Convention on Contracts for the International Sale of Goods shall not apply to this Agreement. All disputes arising out of this Agreement involving Zimbra or any of its parents or subsidiaries shall be subject to the jurisdiction of the federal or state courts of Northern Texas, with venue lying in Dallas County, Texas. No rights may be assigned, no obligations may be delegated, and this Agreement may not be transferred by You, in whole or in part, whether voluntary or by operation of law, including by way of sale of assets, merger, or consolidation, without the prior written consent of Zimbra, and any purported assignment, delegation, or transfer without such consent shall be void ab initio. Any waiver of the provisions of this Agreement or of a party’s rights or remedies under this Agreement must be in writing to be effective. Failure, neglect, or delay by a party to enforce the provisions of this Agreement or its rights or remedies at any time will not be construed or be deemed to be a waiver of such party’s rights under this Agreement and will not in any way affect the validity of the whole or any part of this Agreement or prejudice such party’s right to take subsequent action.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

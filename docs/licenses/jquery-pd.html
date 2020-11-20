@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>jquery-pd</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="jquery-pd.yml">yml</a> -
   <a href="jquery-pd.json">json</a> -
   <a href="jquery-pd.LICENSE">text</a> -
@@ -20,9 +29,24 @@ owner: jQuery Project
 homepage_url: https://jquerytools.github.io/release-notes/
 </pre>
   <hr>
-  <pre>jQuery Public Domain License
+  <pre id="license-text">jQuery Public Domain License
 
 NO COPYRIGHTS OR LICENSES. DO WHAT YOU LIKE.  This is the new jQuery Tools license. Copyrights and patents are evil. They block the natural progress of development. We all know it: if people start sharing instead of owning the world would be a better place. Today money is king. This results in closed systems and poor quality and in many cases people are even seriously exploited. For businessmen nothing is enough.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

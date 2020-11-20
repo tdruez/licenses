@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>microsoft-windows-rally-devkit</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="microsoft-windows-rally-devkit.yml">yml</a> -
   <a href="microsoft-windows-rally-devkit.json">json</a> -
   <a href="microsoft-windows-rally-devkit.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_urls:
   - http://www.microsoft.com/rally
 </pre>
   <hr>
-  <pre>MICROSOFT SOFTWARE LICENSE TERMS
+  <pre id="license-text">MICROSOFT SOFTWARE LICENSE TERMS
 MICROSOFT WINDOWS RALLY DEVELOPMENT KIT
 These license terms are an agreement (&#34;Agreement&#34;) between Microsoft Corporation (or based on where you live, one of its affiliates) and the individual or entity identified and signing below (&#34;you&#34;).  They apply to the sample code for Link Layer Topology Discovery and Plug and Play Extensions (&#34;Sample Code&#34;), which includes the media on which you received the Sample Code, if any.  The terms also apply to any Microsoft
 •	updates,
@@ -82,6 +91,21 @@ By checking the &#34;I Agree&#34; box, below, you indicate that you accept all t
  		I AGREE
 
  		COMPANY NAME</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

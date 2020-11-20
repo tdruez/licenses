@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>jide-sla</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="jide-sla.yml">yml</a> -
   <a href="jide-sla.json">json</a> -
   <a href="jide-sla.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_urls:
   - http://www.jidesoft.com/
 </pre>
   <hr>
-  <pre>SOFTWARE LICENSE AGREEMENT FOR JIDE SOFTWARE, INC.&#39;S PRODUCTS
+  <pre id="license-text">SOFTWARE LICENSE AGREEMENT FOR JIDE SOFTWARE, INC.&#39;S PRODUCTS
  
 IMPORTANT - READ CAREFULLY: This JIDE Software, Inc. (&#34;JIDE&#34;) Software License Agreement (&#34;SLA&#34;) is a legal agreement between you (an individual developer or a company of software applications) and JIDE for the JIDE software product accompanying this SLA, which includes computer software and may include associated source code, media, printed materials, and &#34;on-line&#34; or electronic documentation (&#34;SOFTWARE PRODUCT&#34;). By installing, copying, or otherwise using the SOFTWARE PRODUCT, you agree to be bound by the terms of this SLA. If you do not agree to the terms of this SLA, do not install, use, distribute in any manner, or replicate in any manner, any part, file or portion of the SOFTWARE PRODUCT. 
  
@@ -75,6 +84,21 @@ Title:	                                                           Title:
 Date:	                                                    Date:
 
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

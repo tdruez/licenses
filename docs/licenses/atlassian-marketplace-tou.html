@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>atlassian-marketplace-tou</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="atlassian-marketplace-tou.yml">yml</a> -
   <a href="atlassian-marketplace-tou.json">json</a> -
   <a href="atlassian-marketplace-tou.LICENSE">text</a> -
@@ -25,7 +34,7 @@ ignorable_emails:
   - sales@atlassian.com
 </pre>
   <hr>
-  <pre>Atlassian Marketplace Terms of Use
+  <pre id="license-text">Atlassian Marketplace Terms of Use
 Welcome to the Atlassian Marketplace! The Atlassian Marketplace is an online marketplace for cloud and downloadable software applications, plugins and extensions (“Marketplace Apps” or “Apps”) that are designed to interoperate with Atlassian’s software and cloud offerings (“Atlassian Products”).
 
 Use of the Atlassian Marketplace is governed by these Atlassian Marketplace Terms of Use (“Terms of Use”), which form a legally binding agreement between you (defined in Section 1.1) and Atlassian Pty Ltd, an Australian corporation (ABN 53 102 443 916) (“Atlassian” or “we”).
@@ -155,6 +164,21 @@ Reviews or comments unrelated to the relevant App are prohibited – for example
 10.8. Export Laws and Regulations. You may not use or otherwise export or re-export the Marketplace Apps except as authorized by United States law and the laws of the jurisdiction in which the App was obtained. In particular, but without limitation, Apps may not be exported or re-exported (a) into any U.S. embargoed countries or (b) to anyone on the U.S Treasury Department’s list of Specially Designated Nationals and Consolidated Sanctions list or the U.S. Department of Commerce’s Denied Persons, Entity, or Unverified Lists. By using any Marketplace App, you represent and warrant that you are not located in any such country or on any such list. You agree not to use or provide the Apps for any prohibited end use, including to support any nuclear, chemical, or biological weapons proliferation, or missile technology, without the prior permission of the United States government.
 
 Last Revised: March 31, 2019</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>hp</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="hp.yml">yml</a> -
   <a href="hp.json">json</a> -
   <a href="hp.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_holders:
   - HEWLETT-PACKARD COMPANY
 </pre>
   <hr>
-  <pre>HP SOFTWARE LICENSE TERMS
+  <pre id="license-text">HP SOFTWARE LICENSE TERMS
 NO COMMERCIALIZATION, LIMITED DISTRIBUTION PERMITTED 
 
 THE TERM &#34;SOFTWARE&#34; REFERS TO THIS CODE (WHETHER SOURCE OR OBJECT CODE),
@@ -47,6 +56,21 @@ HP SHALL HAVE NO OBLIGATION TO PROVIDE SUPPORT OR MAINTENANCE FOR, OR TO PROVIDE
 THIS AGREEMENT AND ALL MATTERS REGARDING THE SOFTWARE SHALL BE INTERPRETED EXCLUSIVELY BY APPLYING THE LAWS OF THE STATE OF DELAWARE, USA, WITHOUT REGARD TO ITS CONFLICT OF LAWS PRINCIPLES. 
 ANY VIOLATION OF THIS AGREEMENT AND THESE TERMS WILL BE DEEMED TO CAUSE HP IRREPARABLE HARM. 
 THESE CONDITIONS SHALL APPLY EVEN IF YOU ADVISE HP TO THE CONTRARY IN WRITING OR OTHERWISE; THIS AGREEMENT MAY NOT BE CONTRADICTED OR ALTERED, EXCEPT BY A WRITTEN AMENDMENT THAT BOTH SPECIFICALLY REFERENCES THIS AGREEMENT AND IS SIGNED BY AN AUTHORIZED REPRESENTATIVE OF HP.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

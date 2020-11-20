@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>scola-en</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="scola-en.yml">yml</a> -
   <a href="scola-en.json">json</a> -
   <a href="scola-en.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_emails:
   - information@fip-pcim.gc.ca
 </pre>
   <hr>
-  <pre>
+  <pre id="license-text">
 Statistics Canada Open Licence Agreement
 
 This agreement is between Her Majesty the Queen in Right of Canada, as represented by the Minister for Statistics Canada (&#34;Statistics Canada&#34;) and you (an individual or a legal entity that you are authorized to represent).
@@ -100,6 +109,21 @@ Applicable Law
 
 This agreement shall be governed and construed in accordance with the laws of the province of Ontario and the laws of Canada applicable therein. The parties hereby attorn to the exclusive jurisdiction of the Federal Court of Canada.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

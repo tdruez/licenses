@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>hp-ux-java</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="hp-ux-java.yml">yml</a> -
   <a href="hp-ux-java.json">json</a> -
   <a href="hp-ux-java.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_holders:
   - HP
 </pre>
   <hr>
-  <pre>HP-UX Runtime Environment, for the Java(tm) 2 Platform
+  <pre id="license-text">HP-UX Runtime Environment, for the Java(tm) 2 Platform
 
 ATTENTION:  USE OF THE SOFTWARE IS SUBJECT TO THE HP SOFTWARE LICENSE TERMS
 AND SUPPLEMENTAL RESTRICTIONS SET FORTH BELOW, THIRD PARTY SOFTWARE LICENSE
@@ -225,6 +234,21 @@ INCIDENTAL, CONSEQUENTIAL (INCLUDING LOST PROFIT OR DATA), OR OTHER DAMAGE,
 WHETHER BASED IN CONTRACT, TORT, OR OTHERWISE.  Some countries, states, or
 provinces do not allow the exclusion or limitation of incidental or
 consequential damages, so the above limitation may not apply to you.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

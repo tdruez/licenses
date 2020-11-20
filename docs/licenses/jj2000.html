@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>jj2000</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="jj2000.yml">yml</a> -
   <a href="jj2000.json">json</a> -
   <a href="jj2000.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_authors:
     Askelof
 </pre>
   <hr>
-  <pre>This software module was originally developed by Raphaël Grosbois and
+  <pre id="license-text">This software module was originally developed by Raphaël Grosbois and
 Diego Santa Cruz (Swiss Federal Institute of Technology-EPFL); Joel
 Askelöf (Ericsson Radio Systems AB); and Bertrand Berthelot, David
 Bouchard, Félix Henry, Gerard Mozelle and Patrice Onno (Canon Research
@@ -51,6 +60,21 @@ software module to any third party and to inhibit third parties from
 using this software module for non JPEG 2000 Standard conforming
 products. This copyright notice must be included in all copies or
 derivative works of this software module.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

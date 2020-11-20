@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>hxd</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="hxd.yml">yml</a> -
   <a href="hxd.json">json</a> -
   <a href="hxd.LICENSE">text</a> -
@@ -22,7 +31,7 @@ ignorable_urls:
   - http://mh-nexus.de/hxd
 </pre>
   <hr>
-  <pre>Permission is granted to anyone to use this Software free of charge for any purpose, including commercial applications, and to redistribute it, provided that the warranty disclaimer is accepted and the following conditions are met:
+  <pre id="license-text">Permission is granted to anyone to use this Software free of charge for any purpose, including commercial applications, and to redistribute it, provided that the warranty disclaimer is accepted and the following conditions are met:
 
 All redistributions must keep the original package intact. No file may be removed or modified. Especially you must retain all copyright notices that are currently in place, and this license without modification.
 
@@ -37,6 +46,21 @@ Ads on the pages of your download portal or website are acceptable.
 Explicitly allowed is payed content, as typical for printed magazines or books, where the Software is an addon (and not the main content). If it is a digital magazine or e-book, please notify your readers in a freely accessible part, that the Software is Freeware and optionally provide a link to http://mh-nexus.de/hxd .
 
 If you want to bundle HxD with other commerical /payed products, please contact me.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

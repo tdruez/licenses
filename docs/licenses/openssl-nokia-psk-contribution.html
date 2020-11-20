@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>openssl-nokia-psk-contribution</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="openssl-nokia-psk-contribution.yml">yml</a> -
   <a href="openssl-nokia-psk-contribution.json">json</a> -
   <a href="openssl-nokia-psk-contribution.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_authors:
   - Nokia Corporation
 </pre>
   <hr>
-  <pre>The portions of the attached software (&#34;Contribution&#34;) is developed by
+  <pre id="license-text">The portions of the attached software (&#34;Contribution&#34;) is developed by
 Nokia Corporation and is licensed pursuant to the OpenSSL open source
 license.
 
@@ -46,6 +55,21 @@ SPECIFICALLY DISCLAIMS ANY LIABILITY FOR CLAIMS BROUGHT BY YOU OR ANY
 OTHER ENTITY BASED ON INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS OR
 OTHERWISE.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

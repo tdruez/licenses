@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>melange</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="melange.yml">yml</a> -
   <a href="melange.json">json</a> -
   <a href="melange.LICENSE">text</a> -
@@ -27,7 +36,7 @@ ignorable_emails:
   - chris@terminal.at
 </pre>
   <hr>
-  <pre>MELANGE CHAT SERVER/CLIENT PUBLIC LICENSE
+  <pre id="license-text">MELANGE CHAT SERVER/CLIENT PUBLIC LICENSE
 Version 1.1, 21 October 1998
 	
 Copyright (C) 1998,1999 by Christian Walter, chris@terminal.at
@@ -85,6 +94,21 @@ Vienna, October 1998
 	YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
 	PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
 	POSSIBILITY OF SUCH DAMAGES.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

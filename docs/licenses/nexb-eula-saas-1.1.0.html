@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>nexb-eula-saas-1.1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="nexb-eula-saas-1.1.0.yml">yml</a> -
   <a href="nexb-eula-saas-1.1.0.json">json</a> -
   <a href="nexb-eula-saas-1.1.0.LICENSE">text</a> -
@@ -23,7 +32,7 @@ ignorable_emails:
   - marketing@nexb.com
 </pre>
   <hr>
-  <pre>NEXB INC.
+  <pre id="license-text">NEXB INC.
 END USER AGREEMENT FOR SOFTWARE AS A SERVICE
 READ THIS AGREEMENT CAREFULLY.
 
@@ -170,6 +179,21 @@ Subscription Fees are exclusive of sales, use, value-added or other similar taxe
 We may update or modify this Agreement from time to time, including any referenced policies or other documents. If a revision meaningfully reduces your rights, we will use reasonable efforts to notify You (by, for example, sending an email to the billing or technical contact you designate in the applicable Order, posting on our blog, through your nexB account, or in the Product itself). If we modify the Agreement during Your Subscription Period, the modified version will be effective upon Your next renewal of a Subscription Period.. In this case, if You object to the updated Agreement, as Your exclusive remedy, you may choose not to renew, including cancelling any terms set to auto-renew. You may be required to click through the updated Agreement to show Your acceptance. For the avoidance of doubt, any Order Form is subject to the version of the Agreement in effect at the time the Order Form is accepted.
 
 Revision: 1.1.0 October 2017</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

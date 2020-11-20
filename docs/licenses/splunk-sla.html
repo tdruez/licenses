@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>splunk-sla</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="splunk-sla.yml">yml</a> -
   <a href="splunk-sla.json">json</a> -
   <a href="splunk-sla.LICENSE">text</a> -
@@ -29,7 +38,7 @@ ignorable_urls:
   - https://www.splunk.com/en_us/legal/splunk-software-support-policy.html
 </pre>
   <hr>
-  <pre>SPLUNK SOFTWARE LICENSE AGREEMENT
+  <pre id="license-text">SPLUNK SOFTWARE LICENSE AGREEMENT
 
 THIS SPLUNK SOFTWARE LICENSE AGREEMENT (“AGREEMENT”) GOVERNS THE LICENSING, INSTALLATION AND USE OF SPLUNK SOFTWARE. BY DOWNLOADING AND/OR INSTALLING SPLUNK SOFTWARE: (a) you are indicating that you have read and understand this Agreement, and agree to be legally bound by it on behalf of the company, GOVERNMENT, or other entity for which you are acting (for example, as an employee OR GOVERNMENT OFFICIAL) or, if there is no company, GOVERNMENT or other entity for which you are acting, on behalf of yourself as an individual; and (b) you represent and warrant that you have the authority to act on behalf of and bind SUCH company, GOVERNMENT OR OTHER ENTITY (if any). 
 
@@ -257,6 +266,21 @@ Customer agrees that the following terms and conditions (“Terms and Conditions
 
 
     4. FORCE MAJEURE. Splunk will not be responsible for any failure or delay in its performance under these Terms and Conditions due to causes beyond its reasonable control, including, but not limited to, labor disputes, strikes, lockouts, shortages of or inability to obtain labor, energy, raw materials or supplies, war, acts of terror, riot, acts of God or governmental action.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

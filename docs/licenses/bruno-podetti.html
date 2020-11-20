@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>bruno-podetti</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="bruno-podetti.yml">yml</a> -
   <a href="bruno-podetti.json">json</a> -
   <a href="bruno-podetti.LICENSE">text</a> -
@@ -20,13 +29,28 @@ owner: Bruno Podetti
 homepage_url: http://www.codeproject.com/Articles/2354/Owner-Drawn-Menu-with-Icons-Titles-and-Shading
 </pre>
   <hr>
-  <pre>You are free to use/modify this code but leave this header intact.
+  <pre id="license-text">You are free to use/modify this code but leave this header intact.
 This class is public domain so you are free to use it any of your 
 applications (Freeware, Shareware, Commercial). 
 All I ask is that you let me know so that if you have a real winner I can
 brag to my buddies that some of my code is in your app. I also wouldn&#39;t 
 mind if you sent me a copy of your application since I like to play with
 new stuff.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

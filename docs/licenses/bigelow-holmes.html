@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>bigelow-holmes</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="bigelow-holmes.yml">yml</a> -
   <a href="bigelow-holmes.json">json</a> -
   <a href="bigelow-holmes.LICENSE">text</a> -
@@ -28,7 +37,7 @@ ignorable_holders:
   - Sun Microsystems, Inc.
 </pre>
   <hr>
-  <pre>This is the LEGAL NOTICE pertaining to the Lucida fonts from Bigelow &amp; Holmes:
+  <pre id="license-text">This is the LEGAL NOTICE pertaining to the Lucida fonts from Bigelow &amp; Holmes:
 
 	NOTICE TO USER: The source code, including the glyphs or icons 
 	forming a par of the OPEN LOOK TM Graphic User Interface, on this 
@@ -81,6 +90,21 @@ ignorable_holders:
 	OR PROFITS, WHETHER IN AN ACTION OF  CONTRACT, NEGLIGENCE
 	OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
 	WITH THE USE OR PERFORMANCE OF THIS SOURCE CODE.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

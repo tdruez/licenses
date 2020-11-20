@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>acdl-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="acdl-1.0.yml">yml</a> -
   <a href="acdl-1.0.json">json</a> -
   <a href="acdl-1.0.LICENSE">text</a> -
@@ -29,7 +38,7 @@ ignorable_urls:
   - http://www.opensource.apple.com/cdl/
 </pre>
   <hr>
-  <pre>Version 1.0 - February 16, 2001
+  <pre id="license-text">Version 1.0 - February 16, 2001
 
 Copyright (C) 2001 Apple Computer, Inc.
 
@@ -82,6 +91,21 @@ The proper form for an incorporation of this License by reference is as follows:
 &#34;Copyright (c) [year] by [Copyright Holder&#39;s name]. This material has been released under and is subject to the terms of the Common Documentation License, v.1.0, the terms of which are hereby incorporated by reference. Please obtain a copy of the License at http://www.opensource.apple.com/cdl/ and read it before using this material. Your use of this material signifies your agreement to the terms of the License.&#34;
 
 Apple Common Documentation License v1.0</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

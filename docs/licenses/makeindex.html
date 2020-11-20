@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>makeindex</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="makeindex.yml">yml</a> -
   <a href="makeindex.json">json</a> -
   <a href="makeindex.LICENSE">text</a> -
@@ -24,7 +33,7 @@ notes: |
 spdx_license_key: MakeIndex
 </pre>
   <hr>
-  <pre>MakeIndex Distribution Notice
+  <pre id="license-text">MakeIndex Distribution Notice
 
 Permission is hereby granted to make and distribute original copies of this
 program provided that the copyright notice and this permission notice are
@@ -50,6 +59,21 @@ modified versions should be reported back to the author.
 This program is distributed with no warranty of any sort. No contributor accepts
 responsibility for the consequences of using this program or for whether it
 serves any particular purpose.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

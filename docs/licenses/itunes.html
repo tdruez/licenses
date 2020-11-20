@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>itunes</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="itunes.yml">yml</a> -
   <a href="itunes.json">json</a> -
   <a href="itunes.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_emails:
   - sales@kerbango.com
 </pre>
   <hr>
-  <pre>ENGLISH
+  <pre id="license-text">ENGLISH
 
 APPLE INC.
 SOFTWARE LICENSE AGREEMENT FOR iTUNES
@@ -112,6 +121,21 @@ Without limiting the foregoing, under no circumstances shall 3Com be held liable
 Miscellaneous Provisions. These TOS will be governed by and construed in accordance with the laws of the State of California, without giving effect to its conflict of laws provisions or your actual state or country of residence. If for any reason a court of competent jurisdiction finds any provision or portion of the TOS to be unenforceable, the remainder of the TOS will continue in full force and effect.
 
 These TOS constitute the entire agreement between the parties with respect to the subject matter hereof and supersedes and replaces all prior or contemporaneous understandings or agreements, written or oral, regarding such subject matter. Any waiver of any provision of the TOS will be effective only if in writing and signed by 3Com.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

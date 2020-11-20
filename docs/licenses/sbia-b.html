@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sbia-b</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sbia-b.yml">yml</a> -
   <a href="sbia-b.json">json</a> -
   <a href="sbia-b.LICENSE">text</a> -
@@ -21,7 +30,7 @@ homepage_url: https://www.cbica.upenn.edu/sbia/software/license.html
 minimum_coverage: 60
 </pre>
   <hr>
-  <pre>PART B. DOWNLOADING AGREEMENT - LICENSE FROM SBIA WITH RIGHT TO SUBLICENSE (&#34;SOFTWARE LICENSE&#34;).
+  <pre id="license-text">PART B. DOWNLOADING AGREEMENT - LICENSE FROM SBIA WITH RIGHT TO SUBLICENSE (&#34;SOFTWARE LICENSE&#34;).
 ------------------------------------------------------------------------------------------------
 
 1. As used in this Software License, &#34;you&#34; means the individual downloading and/or
@@ -117,6 +126,21 @@ of The Commonwealth of Pennsylvania without regard to principles of conflicts
 of law. This Agreement shall supercede and replace any license terms that you
 may have agreed to previously with respect to Software from SBIA.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

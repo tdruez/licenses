@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ldpm-1998</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ldpm-1998.yml">yml</a> -
   <a href="ldpm-1998.json">json</a> -
   <a href="ldpm-1998.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Linux Documentation Project
 homepage_url: http://www.ibiblio.org/gferg/ldp_old/LDP-Manifesto.html
 </pre>
   <hr>
-  <pre>This is the Linux Documentation Project ``Manifesto&#39;&#39;
+  <pre id="license-text">This is the Linux Documentation Project ``Manifesto&#39;&#39;
 Last Revision 21 September 1998, by Michael K. Johnson 
 
 Copyright and License
@@ -36,6 +45,21 @@ This manual may be reproduced and distributed in whole or in part, without fee, 
 Exceptions to these rules may be granted for academic purposes: Write to the author and ask. These restrictions are here to protect us as authors, not to restrict you as learners and educators.
 
 All source code in this document is placed under the GNU General Public License, available via anonymous FTP from prep.ai.mit.edu:/pub/gnu/COPYING. </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

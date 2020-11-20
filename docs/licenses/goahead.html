@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>goahead</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="goahead.yml">yml</a> -
   <a href="goahead.json">json</a> -
   <a href="goahead.LICENSE">text</a> -
@@ -31,7 +40,7 @@ ignorable_emails:
   - info@goahead.com
 </pre>
   <hr>
-  <pre>License Agreement 
+  <pre id="license-text">License Agreement 
 
 THIS LICENSE ALLOWS ONLY THE LIMITED USE OF GO AHEAD SOFTWARE,
 INC. PROPRIETARY CODE.  PLEASE CAREFULLY READ THIS AGREEMENT AS IT
@@ -306,6 +315,21 @@ Exhibit A
 GoAhead Trademarks, Logos, and Product Designation Information 
 
 01/28/00</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>winzip-self-extractor</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="winzip-self-extractor.yml">yml</a> -
   <a href="winzip-self-extractor.json">json</a> -
   <a href="winzip-self-extractor.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: WinZip Computing LLC.
 homepage_url: http://kb.winzip.com/kb/entry/31/
 </pre>
   <hr>
-  <pre>License requirements to distribute self-extracting Zip files
+  <pre id="license-text">License requirements to distribute self-extracting Zip files
 
 If you are using a registered copy of WinZip Self-Extractor, you do not need any
 additional license in order to distribute the self-extracting Zip files you
@@ -49,6 +58,21 @@ Extraction Software, nor give anyone permission to do so.
 
 If you have additional questions about license requirements for self-extractors,
 please email the Service Department.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

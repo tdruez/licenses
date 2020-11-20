@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>info-zip-2009-01</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="info-zip-2009-01.yml">yml</a> -
   <a href="info-zip-2009-01.json">json</a> -
   <a href="info-zip-2009-01.LICENSE">text</a> -
@@ -29,7 +38,7 @@ ignorable_urls:
   - http://www.info/
 </pre>
   <hr>
-  <pre>This is version 2009-Jan-02 of the Info-ZIP license. The definitive version of
+  <pre id="license-text">This is version 2009-Jan-02 of the Info-ZIP license. The definitive version of
 this document should be available at ftp://ftp.info-
 zip.org/pub/infozip/license.html indefinitely and a copy at http://www.info-
 zip.org/pub/infozip/license.html.
@@ -87,6 +96,21 @@ the above disclaimer and the following restrictions:
     Info-ZIP retains the right to use the names &#34;Info-ZIP,&#34; &#34;Zip,&#34; &#34;UnZip,&#34;
     &#34;UnZipSFX,&#34; &#34;WiZ,&#34; &#34;Pocket UnZip,&#34; &#34;Pocket Zip,&#34; and &#34;MacZip&#34; for its own
     source and binary releases.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

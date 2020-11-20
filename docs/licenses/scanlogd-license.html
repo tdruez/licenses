@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>scanlogd-license</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="scanlogd-license.yml">yml</a> -
   <a href="scanlogd-license.json">json</a> -
   <a href="scanlogd-license.LICENSE">text</a> -
@@ -21,12 +30,27 @@ other_urls:
   - http://www.openwall.com/scanlogd/
 </pre>
   <hr>
-  <pre>You&#39;re allowed to do whatever you like with this software (including
+  <pre id="license-text">You&#39;re allowed to do whatever you like with this software (including
 re-distribution in any form, with or without modification), provided
 that credit is given where it is due and any modified versions are
 marked as such.
 
 There&#39;s absolutely no warranty.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

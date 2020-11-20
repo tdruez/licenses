@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>npl-1.1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="npl-1.1.yml">yml</a> -
   <a href="npl-1.1.json">json</a> -
   <a href="npl-1.1.LICENSE">text</a> -
@@ -32,7 +41,7 @@ ignorable_urls:
   - http://www.mozilla.org/NPL/
 </pre>
   <hr>
-  <pre>AMENDMENTS
+  <pre id="license-text">AMENDMENTS
 The Netscape Public License Version 1.1 (&#34;NPL&#34;) consists of the Mozilla Public License Version 1.1 with the following Amendments, including Exhibit A-Netscape Public License.  Files identified with &#34;Exhibit A-Netscape Public License&#34; are governed by the Netscape Public License Version 1.1.
 
 Additional Terms applicable to the Netscape Public License.
@@ -75,6 +84,21 @@ Contributor(s):  .
 
 
 Alternatively, the contents of this file may be used under the terms of the   license (the  &#34;[   ] License&#34;), in which case the provisions of [ ] License are applicable  instead of those above.  If you wish to allow use of your version of this file only under the terms of the [ ] License and not to allow others to use your version of this file under the NPL, indicate your decision by deleting  the provisions above and replace  them with the notice and other provisions required by the [   ] License.  If you do not delete the provisions above, a recipient may use your version of this file under either the NPL or the [   ] License.&#34;</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

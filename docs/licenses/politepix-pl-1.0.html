@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>politepix-pl-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="politepix-pl-1.0.yml">yml</a> -
   <a href="politepix-pl-1.0.json">json</a> -
   <a href="politepix-pl-1.0.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_urls:
   - http://www.politepix.com/openears
 </pre>
   <hr>
-  <pre>Politepix Public License version 1.0
+  <pre id="license-text">Politepix Public License version 1.0
 
 Definitions
 
@@ -61,6 +70,21 @@ This license represents the complete agreement concerning subject matter hereof.
 Limitation of Liability
 
 The Software and this license document are provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY AND TITLE, AND THOSE ARISING FROM A COURSE OF DEALING OR USAGE OF TRADE. POLITEPIX UG (HAFTUNGSBESCHRANKT) SHALL NOT BE LIABLE FOR, AND HEREBY EXPRESSLY DISCLAIMS ANY LIABILITY FOR: DAMAGES FOR LOST PROFITS, LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, LOSS OF BUSINESS, OR ANY AND ALL OTHER CONSEQUENTIAL, SPECIAL, COMMERCIAL, INDIRECT OR PUNITIVE DAMAGES OR LOSSES, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM BY ANY THIRD-PARTY.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

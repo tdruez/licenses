@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>activestate-community-2012</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="activestate-community-2012.yml">yml</a> -
   <a href="activestate-community-2012.json">json</a> -
   <a href="activestate-community-2012.LICENSE">text</a> -
@@ -30,7 +39,7 @@ ignorable_emails:
   - sales@activestate.com
 </pre>
   <hr>
-  <pre>ACTIVESTATE COMMUNITY EDITION SOFTWARE LICENSE AGREEMENT
+  <pre id="license-text">ACTIVESTATE COMMUNITY EDITION SOFTWARE LICENSE AGREEMENT
 
     Version effective date: August 2, 2012
 
@@ -104,6 +113,21 @@ ii. redistribute:
 18. Assignment. Except as expressly provided herein neither this Agreement nor any rights granted hereunder, nor the use of any of the Software may be assigned, or otherwise transferred, in whole or in part, by Licensee, without the prior written consent of ACTIVESTATE. ACTIVESTATE may assign this Agreement in the event of a merger or sale of all or substantially all of the stock of assets of ACTIVESTATE without the consent of Licensee. Any attempted assignment will be void and of no effect unless permitted by the foregoing. This Agreement shall inure to the benefit of the parties permitted successors and assigns.
 
 19. Miscellaneous. This Agreement constitutes the entire understanding of the parties with respect to the subject matter of this Agreement and merges all prior communications, representations, and agreements. ACTIVESTATE reserves the right to change this Agreement at any time, which change shall be effective immediately upon its posting into any future release of the Software. If any provision of this Agreement is held to be unenforceable for any reason, such provision shall be reformed only to the extent necessary to make it enforceable. This Agreement shall be construed under the laws of the Province of British Columbia, Canada, excluding rules regarding conflicts of law. The application of the United Nations Convention of Contracts for the International Sale of Goods is expressly excluded. The parties agree that the Uniform Computer Transactions Act or any version thereof, adopted by any state, in any form (&#34;UCITA&#34;), shall not apply to this Agreement, and to the extent that UCITA may be applicable, the parties agree to opt out of the applicability of UCITA pursuant to the opt-out provision(s) contained therein.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

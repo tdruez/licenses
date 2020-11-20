@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>oracle-otn-javase-2019</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="oracle-otn-javase-2019.yml">yml</a> -
   <a href="oracle-otn-javase-2019.json">json</a> -
   <a href="oracle-otn-javase-2019.LICENSE">text</a> -
@@ -32,7 +41,7 @@ ignorable_urls:
   - https://www.oracle.com/technetwork/java/javase/documentation/
 </pre>
   <hr>
-  <pre>Oracle Technology Network License Agreement for Oracle Java SE
+  <pre id="license-text">Oracle Technology Network License Agreement for Oracle Java SE
 
 Oracle is willing to authorize Your access to software associated with this License Agreement (“Agreement”) only upon the condition that You accept that this Agreement governs Your use of the software. By selecting the &#34;Accept License Agreement&#34; button or box (or the equivalent) or installing or using the Programs, You indicate Your acceptance of this Agreement and Your agreement, as an authorized representative of Your company or organization (if being acquired for use by an entity) or as an individual, to comply with the license terms that apply to the software that You wish to download and access. If You are not willing to be bound by this Agreement, do not select the “Accept License Agreement” button or box (or the equivalent) and do not download or access the software.
 
@@ -120,6 +129,21 @@ Redwood City, CA 94065
 Oracle Employees: Under no circumstances are Oracle employees authorized to download software for the purpose of distributing it to customers. Oracle products are available to Oracle employees for internal use or demonstration purposes only. In keeping with Oracle&#39;s trade compliance obligations under U.S. and applicable multilateral law, an Oracle employee&#39;s failure to comply with this policy could result in disciplinary action up to and including termination.
 
 Last updated: April 10, 2019</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

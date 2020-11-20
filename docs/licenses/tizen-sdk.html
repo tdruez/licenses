@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>tizen-sdk</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="tizen-sdk.yml">yml</a> -
   <a href="tizen-sdk.json">json</a> -
   <a href="tizen-sdk.LICENSE">text</a> -
@@ -20,7 +29,7 @@ owner: Samsung
 homepage_url: https://developer.tizen.org/tizen-sdk-license-agreement
 </pre>
   <hr>
-  <pre>Tizen SDK License Agreement
+  <pre id="license-text">Tizen SDK License Agreement
 TIZEN SOFTWARE DEVELOPMENT KIT (&#34;SDK&#34;) LICENSE AGREEMENT
 
 BEFORE YOU (&#34;YOU&#34; OR &#34;LICENSEE&#34;) USE THE TIZEN SDK, PLEASE READ ALL OF THE TERMS AND CONDITIONS SET OUT IN THIS TIZEN SOFTWARE DEVELOPMENT KIT LICENSE AGREEMENT (&#34;AGREEMENT&#34;) CAREFULLY. YOUR USE OF THE TIZEN SDK IS SUBJECT TO THE TERMS AND CONDITIONS SET FORTH IN THIS AGREEMENT. BY CLICKING THE &#34;I AGREE&#34; BUTTON OR BY USING ANY PART OF THE TIZEN SDK, YOU AGREE (ON BEHALF OF YOURSELF AND/OR YOUR COMPANY) TO THE TERMS AND CONDITIONS OF THIS AGREEMENT, WHICH THEN COMMENCES WITH EFFECT AS A LEGAL AGREEMENT BETWEEN YOU AND SAMSUNG. IF YOU DO NOT OR CANNOT AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU MUST NOT DOWNLOAD OR USE THE TIZEN SDK.
@@ -104,6 +113,21 @@ IMPORTANT NOTE: This license is primarily applicable to several proprietary comp
 Last Updated April, 2013
 
 END OF TIZEN SOFTWARE DEVELOPMENT KIT(&#34;SDK&#34;) LICENSE AGREEMENT</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

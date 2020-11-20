@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>opera-eula-2018</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="opera-eula-2018.yml">yml</a> -
   <a href="opera-eula-2018.json">json</a> -
   <a href="opera-eula-2018.LICENSE">text</a> -
@@ -27,7 +36,7 @@ ignorable_emails:
   - opensource@opera.com
 </pre>
   <hr>
-  <pre>End User License Agreement
+  <pre id="license-text">End User License Agreement
 Opera for Computers
 Last updated: December 14, 2018
 
@@ -67,6 +76,21 @@ You may only use the Software as expressly authorized in this Section 2.
 13. Opera may modify these terms. Opera may update the terms of this EULA, the Privacy Statement or the Terms of Service. The current version of this EULA is posted at https://www.opera.com/eula/computers, the latest version of the Privacy Statement is posted at https://www.opera.com/privacy, and the Terms of Service are posted at https://www.opera.com/terms. It is your responsibility to remain informed of any changes as you are bound by the latest version of the EULA, Privacy Statement and Terms of Service.
 
 14. General. You acknowledge and agree that the Software may contain cryptographic functionality the export of which may be restricted under applicable export control law. You will comply with all applicable laws and regulations in your activities with regard to the Software. You will not export or re-export the Software in violation of such laws or regulations or without all required licenses and authorizations. You may not assign or transfer this contract without obtaining Opera’s prior written consent, and any purported assignment or transfer in violation of this restriction will be null and void.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

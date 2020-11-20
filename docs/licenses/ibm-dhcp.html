@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ibm-dhcp</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ibm-dhcp.yml">yml</a> -
   <a href="ibm-dhcp.json">json</a> -
   <a href="ibm-dhcp.LICENSE">text</a> -
@@ -21,7 +30,7 @@ other_urls:
   - http://svn.opendnssec.org/trunk/OpenDNSSEC/common/b64_pton.c
 </pre>
   <hr>
-  <pre>International Business Machines, Inc. (hereinafter called IBM) grants
+  <pre id="license-text">International Business Machines, Inc. (hereinafter called IBM) grants
 permission under its copyrights to use, copy, modify, and distribute this
 Software with or without fee, provided that the above copyright notice and
 all paragraphs of this notice appear in all copies, and that the name of IBM
@@ -42,6 +51,21 @@ DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
 OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
 IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

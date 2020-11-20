@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>oracle-mysql-foss-exception-2.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="oracle-mysql-foss-exception-2.0.yml">yml</a> -
   <a href="oracle-mysql-foss-exception-2.0.json">json</a> -
   <a href="oracle-mysql-foss-exception-2.0.LICENSE">text</a> -
@@ -46,7 +55,7 @@ standard_notice: |
   OSI Certified is a certification mark of the Open Source Initiative.
 </pre>
   <hr>
-  <pre>Oracle’s FOSS License Exception Terms and Conditions
+  <pre id="license-text">Oracle’s FOSS License Exception Terms and Conditions
 
     Definitions.
 
@@ -68,6 +77,21 @@ standard_notice: |
         All works that are aggregated with the Program or the Derivative Work on a medium or volume of storage are not derivative works of the Program, Derivative Work or FOSS Application, and must reasonably be considered independent and separate works.
     Oracle reserves all rights not expressly granted in these terms and conditions. If all of the above conditions are not met, then this FOSS License Exception does not apply to you or your Derivative Work.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

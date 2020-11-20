@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>sun-ejb-spec-2.1</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="sun-ejb-spec-2.1.yml">yml</a> -
   <a href="sun-ejb-spec-2.1.json">json</a> -
   <a href="sun-ejb-spec-2.1.LICENSE">text</a> -
@@ -25,7 +34,7 @@ ignorable_holders:
   - Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054, U.S.A
 </pre>
   <hr>
-  <pre>Enterprise JavaBeansTM Specification (&#34;Specification&#34;) 
+  <pre id="license-text">Enterprise JavaBeansTM Specification (&#34;Specification&#34;) 
 Version: 2.1 
 Status: FCS 
 Release: November 24, 2003
@@ -71,6 +80,21 @@ REPORT
 You may wish to report any ambiguities, inconsistencies or inaccuracies you may find in connection with your use of the Specification (&#34;Feedback&#34;). To the extent that you provide Sun with any Feedback, you hereby: (i) agree that such Feedback is provided on a non-proprietary and non-confidential basis, and (ii) grant Sun a perpetual, non-exclusive, worldwide, fully paid- up, irrevocable license, with the right to sublicense through multiple levels of sublicensees, to incorporate, disclose, and use without limitation the Feedback for any purpose related to the Specification and future versions, implementations, and test suites thereof.
 
 (LFI#135809/Form ID#011801)</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

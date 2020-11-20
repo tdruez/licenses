@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>gpl-2.0-plus-openssl</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="gpl-2.0-plus-openssl.yml">yml</a> -
   <a href="gpl-2.0-plus-openssl.json">json</a> -
   <a href="gpl-2.0-plus-openssl.LICENSE">text</a> -
@@ -23,7 +32,7 @@ notes: replaced by openssl-exception-gpl-2.0-plus
 is_exception: yes
 </pre>
   <hr>
-  <pre>As a special exception to the GNU General Public License terms,
+  <pre id="license-text">As a special exception to the GNU General Public License terms,
 permission is hereby granted to link the code of this program, with or
 without modification, with any version of the OpenSSL library and/or any
 version of unRAR, and to distribute such linked combinations.  You must
@@ -32,6 +41,21 @@ OpenSSL and unRAR.  If you modify this program, you may extend this
 exception to your version of the program, but you are not obligated to
 do so.  (In other words, you may release your derived work under pure
 GNU GPL version 2 or later as published by the FSF.)</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>vitesse-prop</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="vitesse-prop.yml">yml</a> -
   <a href="vitesse-prop.json">json</a> -
   <a href="vitesse-prop.LICENSE">text</a> -
@@ -19,7 +28,7 @@ category: Proprietary Free
 owner: Vitesse Semiconductor Corporation
 </pre>
   <hr>
-  <pre> Unpublished rights reserved under the copyright laws of the United States of
+  <pre id="license-text"> Unpublished rights reserved under the copyright laws of the United States of
  America, other countries and international treaties. Permission to use, copy,
  store and modify, the software and its source code is granted. Permission to
  integrate into other products, disclose, transmit and distribute the software
@@ -35,6 +44,21 @@ owner: Vitesse Semiconductor Corporation
  THIS SOFTWARE HAS BEEN PROVIDED &#34;AS IS,&#34; WITHOUT EXPRESS OR IMPLIED WARRANTY
  INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
  FOR A PARTICULAR USE AND NON-INFRINGEMENT.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

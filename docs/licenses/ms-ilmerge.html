@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ms-ilmerge</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ms-ilmerge.yml">yml</a> -
   <a href="ms-ilmerge.json">json</a> -
   <a href="ms-ilmerge.LICENSE">text</a> -
@@ -24,7 +33,7 @@ ignorable_urls:
   - http://www.microsoft.com/exporting
 </pre>
   <hr>
-  <pre>ILMerge license
+  <pre id="license-text">ILMerge license
 MICROSOFT ILMerge
 
 END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE
@@ -62,6 +71,21 @@ IMPORTANT—READ CAREFULLY: This End-User License Agreement (&#34;EULA&#34;) is 
 13. APPLICABLE LAW. This EULA shall be construed under and governed by the laws of the State of Washington, without regard to conflicts of law principles.
 
 14. ENTIRE AGREEMENT; SEVERABILITY. This EULA (including any addendum or amendment to this EULA which is included with the Software) are the entire agreement between you and Microsoft relating to the Software and the support services (if any) and they supersede all prior or contemporaneous oral or written communications, proposals and representations with respect to the Software or any other subject matter covered by this EULA. If any provision of this EULA is held to be void, invalid, unenforceable or illegal, the other provisions shall continue in full force and effect</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

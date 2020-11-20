@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ghostscript-1988</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ghostscript-1988.yml">yml</a> -
   <a href="ghostscript-1988.json">json</a> -
   <a href="ghostscript-1988.LICENSE">text</a> -
@@ -32,7 +41,7 @@ ignorable_holders:
   - Richard M. Stallman
 </pre>
   <hr>
-  <pre>GHOSTSCRIPT GENERAL PUBLIC LICENSE
+  <pre id="license-text">GHOSTSCRIPT GENERAL PUBLIC LICENSE
             (Clarified 11 Feb 1988)
 
  Copyright (C) 1988 Richard M. Stallman
@@ -174,6 +183,21 @@ INACCURATE OR LOSSES SUSTAINED BY THIRD PARTIES OR A FAILURE OF THE
 PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS) GHOSTSCRIPT, EVEN IF YOU
 HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM
 BY ANY OTHER PARTY.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

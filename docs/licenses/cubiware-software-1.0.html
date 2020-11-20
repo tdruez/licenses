@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>cubiware-software-1.0</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="cubiware-software-1.0.yml">yml</a> -
   <a href="cubiware-software-1.0.json">json</a> -
   <a href="cubiware-software-1.0.LICENSE">text</a> -
@@ -21,7 +30,7 @@ other_urls:
   - https://blog.tivo.com/2015/05/tivo-acquires-cubiware/
 </pre>
   <hr>
-  <pre>Cubiware Sp. z o.o. Software License Version 1.0
+  <pre id="license-text">Cubiware Sp. z o.o. Software License Version 1.0
 
 Any rights which are not expressly granted in this License are entirely and
 exclusively reserved to and by Cubiware Sp. z o.o. You may not rent, lease,
@@ -38,6 +47,21 @@ includes, but is not limited to:
     sale or license by, or on behalf of, User to third parties;
 (2) distribution of the binary or source code to third parties for use with
     a commercial product sold or licensed by, or on behalf of, User.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

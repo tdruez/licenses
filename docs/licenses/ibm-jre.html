@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>ibm-jre</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="ibm-jre.yml">yml</a> -
   <a href="ibm-jre.json">json</a> -
   <a href="ibm-jre.LICENSE">text</a> -
@@ -26,7 +35,7 @@ ignorable_urls:
   - http://www.ibm.com/software/sla/
 </pre>
   <hr>
-  <pre>International License Agreement for Non-Warranted Programs 
+  <pre id="license-text">International License Agreement for Non-Warranted Programs 
 
 Part 1 - General Terms 
 
@@ -326,6 +335,21 @@ The following exceptions are added to this section:
 Arbitration 
 
 In Albania, Armenia, Azerbaijan, Belarus, Bosnia-Herzegovina, Bulgaria, Croatia, Georgia, Hungary, Kazakhstan, Kyrgyzstan, FYR Macedonia, Moldavia, Poland, Romania, Russia, Slovakia, Slovenia, Tajikistan, Turkmenistan, Ukraine, Uzbekistan, and FR Yugoslavia all disputes arising out of this Agreement or related to its violation, termination or nullity will be finally settled under the Rules of Arbitration and Conciliation of the International Arbitral Center of the Federal Economic Chamber in Vienna (Vienna Rules)</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

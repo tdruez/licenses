@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>unicode-data-software</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="unicode-data-software.yml">yml</a> -
   <a href="unicode-data-software.json">json</a> -
   <a href="unicode-data-software.LICENSE">text</a> -
@@ -24,7 +33,7 @@ text_urls:
   - http://unicode.org/copyright.html
 </pre>
   <hr>
-  <pre>Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
+  <pre id="license-text">Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of the Unicode data files and any associated documentation (the
@@ -64,6 +73,21 @@ Unicode and the Unicode logo are trademarks of Unicode, Inc. in the
 United States and other countries. All third party trademarks referenced
 herein are the property of their respective owners.
 </pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>

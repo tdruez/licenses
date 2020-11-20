@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>wsuipa</title>
+    <style>
+      body {font-family: Cerebri Sans,sans-serif;}
+      .container {width: 80%; margin: auto;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+
   </head>
   <body>
     
+  <a href="../index.html">back to list</a> -
   <a href="wsuipa.yml">yml</a> -
   <a href="wsuipa.json">json</a> -
   <a href="wsuipa.LICENSE">text</a> -
@@ -24,7 +33,7 @@ notes: |
 spdx_license_key: Wsuipa
 </pre>
   <hr>
-  <pre>This file was added by Clea F. Rees on 2008/11/30 with the permission of Dean
+  <pre id="license-text">This file was added by Clea F. Rees on 2008/11/30 with the permission of Dean
 Guenther and pointers to this file were added to all source files.
 
 Unlimited copying and redistribution of each of the files is permitted as long
@@ -33,6 +42,21 @@ versions, are also permitted, but only if the resulting file is renamed.
 
 The copyright holder is Washington State University. The original author of the
 fonts is Janene Winter. The primary contact (as of 2008) is Dean Guenther.</pre>
+
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
 
   </body>
 </html>
