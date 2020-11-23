@@ -42,6 +42,37 @@ def write_file(path, filename, content):
     (path / filename).open("w").write(content)
 
 
+def generate_indexes(output_path):
+    license_list_template = env.get_template("license_list.html")
+    index_html = license_list_template.render(title="License list", licenses=licenses)
+    (output_path / "index.html").open("w").write(index_html)
+
+    index = [
+        {
+            "license_key": key,
+            "json": f"licenses/{key}.json",
+            "yml": f"licenses/{key}.yml",
+            "html": f"licenses/{key}.html",
+            "text": f"licenses/{key}.LICENSE"
+        }
+        for key in licenses.keys()
+    ]
+    (output_path / "index.json").open("w").write(json.dumps(index))
+    (output_path / "index.yml").open("w").write(saneyaml.dump(index))
+
+
+def generate_details(output_path):
+    license_details_template = env.get_template("license_details.html")
+    for license in licenses.values():
+        license_data = license.to_dict()
+        yml = saneyaml.dump(license_data)
+        html = license_details_template.render(license=license, license_data=yml)
+        write_file(output_path, f"{license.key}.html", html)
+        write_file(output_path, f"{license.key}.yml", yml)
+        write_file(output_path, f"{license.key}.json", json.dumps(license_data))
+        write_file(output_path, f"{license.key}.LICENSE", license.text)
+
+
 def generate():
     output_path = pathlib.Path(BUILD_LOCATION)
     output_path.mkdir(parents=False, exist_ok=True)
@@ -49,19 +80,8 @@ def generate():
     licenses_path = output_path / "licenses"
     licenses_path.mkdir(parents=False, exist_ok=True)
 
-    license_list_template = env.get_template("license_list.html")
-    html = license_list_template.render(title="License list", licenses=licenses)
-    (output_path / "index.html").open("w").write(html)
-
-    license_details_template = env.get_template("license_details.html")
-    for license in licenses.values():
-        license_data = license.to_dict()
-        yml = saneyaml.dump(license_data)
-        html = license_details_template.render(license=license, license_data=yml)
-        write_file(licenses_path, f"{license.key}.html", html)
-        write_file(licenses_path, f"{license.key}.yml", yml)
-        write_file(licenses_path, f"{license.key}.json", json.dumps(license_data))
-        write_file(licenses_path, f"{license.key}.LICENSE", license.text)
+    generate_indexes(output_path)
+    generate_details(licenses_path)
 
 
 if __name__ == "__main__":
