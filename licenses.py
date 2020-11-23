@@ -53,7 +53,7 @@ def generate_indexes(output_path):
             "json": f"licenses/{key}.json",
             "yml": f"licenses/{key}.yml",
             "html": f"licenses/{key}.html",
-            "text": f"licenses/{key}.LICENSE"
+            "text": f"licenses/{key}.LICENSE",
         }
         for key in licenses.keys()
     ]

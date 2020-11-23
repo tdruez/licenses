@@ -23,6 +23,7 @@
 PYTHON_EXE=python3.6
 MANAGE=bin/python manage.py
 ACTIVATE=. bin/activate;
+BLACK_ARGS=--exclude="docs" .
 
 conf:
 	@echo "-> Configure the Python venv and install dependencies"
@@ -32,9 +33,16 @@ conf:
 clean:
 	git rm -r docs
 
+black:
+	@echo "-> Apply black code formatter"
+	@${ACTIVATE} pip install black==20.8b1
+	bin/black ${BLACK_ARGS}
+
+valid: black
+
 build:
 	@echo "-> Generate the HTML content"
 	bin/python licenses.py
 	cp -R static/ docs/static/
 
-.PHONY: conf clean build
+.PHONY: conf clean black valid build
