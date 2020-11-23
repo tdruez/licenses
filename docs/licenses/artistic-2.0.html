@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>artistic-2.0</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="artistic-2.0.yml">yml</a> -
-  <a href="artistic-2.0.json">json</a> -
-  <a href="artistic-2.0.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/artistic-2.0.yml">edit data</a>
-  <hr>
-  <pre>key: artistic-2.0
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="artistic-2.0.yml">yml</a> -
+    <a href="artistic-2.0.json">json</a> -
+    <a href="artistic-2.0.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/artistic-2.0.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: artistic-2.0
 short_name: Artistic 2.0
 name: Artistic License 2.0
 category: Copyleft Limited
@@ -49,8 +62,8 @@ ignorable_authors:
 ignorable_holders:
   - The Perl Foundation
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Copyright (c) 2000-2006, The Perl Foundation.
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Copyright (c) 2000-2006, The Perl Foundation.
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 
@@ -123,6 +136,7 @@ General Provisions
 (13) This license includes the non-exclusive, worldwide, free-of-charge patent license to make, have made, use, offer to sell, sell, import and otherwise transfer the Package with respect to any patent claims licensable by the Copyright Holder that are necessarily infringed by the Package. If you institute patent litigation (including a cross-claim or counterclaim) against any party alleging that the Package constitutes direct or contributory patent infringement, then this Artistic License to you shall terminate on the date that such litigation is filed.
 
 (14) Disclaimer of Warranty: THE PACKAGE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS &#34;AS IS&#39; AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES. THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT ARE DISCLAIMED TO THE EXTENT PERMITTED BY YOUR LOCAL LAW. UNLESS REQUIRED BY LAW, NO COPYRIGHT HOLDER OR CONTRIBUTOR WILL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</pre>
+  </div>
 
     
   <script>
@@ -139,5 +153,12 @@ General Provisions
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

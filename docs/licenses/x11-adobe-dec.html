@@ -4,34 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>x11-adobe-dec</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="x11-adobe-dec.yml">yml</a> -
-  <a href="x11-adobe-dec.json">json</a> -
-  <a href="x11-adobe-dec.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-adobe-dec.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-adobe-dec.yml">edit data</a>
-  <hr>
-  <pre>key: x11-adobe-dec
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="x11-adobe-dec.yml">yml</a> -
+    <a href="x11-adobe-dec.json">json</a> -
+    <a href="x11-adobe-dec.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-adobe-dec.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-adobe-dec.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: x11-adobe-dec
 short_name: X11-Style (Adobe-DEC)
 name: X11-Style (Adobe-DEC)
 category: Permissive
 owner: Adobe Systems
 minimum_coverage: 85
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Adobe is a trademark of Adobe Systems Incorporated which may be registered in
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Adobe is a trademark of Adobe Systems Incorporated which may be registered in
 certain jurisdictions. Permission to use these trademarks is hereby granted only
 in association with the images described in this file.
 
@@ -44,6 +57,7 @@ advertising or publicity pertaining to distribution of the software without
 specific, written prior permission. Adobe Systems and Digital Equipment
 Corporation make no representations about the suitability of this software for
 any purpose. It is provided &#34;as is&#34; without express or implied warranty.</pre>
+  </div>
 
     
   <script>
@@ -60,5 +74,12 @@ any purpose. It is provided &#34;as is&#34; without express or implied warranty.
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

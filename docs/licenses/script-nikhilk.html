@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>script-nikhilk</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="script-nikhilk.yml">yml</a> -
-  <a href="script-nikhilk.json">json</a> -
-  <a href="script-nikhilk.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/script-nikhilk.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/script-nikhilk.yml">edit data</a>
-  <hr>
-  <pre>key: script-nikhilk
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="script-nikhilk.yml">yml</a> -
+    <a href="script-nikhilk.json">json</a> -
+    <a href="script-nikhilk.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/script-nikhilk.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/script-nikhilk.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: script-nikhilk
 short_name: Script# License
 name: Script# License
 category: Proprietary Free
@@ -35,8 +48,8 @@ other_urls:
   - http://www.amazon.com/exec/obidos/ASIN/0735615829/nikhilkothari-20
   - http://www.nikhilk.net/About.aspx
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">End User License Agreement for Script# 
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">End User License Agreement for Script# 
 IT IS IMPORTANT THAT YOU CAREFULLY READ THIS NOTICE BEFORE INSTALLING THIS PRODUCT. BY INSTALLING, OR OTHERWISE USING THIS SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE AGREEMENT (THE &#34;AGREEMENT&#34;) WHICH CONSTITUTES A LEGALLY BINDING CONTRACT BETWEEN THE LICENSOR (PROJECTS.NIKHILK.NET, HEREAFTER &#34;WE&#34;, OR &#34;US&#34;) AND THE LICENSEE (EITHER AN INDIVIDUAL OR ENTITY, HEREAFTER &#34;YOU&#34;). 
 THIS AGREEMENT 
 1.1 In this Agreement, the phrase &#34;Software&#34; means any version of the computer programs above and all associated media, printed materials, &#34;online&#34; or electronic documentation and bundled software. 
@@ -74,6 +87,7 @@ GENERAL TERMS
 6.4 This Agreement is governed by the laws of the State of Washington, USA. Irrespective of the country in which the Software was acquired, the construction, validity and performance of the Agreement shall be governed in all respects by English law. You agree to submit to exclusive jurisdiction of English courts. 
 6.5 If any provision of this Agreement is found to be invalid by any court having competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining provisions of this Agreement, which shall remain in full force and effect. 
 6.6 You agree that the Software will not be shipped, transferred or exported into any country or used in any manner prohibited by the United States Export Administration Act or any other export laws, restrictions or regulations.</pre>
+  </div>
 
     
   <script>
@@ -90,5 +104,12 @@ GENERAL TERMS
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

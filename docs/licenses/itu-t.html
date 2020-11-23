@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>itu-t</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="itu-t.yml">yml</a> -
-  <a href="itu-t.json">json</a> -
-  <a href="itu-t.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/itu-t.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/itu-t.yml">edit data</a>
-  <hr>
-  <pre>key: itu-t
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="itu-t.yml">yml</a> -
+    <a href="itu-t.json">json</a> -
+    <a href="itu-t.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/itu-t.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/itu-t.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: itu-t
 short_name: ITU-T License
 name: ITU-T License
 category: Free Restricted
@@ -31,8 +44,8 @@ owner: ITU - International Telecommunications Union
 ignorable_urls:
   - http://www.itu.int/ipr
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Software(1) License Agreement 
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Software(1) License Agreement 
 
 ITU hereby grants you a worldwide, non-exclusive, free license to reproduce, modify, and use the Software for the limited purpose of implementing an ITU-T Recommendation. 
 
@@ -44,6 +57,7 @@ Disclaimer: In no event shall the ITU be liable for any damages whatsoever (incl
 _ 
 
 (1)In the context of this Software License Agreement the term &#34;Software&#34; includes source code, object code and/or data, there including audiovisual materials.</pre>
+  </div>
 
     
   <script>
@@ -60,5 +74,12 @@ _
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

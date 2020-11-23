@@ -33,16 +33,21 @@ conf:
 clean:
 	git rm -r docs
 
+isort:
+	@echo "-> Apply isort changes to ensure proper imports ordering"
+	@${ACTIVATE} pip install isort==5.6.4
+	bin/isort app.py
+
 black:
 	@echo "-> Apply black code formatter"
-	@${ACTIVATE} pip install black==20.8b1
+	@${ACTIVATE} pip install black==20.8b1 isort
 	bin/black ${BLACK_ARGS}
 
-valid: black
+valid: isort black
 
 build:
 	@echo "-> Generate the HTML content"
-	bin/python licenses.py
+	bin/python app.py
 	cp -R static/ docs/static/
 
 .PHONY: conf clean black valid build

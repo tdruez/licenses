@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>hp-ux-jre</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="hp-ux-jre.yml">yml</a> -
-  <a href="hp-ux-jre.json">json</a> -
-  <a href="hp-ux-jre.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/hp-ux-jre.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/hp-ux-jre.yml">edit data</a>
-  <hr>
-  <pre>key: hp-ux-jre
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="hp-ux-jre.yml">yml</a> -
+    <a href="hp-ux-jre.json">json</a> -
+    <a href="hp-ux-jre.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/hp-ux-jre.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/hp-ux-jre.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: hp-ux-jre
 short_name: HP JRE License
 name: Hewlett Packard JRE License
 category: Proprietary Free
@@ -33,8 +46,8 @@ ignorable_copyrights:
 ignorable_holders:
   - HP
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">LEGAL NOTICE - READ BEFORE DOWNLOADING OR OTHERWISE USING THIS SOFTWARE.
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">LEGAL NOTICE - READ BEFORE DOWNLOADING OR OTHERWISE USING THIS SOFTWARE.
 
 ATTENTION: USE OF THE SOFTWARE IS SUBJECT TO THE HP SOFTWARE LICENSE TERMS, AND SUPPLEMENTAL RESTRICTIONS SET FORTH BELOW AND THE HP WARRANTY DISCLAIMER ATTACHED. CLICK ON THE &#34;I ACCEPT&#34; BOX BELOW TO INDICATE YOUR ACCEPTANCE OF THESE TERMS. IF YOU DO NOT ACCEPT THESE TERMS FULLY, YOU MAY NOT INSTALL OR OTHERWISE USE THE SOFTWARE. NOTWITHSTANDING ANYTHING TO THE CONTRARY IN THIS NOTICE, INSTALLING OR OTHERWISE USING THE SOFTWARE INDICATES YOUR ACCEPTANCE OF THESE LICENSE TERMS.
 Download license for HPjconfig 2.1
@@ -79,6 +92,7 @@ The Software and any accompanying documentation have been developed entirely at 
 
 Supplemental restrictions
 You acknowledge the Software is not designed or intended for use in on-line control of aircraft, air traffic, aircraft navigation, or aircraft communications; or in the design, construction, operation or maintenance of any nuclear facility. HP disclaims any express or implied warranty of fitness for such uses</pre>
+  </div>
 
     
   <script>
@@ -95,5 +109,12 @@ You acknowledge the Software is not designed or intended for use in on-line cont
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

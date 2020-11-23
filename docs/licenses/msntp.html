@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>msntp</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="msntp.yml">yml</a> -
-  <a href="msntp.json">json</a> -
-  <a href="msntp.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/msntp.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/msntp.yml">edit data</a>
-  <hr>
-  <pre>key: msntp
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="msntp.yml">yml</a> -
+    <a href="msntp.json">json</a> -
+    <a href="msntp.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/msntp.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/msntp.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: msntp
 short_name: MSNTP License
 name: MSNTP software license
 category: Copyleft
@@ -43,8 +56,8 @@ ignorable_holders:
   - N.M. Maclaren
   - University of Cambridge
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">General Public Licence for the software known as MSNTP
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">General Public Licence for the software known as MSNTP
 ------------------------------------------------------
 
           (c) Copyright, N.M. Maclaren, 1996, 1997, 2000
@@ -119,6 +132,7 @@ represented.
 October 1996
 April 1997
 October 2000</pre>
+  </div>
 
     
   <script>
@@ -135,5 +149,12 @@ October 2000</pre>
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

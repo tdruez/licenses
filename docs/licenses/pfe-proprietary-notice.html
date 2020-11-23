@@ -4,37 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>pfe-proprietary-notice</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="pfe-proprietary-notice.yml">yml</a> -
-  <a href="pfe-proprietary-notice.json">json</a> -
-  <a href="pfe-proprietary-notice.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pfe-proprietary-notice.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pfe-proprietary-notice.yml">edit data</a>
-  <hr>
-  <pre>key: pfe-proprietary-notice
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="pfe-proprietary-notice.yml">yml</a> -
+    <a href="pfe-proprietary-notice.json">json</a> -
+    <a href="pfe-proprietary-notice.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pfe-proprietary-notice.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/pfe-proprietary-notice.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: pfe-proprietary-notice
 short_name: PFE Proprietary Notice
 name: PFE Proprietary Notice
 category: Proprietary Free
 owner: Alan Phillips
 homepage_url: https://www.lancaster.ac.uk/staff/steveb/cpaap/pfe/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">You expect me to believe that this stuff is free?
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">You expect me to believe that this stuff is free?
 I could get people to pay for this? Yes, it&#39;s completely free - you&#39;ll find the minimalist terms and conditions in the various readme files (you do look at readme files, don&#39;t you?) in the release ZIP archives and in the help file; but basically you can use PFE at home, at work, in the car and any improbable location of your choice without paying me a penny (or cent, if you&#39;re across the planet from where I am).
 
 But in the unlikely circumstance that you actually think you&#39;d like to distribute PFE with your commercial product - (no, don&#39;t laugh - it was known to happen) - I would want to sell you a licence. Well, I do have a mortgage to pay and a computer to support.</pre>
+  </div>
 
     
   <script>
@@ -51,5 +65,12 @@ But in the unlikely circumstance that you actually think you&#39;d like to distr
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

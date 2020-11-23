@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>x11-doc</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="x11-doc.yml">yml</a> -
-  <a href="x11-doc.json">json</a> -
-  <a href="x11-doc.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-doc.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-doc.yml">edit data</a>
-  <hr>
-  <pre>key: x11-doc
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="x11-doc.yml">yml</a> -
+    <a href="x11-doc.json">json</a> -
+    <a href="x11-doc.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-doc.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/x11-doc.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: x11-doc
 short_name: X11 Documentation License
 name: X11 Documentation License
 category: Permissive
@@ -36,14 +49,15 @@ other_urls:
   - https://books.google.com/books?id=DgzG_28omiYC&amp;pg=PA393&amp;lpg=PA393&amp;dq=%22This+documentation+is+provided+%60%60as+is%27%27+without+express+or+implied+warranty.%22&amp;source=bl&amp;ots=dH16WA9q7t&amp;sig=hS0ElVWtLI_JJ_D3WbCmnH56XdA&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwiZytPX2YrQAhXmr1QKHVOkA0YQ6AEIKzAD#v=onepage&amp;q=%22This%20documentation%20is%20provided%20%60%60as%20is%27%27%20without%20express%20or%20implied%20warranty.%22&amp;f=false
 minimum_coverage: 80
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Permission to use, copy, modify, distribute, and sell this
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Permission to use, copy, modify, distribute, and sell this
 documentation for any purpose is hereby granted without fee,
 provided that the above copyright notice and this permission
 notice appear in all copies.  The author makes no 
 representations about the suitability for any purpose
 of the information in this document.  This documentation is
 provided ``as is&#39;&#39; without express or implied warranty.</pre>
+  </div>
 
     
   <script>
@@ -60,5 +74,12 @@ provided ``as is&#39;&#39; without express or implied warranty.</pre>
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

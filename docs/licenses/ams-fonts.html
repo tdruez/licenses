@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ams-fonts</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="ams-fonts.yml">yml</a> -
-  <a href="ams-fonts.json">json</a> -
-  <a href="ams-fonts.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ams-fonts.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ams-fonts.yml">edit data</a>
-  <hr>
-  <pre>key: ams-fonts
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="ams-fonts.yml">yml</a> -
+    <a href="ams-fonts.json">json</a> -
+    <a href="ams-fonts.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ams-fonts.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ams-fonts.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: ams-fonts
 short_name: AMSFonts license
 name: AMSFonts license
 category: Permissive
@@ -32,8 +45,8 @@ homepage_url: http://www.ams.org/publications/type1-fonts
 other_urls:
   - https://fedoraproject.org/wiki/Licensing:AMS
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">The PostScript Type 1 implementation of the Computer Modern and AMSFonts produced by and previously distributed by Blue Sky Research and Y&amp;Y, Inc., are now 
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">The PostScript Type 1 implementation of the Computer Modern and AMSFonts produced by and previously distributed by Blue Sky Research and Y&amp;Y, Inc., are now 
 freely available for general use. This has been accomplished through the cooperation of a consortium of scientific publishers with Blue Sky Research and Y&amp;Y. 
 Members of this consortium include:
 
@@ -49,6 +62,7 @@ other public domain or commercial font collections or computer applications, use
 the AMS does require that the AMS copyright notice be removed from any derivative versions of the fonts which have been altered in any way. In addition, 
 to ensure the fidelity of TeX documents using Computer Modern fonts, Professor Donald Knuth, creator of the Computer Modern faces, has requested that any 
 alterations which yield different font metrics be given a different name. </pre>
+  </div>
 
     
   <script>
@@ -65,5 +79,12 @@ alterations which yield different font metrics be given a different name. </pre>
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

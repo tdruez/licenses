@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>cdla-permissive-1.0</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="cdla-permissive-1.0.yml">yml</a> -
-  <a href="cdla-permissive-1.0.json">json</a> -
-  <a href="cdla-permissive-1.0.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cdla-permissive-1.0.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cdla-permissive-1.0.yml">edit data</a>
-  <hr>
-  <pre>key: cdla-permissive-1.0
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="cdla-permissive-1.0.yml">yml</a> -
+    <a href="cdla-permissive-1.0.json">json</a> -
+    <a href="cdla-permissive-1.0.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cdla-permissive-1.0.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cdla-permissive-1.0.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: cdla-permissive-1.0
 short_name: CDLA Permissive 1.0
 name: Community Data License Agreement Permissive 1.0
 category: Permissive
@@ -33,8 +46,8 @@ spdx_license_key: CDLA-Permissive-1.0
 other_urls:
   - https://cdla.io/permissive-1-0
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Community Data License Agreement – Permissive – Version 1.0
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Community Data License Agreement – Permissive – Version 1.0
 
 This is the Community Data License Agreement – Permissive, Version 1.0 (&#34;Agreement&#34;).  Data is provided to You under this Agreement by each of the Data Providers.  Your exercise of any of the rights and permissions granted below constitutes Your acceptance and agreement to be bound by the terms and conditions of this Agreement.
 
@@ -119,6 +132,7 @@ Section 7.  Miscellaneous
 7.4 The Data Provider(s) reserve no right or expectation of privacy, data protection or confidentiality in any Data that they Publish under this Agreement.  If You choose to Publish Data under this Agreement, You similarly do so with no reservation or expectation of any rights of privacy or confidentiality in that Data.
 
 7.5 The Community Data License Agreement workgroup under The Linux Foundation is the steward of this Agreement (&#34;Steward&#34;).  No one other than the Steward has the right to modify or publish new versions of this Agreement.  Each version will be given a distinguishing version number.  You may Use and Publish Data Received hereunder under the terms of the version of the Agreement under which You originally Received the Data, or under the terms of any subsequent version published by the Steward.</pre>
+  </div>
 
     
   <script>
@@ -135,5 +149,12 @@ Section 7.  Miscellaneous
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

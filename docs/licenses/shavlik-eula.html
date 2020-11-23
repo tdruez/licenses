@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>shavlik-eula</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="shavlik-eula.yml">yml</a> -
-  <a href="shavlik-eula.json">json</a> -
-  <a href="shavlik-eula.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/shavlik-eula.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/shavlik-eula.yml">edit data</a>
-  <hr>
-  <pre>key: shavlik-eula
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="shavlik-eula.yml">yml</a> -
+    <a href="shavlik-eula.json">json</a> -
+    <a href="shavlik-eula.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/shavlik-eula.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/shavlik-eula.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: shavlik-eula
 short_name: Shavlik Technologies EULA
 name: Shavlik Technologies EULA
 category: Commercial
@@ -32,8 +45,8 @@ homepage_url: http://www.shavlik.com/
 ignorable_emails:
   - info@shavlik.com
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Shavlik Technologies, LLC
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Shavlik Technologies, LLC
 END USER LICENSE AGREEMENT
 CAREFULLY READ THE FOLLOWING TERMS AND CONDITIONS BEFORE LOADING THE SOFTWARE. THIS 
 AGREEMENT GOVERNS THE USE OF THE PRODUCT (AS DEFINED BELOW). BY CLICKING &#34;I ACCEPT&#34; 
@@ -134,6 +147,7 @@ Should you have any questions concerning the Product or this License, contact Sh
 LLC, 2665 Long Lake Road, Suite 400, Roseville, Minnesota 55113 Telephone: +1 (800) 690 6911 or +1 (651) 
 426-6624; fax: (651) 426-3345; e-mail: info@shavlik.com
 SHAVLIK EULA #H4Q2 VERSION 2.3</pre>
+  </div>
 
     
   <script>
@@ -150,5 +164,12 @@ SHAVLIK EULA #H4Q2 VERSION 2.3</pre>
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

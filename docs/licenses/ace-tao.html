@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ace-tao</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="ace-tao.yml">yml</a> -
-  <a href="ace-tao.json">json</a> -
-  <a href="ace-tao.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ace-tao.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ace-tao.yml">edit data</a>
-  <hr>
-  <pre>key: ace-tao
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="ace-tao.yml">yml</a> -
+    <a href="ace-tao.json">json</a> -
+    <a href="ace-tao.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ace-tao.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ace-tao.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: ace-tao
 short_name: ACE TAO License
 name: ACE TAO License
 category: Permissive
@@ -42,8 +55,8 @@ ignorable_holders:
   - Douglas C. Schmidt and his research group at Washington University, University of California,
     Irvine, and Vanderbilt University
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Copyright and Licensing Information for ACE(TM), TAO(TM), CIAO(TM), and CoSMIC(TM)
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Copyright and Licensing Information for ACE(TM), TAO(TM), CIAO(TM), and CoSMIC(TM)
 
 ACE(TM),TAO(TM),CIAO(TM),andCoSMIC(TM) (henceforth referred to as &#34;DOC software&#34;) are copyrighted by Douglas C. Schmidt and his research group at Washington University, University of California, Irvine, and Vanderbilt University, Copyright (c) 1993-2009, all rights reserved. Since DOC software is open-source, freely available software, you are free to use, modify, copy, and distribute--perpetually and irrevocably--the DOC software source code and object code produced from the source, as well as copy and distribute modified versions of this software. You must, however, include this copyright statement along with any code built using DOC software that you release. No copyright statement needs to be provided if you just ship binary executables of your software products.
 
@@ -58,6 +71,7 @@ The names ACE(TM), TAO(TM), CIAO(TM), CoSMIC(TM), Washington University, UC Irvi
 If you have any suggestions, additions, comments, or questions, please let me know. Douglas C. Schmidt
 
 Back to the ACE home page.</pre>
+  </div>
 
     
   <script>
@@ -74,5 +88,12 @@ Back to the ACE home page.</pre>
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

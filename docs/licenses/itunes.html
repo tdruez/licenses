@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>itunes</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="itunes.yml">yml</a> -
-  <a href="itunes.json">json</a> -
-  <a href="itunes.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/itunes.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/itunes.yml">edit data</a>
-  <hr>
-  <pre>key: itunes
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="itunes.yml">yml</a> -
+    <a href="itunes.json">json</a> -
+    <a href="itunes.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/itunes.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/itunes.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: itunes
 short_name: Apple iTunes License
 name: Apple iTunes License
 category: Proprietary Free
@@ -34,8 +47,8 @@ text_urls:
 ignorable_emails:
   - sales@kerbango.com
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">ENGLISH
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">ENGLISH
 
 APPLE INC.
 SOFTWARE LICENSE AGREEMENT FOR iTUNES
@@ -123,6 +136,7 @@ Without limiting the foregoing, under no circumstances shall 3Com be held liable
 Miscellaneous Provisions. These TOS will be governed by and construed in accordance with the laws of the State of California, without giving effect to its conflict of laws provisions or your actual state or country of residence. If for any reason a court of competent jurisdiction finds any provision or portion of the TOS to be unenforceable, the remainder of the TOS will continue in full force and effect.
 
 These TOS constitute the entire agreement between the parties with respect to the subject matter hereof and supersedes and replaces all prior or contemporaneous understandings or agreements, written or oral, regarding such subject matter. Any waiver of any provision of the TOS will be effective only if in writing and signed by 3Com.</pre>
+  </div>
 
     
   <script>
@@ -139,5 +153,12 @@ These TOS constitute the entire agreement between the parties with respect to th
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

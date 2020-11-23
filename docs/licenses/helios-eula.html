@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>helios-eula</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="helios-eula.yml">yml</a> -
-  <a href="helios-eula.json">json</a> -
-  <a href="helios-eula.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/helios-eula.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/helios-eula.yml">edit data</a>
-  <hr>
-  <pre>key: helios-eula
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="helios-eula.yml">yml</a> -
+    <a href="helios-eula.json">json</a> -
+    <a href="helios-eula.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/helios-eula.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/helios-eula.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: helios-eula
 short_name: Helios
 name: Helios EULA
 category: Commercial
@@ -32,8 +45,8 @@ homepage_url: http://www.textpad.com/copyright.html
 ignorable_urls:
   - http://www.textpad.com/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">END USER LICENSE AGREEMENT FOR HELIOS SOFTWARE SOLUTIONS SOFTWARE.
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">END USER LICENSE AGREEMENT FOR HELIOS SOFTWARE SOLUTIONS SOFTWARE.
 
 IMPORTANT - READ CAREFULLY: This Helios Software Solutions End-User License Agreement (&#34;EULA&#34;) is a legal agreement between you (either an individual person or a single legal entity, who will be referred to in this EULA as &#34;You&#34;) and Helios Software Solutions (&#34;Helios&#34;) for the Helios software product that accompanies this EULA, including any associated media, printed materials and electronic documentation (the &#34;Software Product&#34;).  The Software Product also includes any software updates, add-on components, web services and/or supplements that Helios may provide to You or make available to You after the date You obtain Your initial copy of the Software Product to the extent that such items are not accompanied by a separate license agreement or terms of use.  By installing, copying, downloading, accessing or otherwise using the Software Product, You agree to be bound by the terms of this EULA. If You do not agree to the terms of this EULA, do not install, access or use the Software Product; instead, You should return it, with proof of purchase, to Your place of purchase for a full refund.
 
@@ -94,6 +107,7 @@ YOUR EXCLUSIVE REMEDY.  Helios&#39; and its suppliers&#39; entire liability and 
 12.   LIMITATION OF LIABILITY AND REMEDIES.  NOTWITHSTANDING ANY DAMAGES THAT YOU MIGHT INCUR FOR ANY REASON WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ALL DAMAGES REFERENCED ABOVE AND ALL DIRECT OR GENERAL DAMAGES), THE ENTIRE LIABILITY OF HELIOS AND ANY OF ITS SUPPLIERS UNDER ANY PROVISION OF THIS EULA AND YOUR EXCLUSIVE REMEDY FOR ALL OF THE FOREGOING (EXCEPT FOR ANY REMEDY OF REPAIR OR REPLACEMENT ELECTED BY HELIOS WITH RESPECT TO ANY BREACH OF THE LIMITED WARRANTY) SHAL BE LIMITED TO THE GREATER OF THE AMOUNT ACTUALLY PAID BY YOU FOR THE SOFTWARE OR U.S. $5.00.  THE FOREGOING LIMITATIONS, EXCLUSIONS AND DISCLAIMERS (INCLUDING SECTIONS 7, 8, AND 9 ABOVE) SHALL APPLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, EVEN IF ANY REMEDY FAILS ITS ESSENTIAL PURPOSE.
 
 13.   ENTIRE AGREEMENT.  This EULA (including any addendum or amendment to this EULA which is included with the Software Product) is the entire agreement between you and Helios relating to the Software Product and the support services (if any) and they supersede all prior or contemporaneous oral or written communications, proposals and representations with respect to the Software Product or any other subject matter covered by this EULA.  To the extent the terms of any Helios policies or programs for support services conflict with the terms of this EULA, the terms of this EULA shall control.</pre>
+  </div>
 
     
   <script>
@@ -110,5 +124,12 @@ YOUR EXCLUSIVE REMEDY.  Helios&#39; and its suppliers&#39; entire liability and 
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

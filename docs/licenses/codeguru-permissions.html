@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>codeguru-permissions</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="codeguru-permissions.yml">yml</a> -
-  <a href="codeguru-permissions.json">json</a> -
-  <a href="codeguru-permissions.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/codeguru-permissions.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/codeguru-permissions.yml">edit data</a>
-  <hr>
-  <pre>key: codeguru-permissions
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="codeguru-permissions.yml">yml</a> -
+    <a href="codeguru-permissions.json">json</a> -
+    <a href="codeguru-permissions.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/codeguru-permissions.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/codeguru-permissions.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: codeguru-permissions
 short_name: CodeGuru Permissions
 name: CodeGuru Permissions
 category: Permissive
@@ -32,8 +45,8 @@ homepage_url: http://www.codeguru.com/submission-guidelines.php#permission
 text_urls:
   - http://www.codeguru.com/submission-guidelines.php#permission
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Permissions
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Permissions
 
 As you know, this site is a valuable resource for the developer community.
 Please note, however, that to avoid legal complications, we need to obtain your
@@ -58,6 +71,7 @@ COPYRIGHT OWNER&#39;S PERMISSION.
 
 For CodeGuru&#39;s standard Legal Notices, Licensing, Reprints &amp; Permissions, and
 Privacy Policy, see the links at the bottom of any CodeGuru page.</pre>
+  </div>
 
     
   <script>
@@ -74,5 +88,12 @@ Privacy Policy, see the links at the bottom of any CodeGuru page.</pre>
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

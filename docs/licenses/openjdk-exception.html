@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>openjdk-exception</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="openjdk-exception.yml">yml</a> -
-  <a href="openjdk-exception.json">json</a> -
-  <a href="openjdk-exception.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openjdk-exception.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openjdk-exception.yml">edit data</a>
-  <hr>
-  <pre>key: openjdk-exception
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="openjdk-exception.yml">yml</a> -
+    <a href="openjdk-exception.json">json</a> -
+    <a href="openjdk-exception.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openjdk-exception.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openjdk-exception.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: openjdk-exception
 short_name: OpenJDK Exception
 name: OpenJDK Classpath and Assembly Exception
 category: Copyleft Limited
@@ -41,8 +54,8 @@ ignorable_urls:
   - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
   - http://www.gnu.org/copyleft/gpl.html
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">&#34;CLASSPATH&#34; EXCEPTION TO THE GPL
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">&#34;CLASSPATH&#34; EXCEPTION TO THE GPL
 
 Certain source files distributed by Oracle America and/or its affiliates are
 subject to the following clarification and special exception to the GPL, but
@@ -121,6 +134,7 @@ openjdk.java.net, openjdk.dev.java.net, or download.java.net under an
 open source license other than GPL, and your derivatives thereof that
 are in compliance with the applicable open source license.
 </pre>
+  </div>
 
     
   <script>
@@ -137,5 +151,12 @@ are in compliance with the applicable open source license.
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

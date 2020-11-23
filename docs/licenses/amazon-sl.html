@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>amazon-sl</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="amazon-sl.yml">yml</a> -
-  <a href="amazon-sl.json">json</a> -
-  <a href="amazon-sl.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/amazon-sl.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/amazon-sl.yml">edit data</a>
-  <hr>
-  <pre>key: amazon-sl
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="amazon-sl.yml">yml</a> -
+    <a href="amazon-sl.json">json</a> -
+    <a href="amazon-sl.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/amazon-sl.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/amazon-sl.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: amazon-sl
 short_name: Amazon Software License
 name: Amazon Software License
 category: Proprietary Free
@@ -37,8 +50,8 @@ ignorable_copyrights:
 ignorable_holders:
   - Amazon.com, Inc. or its affiliates
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Amazon Software License
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Amazon Software License
 
 This Amazon Software License (&#34;License&#34;) governs your use, reproduction, and distribution of the accompanying software as specified below.
 
@@ -83,6 +96,7 @@ THE WORK IS PROVIDED &#34;AS IS&#34; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIN
 EXCEPT AS PROHIBITED BY APPLICABLE LAW, IN NO EVENT AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE SHALL ANY LICENSOR BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATED TO THIS LICENSE, THE USE OR INABILITY TO USE THE WORK (INCLUDING BUT NOT LIMITED TO LOSS OF GOODWILL, BUSINESS INTERRUPTION, LOST PROFITS OR DATA, COMPUTER FAILURE OR MALFUNCTION, OR ANY OTHER COMM ERCIAL DAMAGES OR LOSSES), EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 Effective Date – April 18, 2008 © 2008 Amazon.com, Inc. or its affiliates. All rights reserved.</pre>
+  </div>
 
     
   <script>
@@ -99,5 +113,12 @@ Effective Date – April 18, 2008 © 2008 Amazon.com, Inc. or its affiliates. Al
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

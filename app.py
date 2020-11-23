@@ -26,6 +26,7 @@ import pathlib
 import saneyaml
 from jinja2 import Environment, PackageLoader
 from licensedcode.models import load_licenses
+from scancode_config import __version__ as scancode_version
 
 licenses = load_licenses(with_deprecated=True)
 
@@ -33,7 +34,7 @@ licenses = load_licenses(with_deprecated=True)
 BUILD_LOCATION = "docs"
 
 env = Environment(
-    loader=PackageLoader("licenses", "templates"),
+    loader=PackageLoader("app", "templates"),
     autoescape=True,
 )
 
@@ -44,7 +45,9 @@ def write_file(path, filename, content):
 
 def generate_indexes(output_path):
     license_list_template = env.get_template("license_list.html")
-    index_html = license_list_template.render(title="License list", licenses=licenses)
+    index_html = license_list_template.render(
+        title="License list", licenses=licenses, scancode_version=scancode_version
+    )
     (output_path / "index.html").open("w").write(index_html)
 
     index = [
@@ -66,7 +69,9 @@ def generate_details(output_path):
     for license in licenses.values():
         license_data = license.to_dict()
         yml = saneyaml.dump(license_data)
-        html = license_details_template.render(license=license, license_data=yml)
+        html = license_details_template.render(
+            license=license, license_data=yml, scancode_version=scancode_version
+        )
         write_file(output_path, f"{license.key}.html", html)
         write_file(output_path, f"{license.key}.yml", yml)
         write_file(output_path, f"{license.key}.json", json.dumps(license_data))

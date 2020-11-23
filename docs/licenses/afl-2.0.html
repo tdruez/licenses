@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>afl-2.0</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="afl-2.0.yml">yml</a> -
-  <a href="afl-2.0.json">json</a> -
-  <a href="afl-2.0.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/afl-2.0.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/afl-2.0.yml">edit data</a>
-  <hr>
-  <pre>key: afl-2.0
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="afl-2.0.yml">yml</a> -
+    <a href="afl-2.0.json">json</a> -
+    <a href="afl-2.0.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/afl-2.0.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/afl-2.0.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: afl-2.0
 short_name: AFL 2.0
 name: Academic Free License 2.0
 category: Permissive
@@ -38,8 +51,8 @@ other_urls:
   - http://wayback.archive.org/web/20060924134533/http://www.opensource.org/licenses/afl-2.0.txt
   - http://www.gnu.org/licenses/license-list.html#AcademicFreeLicense
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Academic Free License
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Academic Free License
 v. 2.0
 
 This Academic Free License (the &#34;License&#34;) applies to any original work of authorship (the &#34;Original Work&#34;) whose owner (the &#34;Licensor&#34;) has placed the following notice immediately following the copyright notice for the Original Work:
@@ -84,6 +97,7 @@ This Academic Free License (the &#34;License&#34;) applies to any original work 
 14) Definition of &#34;You&#34; in This License. &#34;You&#34; throughout this License, whether in upper or lower case, means an individual or a legal entity exercising rights under, and complying with all of the terms of, this License. For legal entities, &#34;You&#34; includes any entity that controls, is controlled by, or is under common control with you. For purposes of this definition, &#34;control&#34; means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.
 
 15) Right to Use. You may use the Original Work in all ways not otherwise restricted or conditioned by this License or by law, and Licensor promises not to interfere with or be responsible for such uses by You.</pre>
+  </div>
 
     
   <script>
@@ -100,5 +114,12 @@ This Academic Free License (the &#34;License&#34;) applies to any original work 
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

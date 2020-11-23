@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>oset-pl-2.1</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="oset-pl-2.1.yml">yml</a> -
-  <a href="oset-pl-2.1.json">json</a> -
-  <a href="oset-pl-2.1.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/oset-pl-2.1.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/oset-pl-2.1.yml">edit data</a>
-  <hr>
-  <pre>key: oset-pl-2.1
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="oset-pl-2.1.yml">yml</a> -
+    <a href="oset-pl-2.1.json">json</a> -
+    <a href="oset-pl-2.1.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/oset-pl-2.1.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/oset-pl-2.1.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: oset-pl-2.1
 short_name: OSET-PL-2.1
 name: OSET Public License version 2.1
 category: Copyleft Limited
@@ -42,8 +55,8 @@ ignorable_copyrights:
 ignorable_urls:
   - http://www.osetfoundation.org/public-license
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">OSET Public License
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">OSET Public License
 (c) 2015 ALL RIGHTS RESERVED VERSION 2.1
 
 THIS LICENSE DEFINES THE RIGHTS OF USE, REPRODUCTION, DISTRIBUTION, MODIFICATION, AND REDISTRIBUTION OF CERTAIN COVERED SOFTWARE (AS DEFINED BELOW) ORIGINALLY RELEASED BY THE OPEN SOURCE ELECTION TECHNOLOGY FOUNDATION (FORMERLY &#34;THE OSDV FOUNDATION&#34;). ANYONE WHO USES, REPRODUCES, DISTRIBUTES, MODIFIES, OR REDISTRIBUTES THE COVERED SOFTWARE, OR ANY PART THEREOF, IS BY THAT ACTION, ACCEPTING IN FULL THE TERMS CONTAINED IN THIS AGREEMENT. IF YOU DO NOT AGREE TO SUCH TERMS, YOU ARE NOT PERMITTED TO USE THE COVERED SOFTWARE.
@@ -156,6 +169,7 @@ If it is not possible or desirable to put the Notice in a particular file, then 
 EXHIBIT B - &#34;Incompatible With Secondary License&#34; Notice
 
 This Source Code Form is &#34;Incompatible With Secondary Licenses&#34;, as defined by the OSET Public License, v.2.1.</pre>
+  </div>
 
     
   <script>
@@ -172,5 +186,12 @@ This Source Code Form is &#34;Incompatible With Secondary Licenses&#34;, as defi
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

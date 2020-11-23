@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ws-policy-specification</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="ws-policy-specification.yml">yml</a> -
-  <a href="ws-policy-specification.json">json</a> -
-  <a href="ws-policy-specification.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ws-policy-specification.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ws-policy-specification.yml">edit data</a>
-  <hr>
-  <pre>key: ws-policy-specification
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="ws-policy-specification.yml">yml</a> -
+    <a href="ws-policy-specification.json">json</a> -
+    <a href="ws-policy-specification.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ws-policy-specification.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ws-policy-specification.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: ws-policy-specification
 short_name: WS-Policy Specification
 name: WS-Policy Specification
 category: Permissive
@@ -32,8 +45,8 @@ homepage_url: https://en.wikipedia.org/wiki/WS-Policy
 other_urls:
   - https://www.w3.org/TR/ws-policy-attach/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">WS-Policy Specification
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">WS-Policy Specification
 
 Permission to copy and display the WS-Policy Specification (the &#34;Specification&#34;, which includes WSDL and schema documents), in any medium without fee or royalty is hereby granted, provided that you include the following on ALL copies of the WS-Policy Specification, that you make:
 
@@ -49,6 +62,7 @@ THE AUTHORS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR 
 The name and trademarks of the Authors may NOT be used in any manner, including advertising or publicity pertaining to the WS-Policy Specification or its contents without specific, written prior permission. Title to copyright in the WS-Policy Specification will at all times remain with the Authors.
 
 No other rights are granted by implication, estoppel or otherwise.</pre>
+  </div>
 
     
   <script>
@@ -65,5 +79,12 @@ No other rights are granted by implication, estoppel or otherwise.</pre>
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>odl</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="odl.yml">yml</a> -
-  <a href="odl.json">json</a> -
-  <a href="odl.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/odl.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/odl.yml">edit data</a>
-  <hr>
-  <pre>key: odl
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="odl.yml">yml</a> -
+    <a href="odl.json">json</a> -
+    <a href="odl.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/odl.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/odl.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: odl
 short_name: Open Directory License
 name: Open Directory License
 category: Permissive
@@ -37,8 +50,8 @@ ignorable_urls:
   - http://dmoz.org/
   - http://dmoz.org/become_an_editor
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Open Directory License
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Open Directory License
 
 The Open Directory is a compilation of many different editors&#39; contributions.  Netscape Communications Corporation (`Netscape&#39;) owns the copyright to the compilation of the different contributions, and makes the Open Directory available to you to use under the following license agreement terms and conditions (`Open Directory License&#39;).  For purposes of this Open Directory License, `Open Directory&#39; means only the Open Directory Project currently hosted at http://dmoz.org (or at another site as may be designated by Netscape in the future), and does not include any other versions of directories, even if referred to as an `Open Directory,&#39; that may be hosted by Netscape on other web pages (e.g., Netscape Netcenter).
 
@@ -62,6 +75,7 @@ Netscape grants you the non-exclusive, royalty-free license to use the above ide
 6. Limitation of Liability. IN NO EVENT SHALL NETSCAPE, ITS SUBSIDIARIES OR AFFILIATES, OR THE OPEN DIRECTORY CONTRIBUTING EDITORS, BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES, INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF ADVISED OF THE POSSIBILITY THEREOF, AND REGARDLESS OF WHETHER ANY CLAIM IS BASED UPON ANY CONTRACT, TORT OR OTHER LEGAL OR EQUITABLE THEORY, RELATING OR ARISING FROM THE OPEN DIRECTORY, YOUR OPEN DIRECTORY USE OR THIS OPEN DIRECTORY LICENSE AGREEMENT.
 
 7. California Law. This Open Directory License will be governed by the laws of the State of California, excluding its conflict of laws provisions.</pre>
+  </div>
 
     
   <script>
@@ -78,5 +92,12 @@ Netscape grants you the non-exclusive, royalty-free license to use the above ide
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

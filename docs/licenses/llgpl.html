@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>llgpl</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="llgpl.yml">yml</a> -
-  <a href="llgpl.json">json</a> -
-  <a href="llgpl.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/llgpl.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/llgpl.yml">edit data</a>
-  <hr>
-  <pre>key: llgpl
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="llgpl.yml">yml</a> -
+    <a href="llgpl.json">json</a> -
+    <a href="llgpl.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/llgpl.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/llgpl.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: llgpl
 short_name: LLGPL
 name: Lisp Lesser General Public License (LLPGL)
 category: Copyleft Limited
@@ -34,8 +47,8 @@ other_urls:
   - http://www.gnu.org/licenses/lgpl-2.1.txt
   - https://github.com/franzinc
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">The concept of the GNU Lesser General Public License version 2.1
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">The concept of the GNU Lesser General Public License version 2.1
 (&#34;LGPL&#34;) has been adopted to govern the use and distribution of above-
 mentioned application. However, the LGPL uses terminology that is more
 appropriate for a program written in C than one written in Lisp.
@@ -90,6 +103,7 @@ Library. However, in connection with each distribution of this
 executable, you must also deliver, in accordance with the terms and
 conditions of the LGPL, the source code of Library (or your derivative
 thereof) that is incorporated into this executable.</pre>
+  </div>
 
     
   <script>
@@ -106,5 +120,12 @@ thereof) that is incorporated into this executable.</pre>
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

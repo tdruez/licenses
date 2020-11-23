@@ -5,16 +5,19 @@
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 {% endblock %}
 {% block content %}
-  <a href="../index.html">back to list</a> -
-  <a href="{{ license.key }}.yml">yml</a> -
-  <a href="{{ license.key }}.json">json</a> -
-  <a href="{{ license.key }}.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/{{ license.key }}.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/{{ license.key }}.yml">edit data</a>
-  <hr>
-  <pre>{{ license_data }}</pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">{{ license.text }}</pre>
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="{{ license.key }}.yml">yml</a> -
+    <a href="{{ license.key }}.json">json</a> -
+    <a href="{{ license.key }}.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/{{ license.key }}.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/{{ license.key }}.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>{{ license_data }}</pre>
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">{{ license.text }}</pre>
+  </div>
 {% endblock %}
 
 {% block scripts %}

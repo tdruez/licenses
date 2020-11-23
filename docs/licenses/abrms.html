@@ -4,34 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>abrms</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="abrms.yml">yml</a> -
-  <a href="abrms.json">json</a> -
-  <a href="abrms.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/abrms.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/abrms.yml">edit data</a>
-  <hr>
-  <pre>key: abrms
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="abrms.yml">yml</a> -
+    <a href="abrms.json">json</a> -
+    <a href="abrms.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/abrms.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/abrms.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: abrms
 short_name: ABRMS
 name: Anyone But Richard Stallman License
 category: Proprietary Free
 owner: Unspecified
 notes: From https://github.com/ErikMcClure/bad-licenses
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">The &#34;Anyone But Richard M Stallman&#34; license
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">The &#34;Anyone But Richard M Stallman&#34; license
 Do anything you want with this program, with the exceptions listed below under &#34;EXCEPTIONS&#34;.
 
 THIS SOFTWARE IS PROVIDED &#34;AS IS&#34; WITH NO WARRANTY OF ANY KIND.
@@ -41,6 +54,7 @@ In the unlikely event that you happen to make a zillion bucks off of this, then 
 EXCEPTIONS
 Richard M Stallman (the guy behind GNU, etc.) may not make use of or redistribute this program or any of its derivatives.
 </pre>
+  </div>
 
     
   <script>
@@ -57,5 +71,12 @@ Richard M Stallman (the guy behind GNU, etc.) may not make use of or redistribut
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

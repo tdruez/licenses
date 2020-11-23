@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ipa-font</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="ipa-font.yml">yml</a> -
-  <a href="ipa-font.json">json</a> -
-  <a href="ipa-font.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ipa-font.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ipa-font.yml">edit data</a>
-  <hr>
-  <pre>key: ipa-font
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="ipa-font.yml">yml</a> -
+    <a href="ipa-font.json">json</a> -
+    <a href="ipa-font.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ipa-font.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ipa-font.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: ipa-font
 short_name: IPA Font License 1.0
 name: IPA Font License Agreement v1.0
 category: Copyleft Limited
@@ -38,8 +51,8 @@ other_urls:
   - http://www.opensource.org/licenses/IPA
   - https://opensource.org/licenses/IPA
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">IPA Font License Agreement v1.0 
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">IPA Font License Agreement v1.0 
  
 The Licensor provides the Licensed Program (as defined in Article 1 below) under the terms of this license agreement (&#34;Agreement&#34;).  Any use, reproduction or distribution of the Licensed Program, or any exercise of rights under this Agreement by a Recipient (as defined in Article 1 below) constitutes the Recipient&#39;s acceptance of this Agreement.
 
@@ -123,6 +136,7 @@ Article 5 (Governing Law)
 1.         IPA may publish revised and/or new versions of this License.  In such an event, the Recipient may select either this Agreement or any subsequent version of the Agreement in using, conducting the Reproduction and Other Exploitation of, or Redistributing the Licensed Program or a Derived Program. Other matters not specified above shall be subject to the Copyright Law of Japan and other related laws and regulations of Japan.
 
 2.         This Agreement shall be construed under the laws of Japan.</pre>
+  </div>
 
     
   <script>
@@ -139,5 +153,12 @@ Article 5 (Governing Law)
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

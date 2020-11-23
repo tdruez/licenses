@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>helix</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="helix.yml">yml</a> -
-  <a href="helix.json">json</a> -
-  <a href="helix.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/helix.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/helix.yml">edit data</a>
-  <hr>
-  <pre>key: helix
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="helix.yml">yml</a> -
+    <a href="helix.json">json</a> -
+    <a href="helix.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/helix.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/helix.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: helix
 short_name: Helix DNA License
 name: Helix DNA Technology Binary Research Use License
 category: Proprietary Free
@@ -38,8 +51,8 @@ ignorable_holders:
 ignorable_urls:
   - http://www.helixcommunity.org/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Helix DNA Technology Binary Research Use License
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Helix DNA Technology Binary Research Use License
 
 REDISTRIBUTION NOT PERMITTED
 
@@ -78,6 +91,7 @@ d) Certain components of the Software may embody a serial copying management sys
 10. MISCELLANEOUS. This License Agreement shall constitute the complete and exclusive agreement between us. A separate written agreement with respect to the subject matter hereof shall supersede this instrument to the extent indicated in such separate agreement. This License Agreement may not be modified except in a writing duly signed by an authorized representative of RealNetworks and You. If any provision of this License Agreement is held to be unenforceable for any reason, such provision shall be reformed only to the extent necessary to make it enforceable, and such decision shall not affect the enforceability of such provision under other circumstances, or of the remaining provisions hereof under all circumstances. This License Agreement shall be governed by the laws of the State of Washington without regard to conflicts of law provisions and You consent to the exclusive jurisdiction of the state and federal courts sitting in the State of Washington. This License Agreement will not be governed by the United Nations Convention of Contracts for the International Sale of Goods, the application of which is hereby expressly excluded.
 
 Copyright ©1995-2002 RealNetworks, Inc. and/or its suppliers. 2601 Elliott Avenue, Suite 1000, Seattle, Washington 98121 U.S.A. The Software may incorporate one or more of the following patents: U.S. Patent #5,917,835; U.S. Patent # 5,854,858; U.S. Patent # 5,917,954. Other U.S. patents pending. All rights reserved. RealNetworks, Helix, RealAudio, and RealVideo are trademarks or registered trademarks of RealNetworks, Inc.</pre>
+  </div>
 
     
   <script>
@@ -94,5 +108,12 @@ Copyright ©1995-2002 RealNetworks, Inc. and/or its suppliers. 2601 Elliott Aven
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

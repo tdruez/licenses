@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>flex2sdk</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="flex2sdk.yml">yml</a> -
-  <a href="flex2sdk.json">json</a> -
-  <a href="flex2sdk.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/flex2sdk.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/flex2sdk.yml">edit data</a>
-  <hr>
-  <pre>key: flex2sdk
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="flex2sdk.yml">yml</a> -
+    <a href="flex2sdk.json">json</a> -
+    <a href="flex2sdk.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/flex2sdk.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/flex2sdk.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: flex2sdk
 short_name: Adobe Flex 2.0.1 SDK EULA
 name: Adobe Flex 2.0.1 SDK EULA
 category: Proprietary Free
@@ -36,8 +49,8 @@ ignorable_urls:
   - http://www.adobe.com/store
   - http://www.adobe.com/type/browser/legal/embeddingeula.html
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">ADOBE FLEX 2.0.1 SOFTWARE DEVELOPMENT KIT (Non Open Source Version)
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">ADOBE FLEX 2.0.1 SOFTWARE DEVELOPMENT KIT (Non Open Source Version)
 Software License Agreement
 
 NOTICE TO USER: THIS LICENSE AGREEMENT GOVERNS INSTALLATION AND USE OF THE ADOBE SOFTWARE DESCRIBED HEREIN BY LICENSEES OF SUCH SOFTWARE. LICENSEE AGREES THAT THIS AGREEMENT IS LIKE ANY WRITTEN NEGOTIATED AGREEMENT SIGNED BY LICENSEE. BY CLICKING TO ACKNOWLEDGE AGREEMENT TO BE BOUND DURING REVIEW OF AN ELECTRONIC VERSION OF THIS LICENSE, OR DOWNLOADING, COPYING, INSTALLING OR USING THE SOFTWARE, LICENSEE ACCEPTS ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT. THIS AGREEMENT IS ENFORCEABLE AGAINST ANY PERSON OR ENTITY THAT INSTALLS AND USES THE SOFTWARE AND ANY PERSON OR ENTITY (E.G., SYSTEM INTEGRATOR, CONSULTANT OR CONTRACTOR) THAT INSTALLS OR USES THE SOFTWARE ON ANOTHER PERSON’S OR ENTITY’S BEHALF.
@@ -207,6 +220,7 @@ Adobe grants Licensee a non-exclusive license to use the Adobe Flex Charting Sof
 If Licensee has any questions regarding this agreement or if Licensee wishes to request any information from Adobe please use the address and contact information included with this product to contact the Adobe office serving Licensee’s jurisdiction.
 
 Adobe is either a registered trademark or trademark of Adobe Systems Incorporated in the United States and/or other countries.</pre>
+  </div>
 
     
   <script>
@@ -223,5 +237,12 @@ Adobe is either a registered trademark or trademark of Adobe Systems Incorporate
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

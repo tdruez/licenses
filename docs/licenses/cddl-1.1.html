@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>cddl-1.1</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="cddl-1.1.yml">yml</a> -
-  <a href="cddl-1.1.json">json</a> -
-  <a href="cddl-1.1.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cddl-1.1.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cddl-1.1.yml">edit data</a>
-  <hr>
-  <pre>key: cddl-1.1
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="cddl-1.1.yml">yml</a> -
+    <a href="cddl-1.1.json">json</a> -
+    <a href="cddl-1.1.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cddl-1.1.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cddl-1.1.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: cddl-1.1
 short_name: CDDL 1.1
 name: Common Development and Distribution License 1.1
 category: Copyleft Limited
@@ -39,8 +52,8 @@ faq_url: http://glassfish.java.net/public/CDDL+GPL_1_1.html
 other_urls:
   - https://javaee.github.io/glassfish/LICENSE
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)Version 1.1
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)Version 1.1
 
 1. Definitions.
 
@@ -125,6 +138,7 @@ As between Initial Developer and the Contributors, each party is responsible for
 NOTICE PURSUANT TO SECTION 9 OF THE COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL)
 
 The code released under the CDDL shall be governed by the laws of the State of California (excluding conflict-of-law provisions). Any litigation relating to this License shall be subject to the jurisdiction of the Federal Courts of the Northern District of California and the state courts of the State of California, with venue lying in Santa Clara County, California.</pre>
+  </div>
 
     
   <script>
@@ -141,5 +155,12 @@ The code released under the CDDL shall be governed by the laws of the State of C
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

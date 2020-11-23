@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>asn1</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="asn1.yml">yml</a> -
-  <a href="asn1.json">json</a> -
-  <a href="asn1.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/asn1.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/asn1.yml">edit data</a>
-  <hr>
-  <pre>key: asn1
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="asn1.yml">yml</a> -
+    <a href="asn1.json">json</a> -
+    <a href="asn1.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/asn1.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/asn1.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: asn1
 short_name: ASN.1 Object Dumping Code License
 name: ASN.1 Object Dumping Code License
 category: Permissive
@@ -53,8 +66,8 @@ ignorable_emails:
   - pgut001@cs.auckland.ac.nz
   - ronald@trustpoint.com
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">ASN.1 Object Dumping Code License
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">ASN.1 Object Dumping Code License
 
 ASN.1 object dumping code, copyright Peter Gutmann &lt;pgut001@cs.auckland.ac.nz&gt;, based on ASN.1 dump program by David Kemp &lt;dpkemp@missi.ncsc.mil&gt;, with contributions from various people including Matthew Hamrick &lt;hamrick@rsa.com&gt;, Bruno Couillard &lt;bcouillard@chrysalis-its.com&gt;, Hallvard Furuseth &lt;h.b.furuseth@usit.uio.no&gt;, Geoff Thorpe &lt;geoff@raas.co.nz&gt;, David Boyce &lt;d.boyce@isode.com&gt;, John Hughes &lt;john.hughes@entegrity.com&gt;, Life is hard, and then you die &lt;ronald@trustpoint.com&gt;, Hans-Olof Hermansson &lt;hans-olof.hermansson@postnet.se&gt;, Tor Rustad &lt;Tor.Rustad@bbs.no&gt;, Kjetil Barvik &lt;kjetil.barvik@bbs.no&gt;, James Sweeny &lt;jsweeny@us.ibm.com&gt;, Chris Ridd &lt;chris.ridd@isode.com&gt;, and several other people whose names I&#39;ve misplaced (a number of those email addresses probably no longer work, since this code has been around for awhile).
 
@@ -69,6 +82,7 @@ This code assumes that the input data is binary, having come from a MIME-aware m
 You can use this code in whatever way you want, as long as you don&#39;t try to claim you wrote it.
 
 Editing notes: Tabs to 4, phasers to stun (and in case anyone wants to complain about that, see &#34;Program Indentation and Comprehensiblity&#34;, Richard Miara, Joyce Musselman, Juan Navarro, and Ben Shneiderman, Communications of the ACM, Vol.26, No.11 (November 1983), p.861)</pre>
+  </div>
 
     
   <script>
@@ -85,5 +99,12 @@ Editing notes: Tabs to 4, phasers to stun (and in case anyone wants to complain 
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

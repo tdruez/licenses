@@ -4,34 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>stlport-4.5</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="stlport-4.5.yml">yml</a> -
-  <a href="stlport-4.5.json">json</a> -
-  <a href="stlport-4.5.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/stlport-4.5.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/stlport-4.5.yml">edit data</a>
-  <hr>
-  <pre>key: stlport-4.5
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="stlport-4.5.yml">yml</a> -
+    <a href="stlport-4.5.json">json</a> -
+    <a href="stlport-4.5.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/stlport-4.5.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/stlport-4.5.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: stlport-4.5
 short_name: STLport License 4.5
 name: STLport License v4.5
 category: Permissive
 owner: STLport Consulting
 notes: stlport-4.5 and mozilla-gc are mostly the same
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">This material is provided &#34;as is&#34;, with absolutely no warranty expressed
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">This material is provided &#34;as is&#34;, with absolutely no warranty expressed
 or implied. Any use is at your own risk.
 
 Permission to use or copy this software for any purpose is hereby
@@ -41,6 +54,7 @@ copies.
 Permission to modify the code and to distribute modified code is
 granted, provided the above notices are retained, and a notice that
 the code was modified is included with the above copyright notice.</pre>
+  </div>
 
     
   <script>
@@ -57,5 +71,12 @@ the code was modified is included with the above copyright notice.</pre>
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

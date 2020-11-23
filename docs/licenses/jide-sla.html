@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jide-sla</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="jide-sla.yml">yml</a> -
-  <a href="jide-sla.json">json</a> -
-  <a href="jide-sla.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jide-sla.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jide-sla.yml">edit data</a>
-  <hr>
-  <pre>key: jide-sla
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="jide-sla.yml">yml</a> -
+    <a href="jide-sla.json">json</a> -
+    <a href="jide-sla.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jide-sla.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jide-sla.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: jide-sla
 short_name: JIDE SLA
 name: JIDE SLA
 category: Commercial
@@ -32,8 +45,8 @@ homepage_url: http://www.jidesoft.com/purchase/SLA.htm
 ignorable_urls:
   - http://www.jidesoft.com/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">SOFTWARE LICENSE AGREEMENT FOR JIDE SOFTWARE, INC.&#39;S PRODUCTS
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">SOFTWARE LICENSE AGREEMENT FOR JIDE SOFTWARE, INC.&#39;S PRODUCTS
  
 IMPORTANT - READ CAREFULLY: This JIDE Software, Inc. (&#34;JIDE&#34;) Software License Agreement (&#34;SLA&#34;) is a legal agreement between you (an individual developer or a company of software applications) and JIDE for the JIDE software product accompanying this SLA, which includes computer software and may include associated source code, media, printed materials, and &#34;on-line&#34; or electronic documentation (&#34;SOFTWARE PRODUCT&#34;). By installing, copying, or otherwise using the SOFTWARE PRODUCT, you agree to be bound by the terms of this SLA. If you do not agree to the terms of this SLA, do not install, use, distribute in any manner, or replicate in any manner, any part, file or portion of the SOFTWARE PRODUCT. 
  
@@ -86,6 +99,7 @@ Title:	                                                           Title:
 Date:	                                                    Date:
 
 </pre>
+  </div>
 
     
   <script>
@@ -102,5 +116,12 @@ Date:	                                                    Date:
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

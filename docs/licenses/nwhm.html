@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>nwhm</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="nwhm.yml">yml</a> -
-  <a href="nwhm.json">json</a> -
-  <a href="nwhm.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nwhm.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nwhm.yml">edit data</a>
-  <hr>
-  <pre>key: nwhm
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="nwhm.yml">yml</a> -
+    <a href="nwhm.json">json</a> -
+    <a href="nwhm.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nwhm.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/nwhm.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: nwhm
 short_name: Non White Heterosexual Male
 name: Non White Heterosexual Male
 category: Permissive
@@ -31,9 +44,10 @@ owner: Unspecified
 homepage_url: https://nonwhiteheterosexualmalelicense.org/
 notes: From https://github.com/ErikMcClure/bad-licenses
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">If you are not a white heterosexual male you are permitted to copy, sell and use this work in any manner you choose without need to include any attribution you do not see fit. You are asked as a courtesy to retain this license in any derivatives but you are not required. If you are a white heterosexual male you are provided the same permissions (reuse, modification, resale) but are required to include this license in any documentation and any public facing derivative. You are also required to include attribution to the original author or to an author responsible for redistribution of a derivative.
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">If you are not a white heterosexual male you are permitted to copy, sell and use this work in any manner you choose without need to include any attribution you do not see fit. You are asked as a courtesy to retain this license in any derivatives but you are not required. If you are a white heterosexual male you are provided the same permissions (reuse, modification, resale) but are required to include this license in any documentation and any public facing derivative. You are also required to include attribution to the original author or to an author responsible for redistribution of a derivative.
 </pre>
+  </div>
 
     
   <script>
@@ -50,5 +64,12 @@ notes: From https://github.com/ErikMcClure/bad-licenses
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>cups</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="cups.yml">yml</a> -
-  <a href="cups.json">json</a> -
-  <a href="cups.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cups.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cups.yml">edit data</a>
-  <hr>
-  <pre>key: cups
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="cups.yml">yml</a> -
+    <a href="cups.json">json</a> -
+    <a href="cups.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cups.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cups.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: cups
 short_name: CUPS License
 name: CUPS License
 category: Copyleft
@@ -43,8 +56,8 @@ ignorable_holders:
 ignorable_urls:
   - http://www.cups.org/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Software License Agreement
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Software License Agreement
 
 Copyright 2007-2009 by Apple Inc.
 1 Infinite Loop
@@ -98,6 +111,7 @@ This notice may not be removed or altered from any source distribution.
 Trademarks
 
 CUPS and the CUPS logo (the &#34;CUPS Marks&#34;) are trademarks of Apple Inc. Apple grants you a non-exclusive and non-transferable right to use the CUPS Marks in any direct port or binary distribution incorporating CUPS software and in any promotional material therefor. You agree that your products will meet the highest levels of quality and integrity for similar goods, not be unlawful, and be developed, manufactured, and distributed in compliance with this license. You will not interfere with Apple&#39;s rights in the CUPS Marks, and all use of the CUPS Marks shall inure to the benefit of Apple. This license does not apply to use of the CUPS Marks in a derivative products, which requires prior written permission from Apple Inc.</pre>
+  </div>
 
     
   <script>
@@ -114,5 +128,12 @@ CUPS and the CUPS logo (the &#34;CUPS Marks&#34;) are trademarks of Apple Inc. A
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

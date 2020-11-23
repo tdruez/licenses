@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>osl-3.0</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="osl-3.0.yml">yml</a> -
-  <a href="osl-3.0.json">json</a> -
-  <a href="osl-3.0.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/osl-3.0.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/osl-3.0.yml">edit data</a>
-  <hr>
-  <pre>key: osl-3.0
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="osl-3.0.yml">yml</a> -
+    <a href="osl-3.0.json">json</a> -
+    <a href="osl-3.0.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/osl-3.0.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/osl-3.0.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: osl-3.0
 short_name: OSL 3.0
 name: Open Software License 3.0
 category: Copyleft
@@ -46,8 +59,8 @@ ignorable_copyrights:
 ignorable_holders:
   - Lawrence Rosen
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Open Software License (&#34;OSL&#34;) v. 3.0
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Open Software License (&#34;OSL&#34;) v. 3.0
 
 This Open Software License (the &#34;License&#34;) applies to any original work of authorship (the &#34;Original Work&#34;) whose owner (the &#34;Licensor&#34;) has placed the following licensing notice adjacent to the copyright notice for the Original Work:
 
@@ -94,6 +107,7 @@ e) to display the Original Work publicly.
 15) Right to Use. You may use the Original Work in all ways not otherwise restricted or conditioned by this License or by law, and Licensor promises not to interfere with or be responsible for such uses by You.
 
 16) Modification of This License. This License is Copyright © 2005 Lawrence Rosen. Permission is granted to copy, distribute, or communicate this License without modification. Nothing in this License permits You to modify this License as applied to the Original Work or to Derivative Works. However, You may modify the text of this License and copy, distribute or communicate your modified version (the &#34;Modified License&#34;) and apply it to other original works of authorship subject to the following conditions: (i) You may not indicate in any way that your Modified License is the &#34;Open Software License&#34; or &#34;OSL&#34; and you may not use those names in the name of your Modified License; (ii) You must replace the notice specified in the first paragraph above with the notice &#34;Licensed under &lt;insert your license name here&gt;&#34; or with a notice of your own that is not confusingly similar to the notice in this License; and (iii) You may not claim that your original works are open source software unless your Modified License has been approved by Open Source Initiative (OSI) and You comply with its license review and certification process.</pre>
+  </div>
 
     
   <script>
@@ -110,5 +124,12 @@ e) to display the Original Work publicly.
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

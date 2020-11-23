@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>historical-ntp</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="historical-ntp.yml">yml</a> -
-  <a href="historical-ntp.json">json</a> -
-  <a href="historical-ntp.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/historical-ntp.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/historical-ntp.yml">edit data</a>
-  <hr>
-  <pre>key: historical-ntp
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="historical-ntp.yml">yml</a> -
+    <a href="historical-ntp.json">json</a> -
+    <a href="historical-ntp.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/historical-ntp.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/historical-ntp.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: historical-ntp
 short_name: Historical Notice - NTP
 name: Historical Notice - NTP
 category: Permissive
@@ -32,8 +45,8 @@ notes: |
   a rare permission notice found in a few pre-1990 files by HP found in NTP
   adjtimed/adjtimed.c include/adjtime.h and libntp/adjtime.c
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Permission is hereby granted for unlimited modification, use, and
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Permission is hereby granted for unlimited modification, use, and
 distribution.  This software is made available with no warranty of any
 kind, express or implied.  This copyright notice must remain intact in
 all versions of this software.
@@ -41,6 +54,7 @@ all versions of this software.
 The author would appreciate it if any bug fixes and enhancements were
 to be sent back to him for incorporation into future versions of this
 software.</pre>
+  </div>
 
     
   <script>
@@ -57,5 +71,12 @@ software.</pre>
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

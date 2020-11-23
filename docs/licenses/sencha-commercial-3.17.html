@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>sencha-commercial-3.17</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="sencha-commercial-3.17.yml">yml</a> -
-  <a href="sencha-commercial-3.17.json">json</a> -
-  <a href="sencha-commercial-3.17.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sencha-commercial-3.17.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sencha-commercial-3.17.yml">edit data</a>
-  <hr>
-  <pre>key: sencha-commercial-3.17
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="sencha-commercial-3.17.yml">yml</a> -
+    <a href="sencha-commercial-3.17.json">json</a> -
+    <a href="sencha-commercial-3.17.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sencha-commercial-3.17.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sencha-commercial-3.17.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: sencha-commercial-3.17
 short_name: Sencha Software License Agreement v3.17
 name: Sencha Software License Agreement v3.17
 category: Commercial
@@ -33,8 +46,8 @@ faq_url: https://www.sencha.com/support/faqs/
 other_urls:
   - https://www.sencha.com/legal/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Sencha Software License Agreement
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Sencha Software License Agreement
 Version 3.17
 
 THIS DOCUMENT IS A LEGAL AGREEMENT (the “Agreement”) BETWEEN SENCHA INC. (“We,” “Us”) AND YOU OR THE ORGANIZATION ON WHOSE BEHALF YOU ARE ENTERING INTO THIS AGREEMENT (“You”) IN RELATION TO SENCHA SOFTWARE GENERALLY MADE AVAILABLE IN SOURCE CODE FORMAT (“Sencha SDKs”) AND/OR SENCHA SOFTWARE GENERALLY MADE AVAILABLE IN OBJECT CODE FORMAT (“Sencha Tools”). (The Sencha SDKs and the Sencha Tools are sometimes hereinafter collectively referred to as the “Software”.)
@@ -171,6 +184,7 @@ Sencha ExtReact Pro includes Sencha ExtReact, Sencha Cmd, Sencha Themer, Sencha 
 
 Sencha ExtAngular Standard includes Sencha ExtAngular, and Sencha Cmd.
 Sencha ExtAngular Premium includes all the Sencha ExtAngular Standard Software and Sencha Themer, Sencha Tree Grid, Sencha Pivot Grid, Sencha Calendar Component, Sencha Exporter, and Sencha D3 Adapter.</pre>
+  </div>
 
     
   <script>
@@ -187,5 +201,12 @@ Sencha ExtAngular Premium includes all the Sencha ExtAngular Standard Software a
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

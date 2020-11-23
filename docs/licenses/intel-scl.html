@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>intel-scl</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="intel-scl.yml">yml</a> -
-  <a href="intel-scl.json">json</a> -
-  <a href="intel-scl.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-scl.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-scl.yml">edit data</a>
-  <hr>
-  <pre>key: intel-scl
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="intel-scl.yml">yml</a> -
+    <a href="intel-scl.json">json</a> -
+    <a href="intel-scl.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-scl.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/intel-scl.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: intel-scl
 short_name: Intel Source Code License Agreement
 name: Intel Source Code License Agreement
 category: Proprietary Free
@@ -31,8 +44,8 @@ owner: Intel Corporation
 other_urls:
   - http://software.intel.com/en-us/articles/intel-64-architecture-processor-topology-enumeration
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Intel Source Code License Agreement
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Intel Source Code License Agreement
 
 This license governs use of the accompanying software. By installing or copying all or any part of the software components in this package, you (&#34;you&#34; or &#34;Licensee&#34;) agree to the terms of this agreement.  Do not install or copy the software until you have carefully read and agreed to the following terms and conditions.  If you do not agree to the terms of this agreement, promptly return the software to Intel Corporation (&#34;Intel&#34;).
 
@@ -78,6 +91,7 @@ C.	You may NOT:  (i) use or copy the Materials except as provided in this Agreem
 8.	U.S. GOVERNMENT RESTRICTED RIGHTS: The Materials are provided with &#34;RESTRICTED RIGHTS&#34;. Use, duplication or disclosure by the Government is subject to restrictions set forth in FAR52.227-14 and DFAR252.227-7013 et seq. or its successor.  Use of the Materials by the Government constitutes acknowledgment of Intel&#39;s rights in them.
 
 9.	APPLICABLE LAWS: Any claim arising under or relating to this Agreement shall be governed by the internal substantive laws of the State of Delaware, without regard to principles of conflict of laws.  You may not export the Materials in violation of applicable export laws.</pre>
+  </div>
 
     
   <script>
@@ -94,5 +108,12 @@ C.	You may NOT:  (i) use or copy the Materials except as provided in this Agreem
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>bugsense-sdk</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="bugsense-sdk.yml">yml</a> -
-  <a href="bugsense-sdk.json">json</a> -
-  <a href="bugsense-sdk.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bugsense-sdk.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bugsense-sdk.yml">edit data</a>
-  <hr>
-  <pre>key: bugsense-sdk
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="bugsense-sdk.yml">yml</a> -
+    <a href="bugsense-sdk.json">json</a> -
+    <a href="bugsense-sdk.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bugsense-sdk.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/bugsense-sdk.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: bugsense-sdk
 short_name: BugSense SDK License
 name: BugSense SDK License
 category: Proprietary Free
@@ -38,8 +51,8 @@ ignorable_urls:
 ignorable_emails:
   - mobilesupport@splunk.com
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">SDK LICENSE AGREEMENT
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">SDK LICENSE AGREEMENT
 Information
 Last Updated: September 25, 2013
 YOU SHOULD READ THIS AGREEMENT CAREFULLY, AS IT CONSTITUTES A BINDING CONTRACT BETWEEN YOU AND BUGSENSE.
@@ -134,6 +147,7 @@ The following Choice of Law and Disputes terms and conditions will apply under t
 
 25.	General.
 All notices required or permitted under this Agreement will be by email. All notices to BugSense will be sent to mobilesupport@splunk.com (or to such other email address as we may notice to you from time to time). All notices to you will be sent to the email address you provide to BugSense as part of registering and establishing an account with us (or to such other email address as you may notice to us from time to time). You may not assign, delegate or transfer this Agreement, in whole or in part, by agreement, operation of law or otherwise. BugSense may assign this Agreement in whole or in part to (i) an affiliate, (ii) in connection with an internal reorganization, or (iii) in connection with a merger, acquisition, sale of all or a portion of BugSense’s business, assets or stock, or similar transaction. Further, BugSense may assign its rights to receive payment due as a result of performance of this Agreement to a bank, trust company, or other financing institution, including any Federal lending agency in accordance with the Assignment of Claims Act (31 U.S.C. 3727) and may assign this Agreement in accordance with the provisions at 48 C.F.R 42.12, as applicable. Any attempt to assign this Agreement other than as permitted herein will be null and void. Subject to the foregoing, this Agreement will bind and inure to the benefit of the parties’ permitted successors and assigns. This Agreement, including any exhibits or schedules hereto and any additional terms incorporated by reference, constitutes the complete and exclusive understanding and agreement between the parties and supersedes any and all prior or contemporaneous agreements, communications and understandings, written or oral, relating to their subject matter. Any waiver, modification or amendment of any provision of this Agreement will be effective only if in writing and signed by duly authorized representatives of both parties. Any terms and conditions contained or referenced by either party in a quote, purchase order, acceptance, invoice or any similar document purporting to modify the terms and conditions contained in this Agreement are hereby rejected and will be disregarded and have no effect unless otherwise expressly agreed to by the parties in accordance with the preceding sentence. This Agreement is a binding contract between you and BugSense governing your use of the BugSense SDK; however, if you and BugSense enter into a separate written agreement that specifically states that it supersedes this Agreement, in whole or in part, such separate written agreement will apply to your use of the BugSense SDK and supersede this Agreement to the extent and as set forth in such separate written agreement. In addition, this Agreement may be amended and become effective as set forth in Section 2 above.</pre>
+  </div>
 
     
   <script>
@@ -150,5 +164,12 @@ All notices required or permitted under this Agreement will be by email. All not
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ogl-uk-3.0</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="ogl-uk-3.0.yml">yml</a> -
-  <a href="ogl-uk-3.0.json">json</a> -
-  <a href="ogl-uk-3.0.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ogl-uk-3.0.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ogl-uk-3.0.yml">edit data</a>
-  <hr>
-  <pre>key: ogl-uk-3.0
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="ogl-uk-3.0.yml">yml</a> -
+    <a href="ogl-uk-3.0.json">json</a> -
+    <a href="ogl-uk-3.0.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ogl-uk-3.0.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ogl-uk-3.0.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: ogl-uk-3.0
 short_name: OGL-UK-3.0
 name: U.K. Open Government License for Public Sector Information v3.0
 category: Permissive
@@ -34,8 +47,8 @@ other_urls:
   - http://www.nationalarchives.gov.uk/doc/open-government-licence/
   - http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">You are encouraged to use and re-use the Information that is available under this licence freely and flexibly, with only a few conditions.
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">You are encouraged to use and re-use the Information that is available under this licence freely and flexibly, with only a few conditions.
 Using Information under this licence
 
 Use of copyright and database right material expressly made available under this licence (the &#39;Information&#39;) indicates your acceptance of the terms and conditions below.
@@ -107,6 +120,7 @@ This is version 3.0 of the Open Government Licence. The National Archives may, f
 These terms are compatible with the Creative Commons Attribution License 4.0 and the Open Data Commons Attribution License, both of which license copyright and database rights. This means that when the Information is adapted and licensed under either of those licences, you automatically satisfy the conditions of the OGL when you comply with the other licence. The OGLv3.0 is Open Definition compliant.
 
 Further context, best practice and guidance can be found in the UK Government Licensing Framework section on The National Archives website.</pre>
+  </div>
 
     
   <script>
@@ -123,5 +137,12 @@ Further context, best practice and guidance can be found in the UK Government Li
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

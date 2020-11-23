@@ -4,33 +4,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>planet-source-code</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="planet-source-code.yml">yml</a> -
-  <a href="planet-source-code.json">json</a> -
-  <a href="planet-source-code.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/planet-source-code.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/planet-source-code.yml">edit data</a>
-  <hr>
-  <pre>key: planet-source-code
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="planet-source-code.yml">yml</a> -
+    <a href="planet-source-code.json">json</a> -
+    <a href="planet-source-code.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/planet-source-code.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/planet-source-code.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: planet-source-code
 short_name: Planet Source Code License
 name: Planet Source Code License
 category: Free Restricted
 owner: Planet Source Code
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Terms of Agreement:   
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Terms of Agreement:   
 By using this code, you agree to the following terms...   
 
 You may use this code in your own programs (and may compile it into a program and distribute it in compiled format for languages that allow it) freely and with no charge.
@@ -40,6 +53,7 @@ You MAY NOT redistribute this code (for example to a web site) without written p
 You may link to this code from another website, but ONLY if it is not wrapped in a frame.
 
 You will abide by any additional copyright restrictions which the author may have placed in the code or code&#39;s description.</pre>
+  </div>
 
     
   <script>
@@ -56,5 +70,12 @@ You will abide by any additional copyright restrictions which the author may hav
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

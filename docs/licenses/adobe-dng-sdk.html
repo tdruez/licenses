@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>adobe-dng-sdk</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="adobe-dng-sdk.yml">yml</a> -
-  <a href="adobe-dng-sdk.json">json</a> -
-  <a href="adobe-dng-sdk.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adobe-dng-sdk.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adobe-dng-sdk.yml">edit data</a>
-  <hr>
-  <pre>key: adobe-dng-sdk
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="adobe-dng-sdk.yml">yml</a> -
+    <a href="adobe-dng-sdk.json">json</a> -
+    <a href="adobe-dng-sdk.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adobe-dng-sdk.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/adobe-dng-sdk.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: adobe-dng-sdk
 short_name: Adobe DNG SDK License Agreement
 name: Adobe DNG SDK License Agreement
 category: Proprietary Free
@@ -35,8 +48,8 @@ ignorable_urls:
   - http://www.adobe.com/
   - http://www.adobe.com/products/dng/license.html
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">DNG SDK License Agreement
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">DNG SDK License Agreement
 
 NOTICE TO USER:
 Adobe Systems Incorporated provides the Software and Documentation for use under the terms of this Agreement. Any download, installation, use, reproduction, modification or distribution of the Software or Documentation, or any derivatives or portions thereof, constitutes your acceptance of this Agreement.
@@ -74,6 +87,7 @@ Your rights under this Agreement shall terminate if you fail to comply with any 
 This Agreement supersedes any prior agreement, oral or written, between Adobe and you with respect to the licensing to you of the Software and Documentation. No variation of the terms of this Agreement will be enforceable against Adobe unless Adobe gives its express consent in writing signed by an authorized signatory of Adobe. If any part of this Agreement is found void and unenforceable, it will not affect the validity of the balance of the Agreement, which shall remain valid and enforceable according to its terms.
 
 For licensing information on the DNG File Format Specification, which is not included in the DNG SDK, please visit: http://www.adobe.com/products/dng/license.html.</pre>
+  </div>
 
     
   <script>
@@ -90,5 +104,12 @@ For licensing information on the DNG File Format Specification, which is not inc
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

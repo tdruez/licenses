@@ -4,34 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>qaplug</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="qaplug.yml">yml</a> -
-  <a href="qaplug.json">json</a> -
-  <a href="qaplug.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/qaplug.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/qaplug.yml">edit data</a>
-  <hr>
-  <pre>key: qaplug
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="qaplug.yml">yml</a> -
+    <a href="qaplug.json">json</a> -
+    <a href="qaplug.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/qaplug.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/qaplug.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: qaplug
 short_name: QAPlug License
 name: QAPlug License
 category: Proprietary Free
 owner: SolDevelo
 homepage_url: http://qaplug.com/about/license-agreement/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">END USER LICENSE AGREEMENT
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">END USER LICENSE AGREEMENT
 
 SolDevelo (&#34;Licensor&#34;) will license the software application (&#34;Software&#34;) to the User (&#34;Licensee&#34;), upon the condition that Licensee accept all of the Terms and Conditions of this End User License Agreement (&#34;Agreement&#34;).
 Please read the Terms and Conditions of this Agreement.
@@ -76,6 +89,7 @@ This Agreement may not be amended except by a written document signed by both pa
 9. Severability.
 Each provision of this Agreement is a separately enforceable provision.
 If any provision of this Agreement is determined to be or becomes unenforceable or illegal, such provision shall be reformed to the minimum extent necessary in order for this Agreement to remain in effect in accordance with its terms as modified by such reformation.</pre>
+  </div>
 
     
   <script>
@@ -92,5 +106,12 @@ If any provision of this Agreement is determined to be or becomes unenforceable 
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ms-sysinternals-sla</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="ms-sysinternals-sla.yml">yml</a> -
-  <a href="ms-sysinternals-sla.json">json</a> -
-  <a href="ms-sysinternals-sla.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-sysinternals-sla.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-sysinternals-sla.yml">edit data</a>
-  <hr>
-  <pre>key: ms-sysinternals-sla
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="ms-sysinternals-sla.yml">yml</a> -
+    <a href="ms-sysinternals-sla.json">json</a> -
+    <a href="ms-sysinternals-sla.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-sysinternals-sla.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-sysinternals-sla.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: ms-sysinternals-sla
 short_name: MS Sysinternals SLA
 name: Microsoft Sysinternals Software License Terms
 category: Commercial
@@ -31,8 +44,8 @@ owner: Microsoft
 ignorable_urls:
   - http://www.microsoft.com/exporting
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Sysinternals Software License Terms
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Sysinternals Software License Terms
 
     09/27/2009
     5 minutes to read
@@ -127,6 +140,7 @@ Cette limitation concerne :
 Elle s&#39;applique également, même si Sysinternals connaissait ou devrait connaître l&#39;éventualité d&#39;un tel dommage. Si votre pays n&#39;autorise pas l&#39;exclusion ou la limitation de responsabilité pour les dommages indirects, accessoires ou de quelque nature que ce soit, il se peut que la limitation ou l&#39;exclusion ci-dessus ne s&#39;appliquera pas à votre égard.
 
 EFFET JURIDIQUE. Le présent contrat décrit certains droits juridiques. Vous pourriez avoir d&#39;autres droits prévus par les lois de votre pays. Le présent contrat ne modifie pas les droits que vous confèrent les lois de votre pays si celles-ci ne le permettent pas.</pre>
+  </div>
 
     
   <script>
@@ -143,5 +157,12 @@ EFFET JURIDIQUE. Le présent contrat décrit certains droits juridiques. Vous po
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>mpl-1.1</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="mpl-1.1.yml">yml</a> -
-  <a href="mpl-1.1.json">json</a> -
-  <a href="mpl-1.1.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mpl-1.1.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mpl-1.1.yml">edit data</a>
-  <hr>
-  <pre>key: mpl-1.1
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="mpl-1.1.yml">yml</a> -
+    <a href="mpl-1.1.json">json</a> -
+    <a href="mpl-1.1.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mpl-1.1.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mpl-1.1.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: mpl-1.1
 short_name: MPL 1.1
 name: Mozilla Public License 1.1
 category: Copyleft Limited
@@ -47,8 +60,8 @@ other_urls:
 ignorable_urls:
   - http://www.mozilla.org/MPL/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">MOZILLA PUBLIC LICENSE
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">MOZILLA PUBLIC LICENSE
 Version 1.1
 
 1. Definitions.
@@ -194,6 +207,7 @@ EXHIBIT A -Mozilla Public License.
  Alternatively, the contents of this file may be used under the terms of the   license (the &#34;[   ] License&#34;), in which case the provisions of [ ] License are applicable instead of those above. If you wish to allow use of your version of this file only under the terms of the [ ] License and not to allow others to use your version of this file under the MPL, indicate your decision by deleting the provisions above and replace them with the notice and other provisions required by the [   ] License. If you do not delete the provisions above, a recipient may use your version of this file under either the MPL or the [   ] License.&#34;
 
  [NOTE: The text of this Exhibit A may differ slightly from the text of the notices in the Source Code files of the Original Code. You should use the text of this Exhibit A rather than the text found in the Original Code Source Code for Your Modifications.]</pre>
+  </div>
 
     
   <script>
@@ -210,5 +224,12 @@ EXHIBIT A -Mozilla Public License.
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

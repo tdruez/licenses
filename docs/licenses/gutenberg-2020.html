@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>gutenberg-2020</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="gutenberg-2020.yml">yml</a> -
-  <a href="gutenberg-2020.json">json</a> -
-  <a href="gutenberg-2020.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gutenberg-2020.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gutenberg-2020.yml">edit data</a>
-  <hr>
-  <pre>key: gutenberg-2020
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="gutenberg-2020.yml">yml</a> -
+    <a href="gutenberg-2020.json">json</a> -
+    <a href="gutenberg-2020.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gutenberg-2020.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/gutenberg-2020.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: gutenberg-2020
 short_name: Gutenberg License 2020
 name: Project Gutenberg License 2020
 category: Proprietary Free
@@ -38,8 +51,8 @@ ignorable_urls:
 ignorable_emails:
   - gbnewby@pglaf.org
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">THE FULL PROJECT GUTENBERG LICENSE
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">THE FULL PROJECT GUTENBERG LICENSE
 PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
 
 To protect the Project Gutenberg-tm mission of promoting the free
@@ -140,6 +153,7 @@ Most people start at our Web site which has the main PG search facility: www.gut
 This Web site includes information about Project Gutenberg-tm, including how to make donations to the Project Gutenberg Literary Archive Foundation, how to help produce our new eBooks, and how to subscribe to our email newsletter to hear about new eBooks.
 
 [*] This paragraph, after 1.C., is included only for copyrighted works. For those, you must contact the copyright holder before any non-free use or removal of the Project Gutenberg header.</pre>
+  </div>
 
     
   <script>
@@ -156,5 +170,12 @@ This Web site includes information about Project Gutenberg-tm, including how to 
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>mozilla-ospl-1.0</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="mozilla-ospl-1.0.yml">yml</a> -
-  <a href="mozilla-ospl-1.0.json">json</a> -
-  <a href="mozilla-ospl-1.0.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mozilla-ospl-1.0.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mozilla-ospl-1.0.yml">edit data</a>
-  <hr>
-  <pre>key: mozilla-ospl-1.0
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="mozilla-ospl-1.0.yml">yml</a> -
+    <a href="mozilla-ospl-1.0.json">json</a> -
+    <a href="mozilla-ospl-1.0.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mozilla-ospl-1.0.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/mozilla-ospl-1.0.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: mozilla-ospl-1.0
 short_name: Mozilla Open Software Patent License 1.0
 name: Mozilla Open Software Patent License Agreement v1
 category: Patent License
@@ -33,8 +46,8 @@ faq_url: https://www.mozilla.org/en-US/about/patents/
 other_urls:
   - https://www.mozilla.org/en-US/about/patents/guide/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Mozilla Open Software Patent License Agreement v1
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Mozilla Open Software Patent License Agreement v1
 This Open Software Patent License Agreement (&#34;Agreement&#34;) is made between you and the Licensor identified below. For purposes of this Agreement, you means you and your Affiliates, and Licensor means the Mozilla Corporation, Mozilla Foundation and any of their Affiliates.
 
 1.	Definitions
@@ -70,6 +83,7 @@ If you would like to show your intention to be bound by this Agreement, you may 
 
 If you would like to use the text of this agreement for your own patent licensing, you may feel free to do so. However, to avoid confusion please remove all references to &#34;Mozilla&#34; from your version of the agreement. You may wish to say that your agreement is &#34;based on the Mozilla Open Software Patent License Agreement,&#34; for informational purposes, but you are not required to do so.
 </pre>
+  </div>
 
     
   <script>
@@ -86,5 +100,12 @@ If you would like to use the text of this agreement for your own patent licensin
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

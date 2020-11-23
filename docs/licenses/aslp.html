@@ -4,34 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>aslp</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="aslp.yml">yml</a> -
-  <a href="aslp.json">json</a> -
-  <a href="aslp.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/aslp.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/aslp.yml">edit data</a>
-  <hr>
-  <pre>key: aslp
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="aslp.yml">yml</a> -
+    <a href="aslp.json">json</a> -
+    <a href="aslp.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/aslp.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/aslp.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: aslp
 short_name: Artop ASLP
 name: Artop Software License for Preparatory Development
 category: Free Restricted
 owner: Artop
 homepage_url: http://www.artop.org/aslp.html
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Artop Software License for Preparatory Development (ASLP)
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Artop Software License for Preparatory Development (ASLP)
 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ARTOP SOFTWARE LICENSE FOR PREPARATORY DEVELOPMENT (ASLP) (&#34;LICENSE&#34;). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT&#39;S ACCEPTANCE OF THIS AGREEMENT.
 
 1. DEFINITIONS
@@ -149,6 +162,7 @@ Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives n
 All rights in the Program not expressly granted under this License are reserved.
 8.6 Governing Law
 This License is governed by the laws of the Federal Republic of Germany. The application of the United Nations Convention for the International Sale of Goods (CISG) is hereby excluded.</pre>
+  </div>
 
     
   <script>
@@ -165,5 +179,12 @@ This License is governed by the laws of the Federal Republic of Germany. The app
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ijg</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="ijg.yml">yml</a> -
-  <a href="ijg.json">json</a> -
-  <a href="ijg.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ijg.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ijg.yml">edit data</a>
-  <hr>
-  <pre>key: ijg
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="ijg.yml">yml</a> -
+    <a href="ijg.json">json</a> -
+    <a href="ijg.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ijg.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ijg.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: ijg
 short_name: JPEG License
 name: Independent JPEG Group License
 category: Permissive
@@ -48,8 +61,8 @@ ignorable_holders:
   - Thomas G. Lane
   - the Free Software Foundation
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">LEGAL ISSUES
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">LEGAL ISSUES
 ============
 
 In plain English:
@@ -134,6 +147,7 @@ We are required to state that
     &#34;The Graphics Interchange Format(c) is the Copyright property of
     CompuServe Incorporated.  GIF(sm) is a Service Mark property of
     CompuServe Incorporated.&#34;</pre>
+  </div>
 
     
   <script>
@@ -150,5 +164,12 @@ We are required to state that
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

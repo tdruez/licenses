@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>esri</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="esri.yml">yml</a> -
-  <a href="esri.json">json</a> -
-  <a href="esri.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/esri.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/esri.yml">edit data</a>
-  <hr>
-  <pre>key: esri
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="esri.yml">yml</a> -
+    <a href="esri.json">json</a> -
+    <a href="esri.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/esri.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/esri.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: esri
 short_name: Esri License
 name: Esri License
 category: Commercial
@@ -50,8 +63,8 @@ ignorable_urls:
   - http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9792-teleatlas_use_data.pdf
   - http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9946-icubed.pdf
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">IMPORTANT—READ CAREFULLY
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">IMPORTANT—READ CAREFULLY
  
 Unless superseded by a signed license agreement between you and Esri, Esri is willing to license Products to you only if you accept all terms and conditions contained in this License Agreement. Please read the terms and conditions carefully. You may not use the Products until you have agreed to the terms and conditions of the License Agreement. If you do not agree to the terms and conditions as stated, click &#34;I do not accept the license agreement&#34; below; you may then request a refund of applicable fees paid.
  
@@ -620,6 +633,7 @@ c.     Installation Support. Installation Support for a period of ninety (90) da
 Esri Installation Support will be provided in compliance with the Esri ArcGIS for Home Use Installation Support document on the Esri website at http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/home-use-installation-support.pdf. Esri supports users solely with the installation of Esri Software. Esri&#39;s Support website is at http://support.esri.com/en/support. Support provided by an authorized distributor will be in accordance with the distributor&#39;s technical support program terms and conditions.
  
 4.     Other Esri Limited Use Programs: If Licensee acquires Products under any limited use program not listed above, Licensee&#39;s use of the Products may be subject to the terms set forth in the applicable launching page or enrollment form or as described on Esri&#39;s website in addition to the nonconflicting terms of this Addendum 4. All such program terms are incorporated herein by reference.</pre>
+  </div>
 
     
   <script>
@@ -636,5 +650,12 @@ Esri Installation Support will be provided in compliance with the Esri ArcGIS fo
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

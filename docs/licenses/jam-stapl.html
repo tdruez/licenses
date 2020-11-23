@@ -4,34 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jam-stapl</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="jam-stapl.yml">yml</a> -
-  <a href="jam-stapl.json">json</a> -
-  <a href="jam-stapl.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jam-stapl.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jam-stapl.yml">edit data</a>
-  <hr>
-  <pre>key: jam-stapl
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="jam-stapl.yml">yml</a> -
+    <a href="jam-stapl.json">json</a> -
+    <a href="jam-stapl.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jam-stapl.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jam-stapl.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: jam-stapl
 short_name: Jam STAPL Software License
 name: Jam STAPL Software License
 category: Free Restricted
 owner: Altera Corporation
 homepage_url: https://www.intel.com/content/www/us/en/programmable/support/support-resources/download/licensing/lic-jam.html
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">Jam STAPL Software License
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">Jam STAPL Software License
 SOFTWARE DISTRIBUTION AGREEMENT
 
 THE JAM SOFTWARE PROGRAM AND EXECUTABLE FILES, AND RELATED SPECIFICATION DOCUMENTATION (&#34;PROGRAMS&#34;) (AVAILABLE FOR DOWNLOADING FROM THIS WEB SITE OR ENCLOSED WITH THE COMPUTER DISK ACCOMPANYING THIS NOTICE), ARE MADE FREELY AVAILABLE FOR USE BY ANYONE, SUBJECT TO CERTAIN TERMS AND CONDITIONS SET FORTH BELOW. PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE DOWNLOADING OR USING THE PROGRAMS. BY DOWNLOADING OR USING THE PROGRAMS YOU INDICATE YOUR ACCEPTANCE OF THESE TERMS AND CONDITIONS, WHICH CONSTITUTE THE LICENSE AGREEMENT (the &#34;AGREEMENT&#34;) BETWEEN YOU AND ALTERA CORPORATION (&#34;ALTERA&#34;) WITH REGARD TO THE PROGRAMS. IN THE EVENT THAT YOU DO NOT AGREE WITH ANY OF THESE TERMS AND CONDITIONS, DO NOT DOWNLOAD THE PROGRAMS OR PROMPTLY RETURN THE PROGRAMS TO ALTERA UNUSED. 
@@ -62,6 +75,7 @@ BY USING THE PROGRAMS YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERST
 
 U.S. Government Restricted Rights 
 The Programs and any accompanying documentation are provided with RESTRICTED RIGHTS. Use, duplication, or disclosure by the Government is subject to restrictions as set forth in subparagraph (c)(1)(ii) of The Rights in Technical Data and Computer Software clause at DFARS 252.227-7013 or subparagraphs (c)(1) and (2) of Commercial Computer Software--Restricted Rights at 48 CFR 52.227-19, as applicable. Contractor/manufacturer is Altera Corporation, 101 Innovation Drive, San Jose, CA 95134 and its licensors.</pre>
+  </div>
 
     
   <script>
@@ -78,5 +92,12 @@ The Programs and any accompanying documentation are provided with RESTRICTED RIG
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

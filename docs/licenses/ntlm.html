@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ntlm</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="ntlm.yml">yml</a> -
-  <a href="ntlm.json">json</a> -
-  <a href="ntlm.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ntlm.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ntlm.yml">edit data</a>
-  <hr>
-  <pre>key: ntlm
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="ntlm.yml">yml</a> -
+    <a href="ntlm.json">json</a> -
+    <a href="ntlm.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ntlm.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ntlm.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: ntlm
 short_name: NTLM License
 name: NTLM License
 category: Permissive
@@ -43,8 +56,8 @@ ignorable_emails:
   - Mark.Bush@bushnet.demon.co.uk
   - davidbuzz@gmail.com
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">COPYRIGHT AND LICENCE
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">COPYRIGHT AND LICENCE
 
 This application is free software. This code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. You may freely use, copy and distribute this software as long as all copyright notices, including this notice, remain intact and that you do not try to claim it as your own or try to sell it. You may alter the code as long as you send me any diffs (this will ensure that you have an easier time of it when you upgrade ;).
 
@@ -55,6 +68,7 @@ Perl port of this code is Copyright (C) 2001 Mark Bush. &lt;Mark.Bush@bushnet.de
 The code is originally based on fetchmail code which is Copyright (C) 1997 Eric S. Raymond.
 
 Fetchmail uses SMB/Netbios code from samba which is Copyright (C) Andrew Tridgell 1992-1998 with modifications from Jeremy Allison.</pre>
+  </div>
 
     
   <script>
@@ -71,5 +85,12 @@ Fetchmail uses SMB/Netbios code from samba which is Copyright (C) Andrew Tridgel
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

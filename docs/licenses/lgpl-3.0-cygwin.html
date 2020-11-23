@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>lgpl-3.0-cygwin</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="lgpl-3.0-cygwin.yml">yml</a> -
-  <a href="lgpl-3.0-cygwin.json">json</a> -
-  <a href="lgpl-3.0-cygwin.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-3.0-cygwin.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-3.0-cygwin.yml">edit data</a>
-  <hr>
-  <pre>key: lgpl-3.0-cygwin
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="lgpl-3.0-cygwin.yml">yml</a> -
+    <a href="lgpl-3.0-cygwin.json">json</a> -
+    <a href="lgpl-3.0-cygwin.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-3.0-cygwin.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/lgpl-3.0-cygwin.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: lgpl-3.0-cygwin
 is_deprecated: yes
 short_name: LGPL 3.0 or later with Cygwin exception
 name: LGPL 3.0 or later with Cygwin exception
@@ -34,12 +47,13 @@ is_exception: yes
 other_urls:
   - https://cygwin.com/COPYING.LIB
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">The Cygwin API library found in the winsup subdirectory of the source code is covered by the GNU Lesser General Public License (LGPL) version 3 or later. For details of the requirements of LGPLv3, please read the GNU Lesser General Public License (LGPL).
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">The Cygwin API library found in the winsup subdirectory of the source code is covered by the GNU Lesser General Public License (LGPL) version 3 or later. For details of the requirements of LGPLv3, please read the GNU Lesser General Public License (LGPL).
 
 Cygwin™ Linking Exception
 
 As a special exception, the copyright holders of the Cygwin library grant you additional permission to link libcygwin.a, crt0.o, and gcrt0.o with independent modules to produce an executable, and to convey the resulting executable under terms of your choice, without any need to comply with the conditions of LGPLv3 section 4. An independent module is a module which is not itself based on the Cygwin library.</pre>
+  </div>
 
     
   <script>
@@ -56,5 +70,12 @@ As a special exception, the copyright holders of the Cygwin library grant you ad
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>

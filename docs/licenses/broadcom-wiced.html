@@ -4,26 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>broadcom-wiced</title>
-    <style>
-      body {font-family: sans-serif;}
-      .container {width: 80%; margin: auto;}
-      table.dataTable {visibility: visible !important;}
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+      <style>
+        table.dataTable {visibility: visible!important;}
+        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+        a:visited {color: #5755d9!important;}
+      </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
   <body>
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+    </section>
+  </header>
+</div>
     
-  <a href="../index.html">back to list</a> -
-  <a href="broadcom-wiced.yml">yml</a> -
-  <a href="broadcom-wiced.json">json</a> -
-  <a href="broadcom-wiced.LICENSE">text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/broadcom-wiced.LICENSE">edit text</a> -
-  <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/broadcom-wiced.yml">edit data</a>
-  <hr>
-  <pre>key: broadcom-wiced
+  <div class="container">
+    <hr>
+    <a href="../index.html">back to list</a> -
+    <a href="broadcom-wiced.yml">yml</a> -
+    <a href="broadcom-wiced.json">json</a> -
+    <a href="broadcom-wiced.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/broadcom-wiced.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/broadcom-wiced.yml" target="_blank">edit data</a>
+    <hr>
+    <pre>key: broadcom-wiced
 short_name: Broadcom WICED SDK License
 name: Broadcom WICED Development Kit License Agreement
 category: Proprietary Free
@@ -31,8 +44,8 @@ owner: Broadcom
 ignorable_urls:
   - http://www.broadcom.com/
 </pre>
-  <hr>
-  <pre id="license-text" style="white-space: pre-wrap;">BROADCOM WICED DEVELOPMENT KIT LICENSE AGREEMENT
+    <hr>
+    <pre id="license-text" style="white-space: pre-wrap;">BROADCOM WICED DEVELOPMENT KIT LICENSE AGREEMENT
 
 IMPORTANT—BY OPENING THE PACKAGE FOR THIS BROADCOM WIRELESS INTERNET CONNECTIVITY FOR EMBEDDED DEVICES DEVELOPER’S KIT (&#34;SDK&#34;), YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS LICENSE AGREEMENT (&#34;AGREEMENT&#34;). IF YOU DO NOT AGREE WITH THE TERMS OF THIS AGREEMENT, DO NOT DOWNLOAD, INSTALL OR USE THE SOFTWARE AND PROMPTLY RETURN THE SDK AND THE ACCOMPANYING DOCUMENTATION TO BROADCOM. IF YOU AGREE WITH AND ACCEPT THE TERMS AND CONDITIONS OF THIS AGREEMENT, IT SHALL BECOME A LEGALLY BINDING AGREEMENT BETWEEN YOU AND BROADCOM CORPORATION (&#34;BROADCOM&#34;), AND YOU MAY PROCEED TO DOWNLOAD, INSTALL, AND USE THE SDK IN ACCORDANCE WITH THE TERMS AND CONDITIONS OF THIS AGREEMENT.
 
@@ -72,6 +85,7 @@ You may not attempt to obtain the source code for the Software (except for the s
 11. MISCELLANEOUS. The laws of the state of California govern this Agreement, and it shall inure to the benefit of BROADCOM, its successors, administrators, heirs and assigns. In any action regarding this Agreement, the prevailing party shall be entitled to receive, in addition to any other relief, reasonable attorneys&#39; fees and expenses. If one or more of the provisions contained in this Agreement shall be unenforceable, then such provision shall be considered inoperative to the extent of such enforceability and the remainder of this Agreement shall continue in full force and effect. The parties hereto agree to replace any such invalid or unenforceable provision with a new provision that has the most nearly similar permissible economic or other effect. You may not assign, delegate or otherwise transfer, whether by agreement, operation of law or otherwise, any right or obligation hereunder without the express prior written consent of BROADCOM, and any attempted assignment, delegation or transfer without such consent shall be void. This Agreement supersedes all prior or contemporaneous proposals, representations, warranties, promises and other communications, whether oral or written, relating to the Software and Documentation. This Agreement may not be amended or modified, except by a written document signed by an authorized representative of each party. Any term or condition in any purchase order or other document you may submit to BROADCOM will have no legal effect.
 
 12. ACKNOWLEDGMENT. You acknowledge that you have read this Agreement, understand it, and agree to its terms and conditions. You also agree that this Agreement covers any merged or partial copies of the Software and is the complete and exclusive Agreement between the parties and supersedes all related proposals, communications or prior agreements, oral or written.</pre>
+  </div>
 
     
   <script>
@@ -88,5 +102,12 @@ You may not attempt to obtain the source code for the Software (except for the s
     });
   </script>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
   </body>
 </html>
