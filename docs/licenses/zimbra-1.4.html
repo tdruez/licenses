@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>zimbra-1.4</title>
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-      <style>
-        table.dataTable {visibility: visible!important;}
-        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
-        a:visited {color: #5755d9!important;}
-      </style>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+    </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
 
   </head>
   <body style="padding: 0 7rem;">
@@ -23,6 +29,12 @@
       <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
       <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
     </section>
   </header>
 </div>
@@ -93,6 +105,13 @@ IN NO EVENT WILL ZIMBRA BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
 This Agreement contains the entire agreement of the parties with respect to the subject matter of this Agreement and supersedes all previous communications, representations, understandings, and agreements, either oral or written, between the parties with respect to said subject matter. The relationship of the parties hereunder is that of independent contractors, and this Agreement will not be construed as creating an agency, partnership, joint venture, or any other form of legal association between the parties. If any term, condition, or provision in this Agreement is found to be invalid, unlawful, or unenforceable to any extent, this Agreement will be construed in a manner that most closely effectuates the intent of this Agreement. Such invalid term, condition or provision will be severed from the remaining terms, conditions, and provisions, which will continue to be valid and enforceable to the fullest extent permitted by law. This Agreement will be interpreted and construed in accordance with the laws of the State of Delaware and the United States of America, without regard to conflict of law principles. The U.N. Convention on Contracts for the International Sale of Goods shall not apply to this Agreement. All disputes arising out of this Agreement involving Zimbra or any of its parents or subsidiaries shall be subject to the jurisdiction of the federal or state courts of Northern Texas, with venue lying in Dallas County, Texas. No rights may be assigned, no obligations may be delegated, and this Agreement may not be transferred by You, in whole or in part, whether voluntary or by operation of law, including by way of sale of assets, merger, or consolidation, without the prior written consent of Zimbra, and any purported assignment, delegation, or transfer without such consent shall be void ab initio. Any waiver of the provisions of this Agreement or of a party’s rights or remedies under this Agreement must be in writing to be effective. Failure, neglect, or delay by a party to enforce the provisions of this Agreement or its rights or remedies at any time will not be construed or be deemed to be a waiver of such party’s rights under this Agreement and will not in any way affect the validity of the whole or any part of this Agreement or prejudice such party’s right to take subsequent action.</code></pre>
   </div>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
     
   <script>
     $(document).ready(function() {
@@ -108,12 +127,5 @@ This Agreement contains the entire agreement of the parties with respect to the 
     });
   </script>
 
-    <footer class="section">
-  <div class="container text-dark">
-    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
-    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
-    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
-  </div>
-</footer>
   </body>
 </html>

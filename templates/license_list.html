@@ -45,10 +45,14 @@
 {% block scripts %}
   <script>
     $(document).ready(function() {
-      $('table').DataTable( {
-          "paging": false,
-          "ordering": true,
-          "info": true,
+      let table = $('table').DataTable({
+        "paging": false,
+        "ordering": true,
+        "info": true,
+      });
+      // https://datatables.net/reference/api/search()
+      $("#searchbox").on("keyup", function() {
+        table.search(this.value).draw();
       });
     });
   </script>

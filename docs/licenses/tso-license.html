@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>tso-license</title>
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-      <style>
-        table.dataTable {visibility: visible!important;}
-        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
-        a:visited {color: #5755d9!important;}
-      </style>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+    </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
 
   </head>
   <body style="padding: 0 7rem;">
@@ -23,6 +29,12 @@
       <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
       <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
     </section>
   </header>
 </div>
@@ -62,6 +74,13 @@ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE.
 </code></pre>
   </div>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
     
   <script>
     $(document).ready(function() {
@@ -77,12 +96,5 @@ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE.
     });
   </script>
 
-    <footer class="section">
-  <div class="container text-dark">
-    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
-    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
-    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
-  </div>
-</footer>
   </body>
 </html>

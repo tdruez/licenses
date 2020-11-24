@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>google-analytics-tos</title>
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-      <style>
-        table.dataTable {visibility: visible!important;}
-        footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
-        a:visited {color: #5755d9!important;}
-      </style>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+    </style>
     
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
 
   </head>
   <body style="padding: 0 7rem;">
@@ -23,6 +29,12 @@
       <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
       <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
     </section>
   </header>
 </div>
@@ -138,6 +150,13 @@ Google may modify these terms or any additional terms that apply to the Service 
 Google will be excused from performance in this Agreement to the extent that performance is prevented, delayed or obstructed by causes beyond its reasonable control. This Agreement (including any amendment agreed upon by the parties in writing) represents the complete agreement between You and Google concerning its subject matter, and supersedes all prior agreements and representations between the parties. If any provision of this Agreement is held to be unenforceable for any reason, such provision will be reformed to the extent necessary to make it enforceable to the maximum extent permissible so as to effect the intent of the parties, and the remainder of this Agreement will continue in full force and effect. This Agreement will be governed by and construed under the laws of the state of California without reference to its conflict of law principles. In the event of any conflicts between foreign law, rules, and regulations, and California law, rules, and regulations, California law, rules and regulations will prevail and govern. Each party agrees to submit to the exclusive and personal jurisdiction of the courts located in Santa Clara County, California. The United Nations Convention on Contracts for the International Sale of Goods and the Uniform Computer Information Transactions Act do not apply to this Agreement. The Software is controlled by U.S. Export Regulations, and it may be not be exported to or used by embargoed countries or individuals. Any notices to Google must be sent to: Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA, with a copy to Legal Department, via first class or air mail or overnight courier, and are deemed given upon receipt. A waiver of any default is not a waiver of any subsequent default. You may not assign or otherwise transfer any of Your rights in this Agreement without Google&#39;s prior written consent, and any such attempt is void. The relationship between Google and You is not one of a legal partnership relationship, but is one of independent contractors. This Agreement will be binding upon and inure to the benefit of the respective successors and assigns of the parties hereto. The following sections of this Agreement will survive any termination thereof: 1, 4, 5, 6 (except the last two sentences), 7, 8, 9, 10, 11, 12, 14, and 16.</code></pre>
   </div>
 
+    <footer class="section">
+  <div class="container text-dark">
+    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
+  </div>
+</footer>
     
   <script>
     $(document).ready(function() {
@@ -153,12 +172,5 @@ Google will be excused from performance in this Agreement to the extent that per
     });
   </script>
 
-    <footer class="section">
-  <div class="container text-dark">
-    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
-    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://github.com/nexB/licensedb/blob/main/LICENSE" target="_blank">Apache License Version 2.0</a>.</p>
-    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3.</p>
-  </div>
-</footer>
   </body>
 </html>
