@@ -46,7 +46,7 @@ def write_file(path, filename, content):
 def generate_indexes(output_path):
     license_list_template = env.get_template("license_list.html")
     index_html = license_list_template.render(
-        title="License list", licenses=licenses, scancode_version=scancode_version
+        licenses=licenses, scancode_version=scancode_version
     )
     (output_path / "index.html").open("w").write(index_html)
 
