@@ -15,14 +15,14 @@
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
-  <body>
+  <body style="padding: 0 7rem;">
     <div class="container">
   <header class="navbar">
     <section class="navbar-section">
-      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
-      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1.1rem;">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
-      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
     </section>
   </header>
 </div>
@@ -36,7 +36,7 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/minecraft-mod.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/minecraft-mod.yml" target="_blank">edit data</a>
     <hr>
-    <pre>key: minecraft-mod
+    <pre style="white-space: pre-wrap;">key: minecraft-mod
 short_name: Minecraft Mod License
 name: Minecraft Mod License
 category: Proprietary Free
@@ -45,7 +45,7 @@ homepage_url: https://bdew.net/
 notes: From https://github.com/ErikMcClure/bad-licenses
 </pre>
     <hr>
-    <pre id="license-text" style="white-space: pre-wrap;">Minecraft: Denotes a copy of the Minecraft game licensed by Mojang AB
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Minecraft: Denotes a copy of the Minecraft game licensed by Mojang AB
 User: Anybody that interacts with the software in one of the following ways:
    - play
    - decompile
@@ -104,7 +104,7 @@ Bukkit).
 Modified version of binaries and sources, as well as files containing sections
 copied from this mod, should be distributed under the terms of the present
 license.
-</pre>
+</code></pre>
   </div>
 
     

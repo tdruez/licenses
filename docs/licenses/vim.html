@@ -15,14 +15,14 @@
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
-  <body>
+  <body style="padding: 0 7rem;">
     <div class="container">
   <header class="navbar">
     <section class="navbar-section">
-      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
-      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1.1rem;">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
-      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
     </section>
   </header>
 </div>
@@ -36,7 +36,7 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/vim.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/vim.yml" target="_blank">edit data</a>
     <hr>
-    <pre>key: vim
+    <pre style="white-space: pre-wrap;">key: vim
 short_name: VIM License
 name: VIM License
 category: Copyleft
@@ -52,7 +52,7 @@ ignorable_emails:
   - maintainer@vim.org
 </pre>
     <hr>
-    <pre id="license-text" style="white-space: pre-wrap;">VIM LICENSE
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>VIM LICENSE
 
 I)  There are no restrictions on distributing unmodified copies of Vim except
     that they must include this license text.  You can also distribute
@@ -153,7 +153,7 @@ Note:
 
 - If you distribute a modified version of Vim, you can include your name and
   contact information with the &#34;--with-modified-by&#34; configure argument or the
-  MODIFIED_BY define.</pre>
+  MODIFIED_BY define.</code></pre>
   </div>
 
     

@@ -15,14 +15,14 @@
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
-  <body>
+  <body style="padding: 0 7rem;">
     <div class="container">
   <header class="navbar">
     <section class="navbar-section">
-      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
-      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1.1rem;">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
-      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
     </section>
   </header>
 </div>
@@ -36,7 +36,7 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/dropbear-2016.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/dropbear-2016.yml" target="_blank">edit data</a>
     <hr>
-    <pre>key: dropbear-2016
+    <pre style="white-space: pre-wrap;">key: dropbear-2016
 short_name: Dropbear-2016
 name: Dropbear-2016
 category: Permissive
@@ -76,7 +76,7 @@ ignorable_emails:
   - ylo@cs.hut.fi
 </pre>
     <hr>
-    <pre id="license-text" style="white-space: pre-wrap;">Dropbear contains a number of components from different sources, hence there
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Dropbear contains a number of components from different sources, hence there
 are a few licenses and authors involved. All licenses are fairly 
 non-restrictive.
 The majority of code is written by Matt Johnston, under the license below.
@@ -193,7 +193,7 @@ curve25519-donna:
  * This is, almost, a clean room reimplementation from the curve25519 paper. It
  * uses many of the tricks described therein. Only the crecip function is taken
  * from the sample implementation.
- */</pre>
+ */</code></pre>
   </div>
 
     

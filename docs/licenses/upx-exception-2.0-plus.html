@@ -15,14 +15,14 @@
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
-  <body>
+  <body style="padding: 0 7rem;">
     <div class="container">
   <header class="navbar">
     <section class="navbar-section">
-      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
-      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1.1rem;">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
-      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
     </section>
   </header>
 </div>
@@ -36,7 +36,7 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/upx-exception-2.0-plus.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/upx-exception-2.0-plus.yml" target="_blank">edit data</a>
     <hr>
-    <pre>key: upx-exception-2.0-plus
+    <pre style="white-space: pre-wrap;">key: upx-exception-2.0-plus
 short_name: UPX exception to GPL 2.0 or later
 name: UPX exception to GPL 2.0 or later
 category: Copyleft Limited
@@ -131,7 +131,7 @@ standard_notice: |
   Linz, Austria, 25 Feb 2000
 </pre>
     <hr>
-    <pre id="license-text" style="white-space: pre-wrap;">SPECIAL EXCEPTION FOR COMPRESSED EXECUTABLES
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>SPECIAL EXCEPTION FOR COMPRESSED EXECUTABLES
 ============================================
 
 The stub which is imbedded in each UPX compressed program is part of UPX and UCL, and contains code that is under our copyright. The terms of the GNU General Public License still apply as compressing a program is a special form of linking with our stub.
@@ -142,7 +142,7 @@ Hereby Markus F.X.J. Oberhumer and Laszlo Molnar grant you special permission to
 
 2. This also implies that the UPX stub must be completely unmodfied, i.e.the stub imbedded in your compressed program must be byte-identical to the stub that is produced by the official unmodified UPX version.
 
-3. The decompressor and any other code from the stub must exclusively get used by the unmodified UPX stub for decompressing your program at program startup. No portion of the stub may get read, copied, called or otherwise get used or accessed by your program.</pre>
+3. The decompressor and any other code from the stub must exclusively get used by the unmodified UPX stub for decompressing your program at program startup. No portion of the stub may get read, copied, called or otherwise get used or accessed by your program.</code></pre>
   </div>
 
     

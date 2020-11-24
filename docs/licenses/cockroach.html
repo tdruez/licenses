@@ -15,14 +15,14 @@
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
-  <body>
+  <body style="padding: 0 7rem;">
     <div class="container">
   <header class="navbar">
     <section class="navbar-section">
-      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
-      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1.1rem;">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
-      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
     </section>
   </header>
 </div>
@@ -36,7 +36,7 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cockroach.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/cockroach.yml" target="_blank">edit data</a>
     <hr>
-    <pre>key: cockroach
+    <pre style="white-space: pre-wrap;">key: cockroach
 short_name: CCL
 name: Cockroach Community License
 category: Source-available
@@ -50,7 +50,7 @@ ignorable_urls:
   - https://github.com/cockroachdb/cockroach
 </pre>
     <hr>
-    <pre id="license-text" style="white-space: pre-wrap;">CockroachDB Community License Agreement
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>CockroachDB Community License Agreement
 
 Please read this CockroachDB Community License Agreement (the &#34;Agreement&#34;)
 carefully before using CockroachDB (as defined below), which is offered by
@@ -442,7 +442,7 @@ industry custom. The failure of either party to enforce its rights under this
 Agreement at any time for any period shall not be construed as a waiver of such
 rights. No changes, modifications or waivers to this Agreement will be effective
 unless in writing and signed by both parties.
-</pre>
+</code></pre>
   </div>
 
     

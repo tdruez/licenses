@@ -15,14 +15,14 @@
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
-  <body>
+  <body style="padding: 0 7rem;">
     <div class="container">
   <header class="navbar">
     <section class="navbar-section">
-      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
-      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1.1rem;">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
-      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
     </section>
   </header>
 </div>
@@ -36,7 +36,7 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/musl-exception.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/musl-exception.yml" target="_blank">edit data</a>
     <hr>
-    <pre>key: musl-exception
+    <pre style="white-space: pre-wrap;">key: musl-exception
 short_name: musl attribution exception
 name: musl attribution exception
 category: Permissive
@@ -45,7 +45,7 @@ homepage_url: http://www.musl-libc.org/
 is_exception: yes
 </pre>
     <hr>
-    <pre id="license-text" style="white-space: pre-wrap;">In addition, permission is hereby granted for all public header files
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>In addition, permission is hereby granted for all public header files
 (include/* and arch/*/bits/*) and crt files intended to be linked into
 applications (crt/*, ldso/dlstart.c, and arch/*/crt_arch.h) to omit
 the copyright notice and permission notice otherwise required by the
@@ -61,7 +61,7 @@ Stefan Kristiansson
 Szabolcs Nagy
 
 all of whom have explicitly granted such permission.
-</pre>
+</code></pre>
   </div>
 
     

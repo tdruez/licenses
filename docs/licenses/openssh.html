@@ -15,14 +15,14 @@
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
-  <body>
+  <body style="padding: 0 7rem;">
     <div class="container">
   <header class="navbar">
     <section class="navbar-section">
-      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
-      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1.1rem;">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
-      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
     </section>
   </header>
 </div>
@@ -36,7 +36,7 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openssh.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/openssh.yml" target="_blank">edit data</a>
     <hr>
-    <pre>key: openssh
+    <pre style="white-space: pre-wrap;">key: openssh
 short_name: OpenSSH License
 name: OpenSSH License
 category: Permissive
@@ -79,7 +79,7 @@ ignorable_emails:
   - ylo@cs.hut.fi
 </pre>
     <hr>
-    <pre id="license-text" style="white-space: pre-wrap;">This file is part of the OpenSSH software.
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>This file is part of the OpenSSH software.
 
 The licences which components of this software fall under are as
 follows.  First, we will summarize and say that all components
@@ -418,7 +418,7 @@ OpenSSH contains no GPL code.
 
 
 ------
-$OpenBSD: LICENCE,v 1.19 2004/08/30 09:18:08 markus Exp $</pre>
+$OpenBSD: LICENCE,v 1.19 2004/08/30 09:18:08 markus Exp $</code></pre>
   </div>
 
     

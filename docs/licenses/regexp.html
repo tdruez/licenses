@@ -15,14 +15,14 @@
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
 
   </head>
-  <body>
+  <body style="padding: 0 7rem;">
     <div class="container">
   <header class="navbar">
     <section class="navbar-section">
-      <a class="navbar-brand text-bold mr-2">LicenseDB</a>
-      <a href="https://www.aboutcode.org/" target="_blank">About</a>
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1.1rem;">LicenseDB</a>
+      <a href="https://www.aboutcode.org/" target="_blank" class="btn btn-link">About</a>
       <a href="https://github.com/nexB/licensedb" target="_blank" class="btn btn-link">GitHub</a>
-      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
     </section>
   </header>
 </div>
@@ -36,7 +36,7 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/regexp.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/regexp.yml" target="_blank">edit data</a>
     <hr>
-    <pre>key: regexp
+    <pre style="white-space: pre-wrap;">key: regexp
 short_name: Regexp License
 name: Regexp License
 category: Permissive
@@ -45,7 +45,7 @@ homepage_url: https://fedoraproject.org/wiki/Licensing/Henry_Spencer_Reg-Ex_Libr
 spdx_license_key: Spencer-86
 </pre>
     <hr>
-    <pre id="license-text" style="white-space: pre-wrap;">Not derived from licensed software.
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Not derived from licensed software.
 
 Permission is granted to anyone to use this software for any
 purpose on any computer system, and to redistribute it freely,
@@ -64,7 +64,7 @@ be misrepresented as being the original software.
 Beware that some of this code is subtly aware of the way operator
 precedence is structured in regular expressions. Serious changes in
 regular-expression syntax might require a total rethink.
-</pre>
+</code></pre>
   </div>
 
     
