@@ -30,7 +30,9 @@
               -
             {% endif %}
           </td>
-          <td>{{ license.category }}</td>
+          <td>
+            <a href="?search={{ license.category }}" style="color: inherit !important;">{{ license.category }}</a>
+          </td>
           <td>
             <a href="licenses/{{ key }}.yml">yml</a> -
             <a href="licenses/{{ key }}.json">json</a> -
@@ -51,10 +53,20 @@
         "ordering": true,
         "info": true,
       });
+
       // https://datatables.net/reference/api/search()
-      $("#searchbox").on("keyup", function() {
+      let searchbox = $("#searchbox");
+      searchbox.on("keyup", function() {
         table.search(this.value).draw();
       });
+
+      let url_params = new URLSearchParams(window.location.search);
+      let search = url_params.get('search');
+      if (search) {
+        searchbox.val(search);
+        searchbox.keyup();
+      }
+
     });
   </script>
 {% endblock %}
