@@ -3,8 +3,6 @@
 {% block title %}LicenseDB: {{ license.key }}{% endblock %}
 
 {% block extrahead %}
-  <link rel="stylesheet" href="../static/spectre-0.5.9.min.css">
-  <script src="../static/jquery-3.5.1.slim.min.js"></script>
   <script src="../static/jquery.mark-8.11.1.min.js"></script>
   <style>
     table.dataTable {visibility: visible!important;}
@@ -22,7 +20,7 @@
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/{{ license.key }}.LICENSE" target="_blank">edit text</a> -
     <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/{{ license.key }}.yml" target="_blank">edit data</a>
     <hr>
-    <pre style="white-space: pre-wrap;">{{ license_data }}</pre>
+    <pre style="white-space: pre-wrap; font-family: inherit;">{{ license_data }}</pre>
     <hr>
     <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>{{ license.text }}</code></pre>
   </div>

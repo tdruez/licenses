@@ -1,7 +1,7 @@
 <div class="container">
   <footer class="section text-dark">
     <p>
-      <a href="#">Help</a> ·
+      <a href="{% if not is_root %}../{% endif %}help.html">Help</a> ·
       <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
       <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
       <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>

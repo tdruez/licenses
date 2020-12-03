@@ -1,8 +1,8 @@
 <div class="container">
   <header class="navbar">
     <section class="navbar-section">
-      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;">ScanCode LicenseDB</a>
-      <a href="#" class="btn btn-link">Help</a>
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="{% if not is_root %}../index.html{% endif %}">ScanCode LicenseDB</a>
+      <a href="{% if not is_root %}../{% endif %}help.html" class="btn btn-link">Help</a>
       <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
       <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
       <span class="nav-item">Licensed under <a href="{% if not is_root %}../{% endif %}licenses/cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>

@@ -89,15 +89,25 @@ def generate_details(output_path):
         write_file(output_path, f"{license.key}.LICENSE", license.text)
 
 
-def generate():
-    output_path = pathlib.Path(BUILD_LOCATION)
-    output_path.mkdir(parents=False, exist_ok=True)
+def generate_help(output_path):
+    template = env.get_template("help.html")
+    html = template.render(
+        is_root=True,
+        now=now(),
+    )
+    (output_path / "help.html").open("w").write(html)
 
-    licenses_path = output_path / "licenses"
+
+def generate():
+    root_path = pathlib.Path(BUILD_LOCATION)
+    root_path.mkdir(parents=False, exist_ok=True)
+
+    licenses_path = root_path / "licenses"
     licenses_path.mkdir(parents=False, exist_ok=True)
 
-    generate_indexes(output_path)
+    generate_indexes(root_path)
     generate_details(licenses_path)
+    generate_help(root_path)
 
 
 if __name__ == "__main__":
