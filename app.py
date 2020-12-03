@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
-# http://nexb.com and https://github.com/nexB/licensedb
+# http://nexb.com and https://github.com/nexB/scancode-licensedb
 # The LicenseDB software is licensed under the Apache License version 2.0.
 # Data generated with LicenseDB is provided as-is without warranties.
 # LicenseDB is a trademark of nexB Inc.
@@ -18,7 +18,7 @@
 # for any legal advice.
 #
 # LicenseDB is a free software code scanning tool from nexB Inc. and others.
-# Visit https://github.com/nexB/licensedb for support and download.
+# Visit https://github.com/nexB/scancode-licensedb for support and download.
 
 import json
 import pathlib
