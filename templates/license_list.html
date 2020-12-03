@@ -11,6 +11,7 @@
 
 {% block content %}
   <div class="container">
+    <div class="loading loading-lg" style="margin-top:50px;"></div>
     <table class="display" style="visibility: hidden;">
       <thead>
         <tr>
@@ -51,7 +52,11 @@
 {% block scripts %}
   <script>
     $(document).ready(function() {
-      let table = $('table').DataTable({
+      let table = $("table")
+      .on("init.dt", function() {
+        $(".loading").remove();
+      })
+      .DataTable({
         "paging": false,
         "ordering": true,
         "info": true,
