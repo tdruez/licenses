@@ -1,7 +1,12 @@
 <div class="container">
   <footer class="section text-dark">
-    <p><a href="https://www.aboutcode.org/" target="_blank">About</a> · <a href="https://github.com/nexB/licensedb" target="_blank">GitHub</a> · <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a></p>
-    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="https://raw.githubusercontent.com/nexB/scancode-toolkit/develop/src/licensedcode/data/licenses/cc-by-4.0.LICENSE" target="_blank">Creative Commons Attribution License 4.0</a>.</p>
+    <p>
+      <a href="#">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="{% if not is_root %}../{% endif %}licenses/cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
     <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> {{ scancode_version }}.</p>
   </footer>
 </div>

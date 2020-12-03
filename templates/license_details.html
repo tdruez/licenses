@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+
 {% block title %}LicenseDB: {{ license.key }}{% endblock %}
+
 {% block extrahead %}
   <link rel="stylesheet" href="../static/spectre-0.5.9.min.css">
   <script src="../static/jquery-3.5.1.slim.min.js"></script>
@@ -9,6 +11,7 @@
     #search-section {display: none;}
   </style>
 {% endblock %}
+
 {% block content %}
   <div class="container">
     <hr>
