@@ -3,7 +3,7 @@
 {% block title %}LicenseDB: {{ license.key }}{% endblock %}
 
 {% block extrahead %}
-  <script src="../static/jquery.mark-8.11.1.min.js"></script>
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
   <style>
     table.dataTable {visibility: visible!important;}
     #search-section {display: none;}
@@ -13,7 +13,7 @@
 {% block content %}
   <div class="container">
     <hr>
-    <a href="../index.html">back to list</a> -
+    <a href="index.html">back to list</a> -
     <a href="{{ license.key }}.yml">yml</a> -
     <a href="{{ license.key }}.json">json</a> -
     <a href="{{ license.key }}.LICENSE">text</a> -

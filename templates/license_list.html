@@ -23,7 +23,7 @@
       <tbody>
       {% for key, license in licenses.items() %}
         <tr>
-          <td><a href="licenses/{{ key }}.html">{{ key }}</a></td>
+          <td><a href="{{ key }}.html">{{ key }}</a></td>
           <td>{{ license.short_name }}</td>
           <td>
             {% if license.spdx_license_key %}
@@ -36,9 +36,9 @@
             <a href="?search={{ license.category }}" style="color: inherit !important;">{{ license.category }}</a>
           </td>
           <td>
-            <a href="licenses/{{ key }}.yml">yml</a> -
-            <a href="licenses/{{ key }}.json">json</a> -
-            <a href="licenses/{{ key }}.LICENSE">text</a>
+            <a href="{{ key }}.yml">yml</a> -
+            <a href="{{ key }}.json">json</a> -
+            <a href="{{ key }}.LICENSE">text</a>
           </td>
         </tr>
       {% endfor %}

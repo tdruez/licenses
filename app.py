@@ -50,35 +50,39 @@ env = Environment(
 
 
 def write_file(path, filename, content):
-    (path / filename).open("w").write(content)
+    path.joinpath(filename).open("w").write(content)
 
 
 def now():
     return datetime.now().strftime("%b %d, %Y")
 
 
+base_context = {
+    "scancode_version": scancode_version,
+    "now": now(),
+}
+
+
 def generate_indexes(output_path):
     license_list_template = env.get_template("license_list.html")
     index_html = license_list_template.render(
+        **base_context,
         licenses=licenses,
-        scancode_version=scancode_version,
-        is_root=True,
-        now=now(),
     )
-    (output_path / "index.html").open("w").write(index_html)
+    write_file(output_path, "index.html", index_html)
 
     index = [
         {
             "license_key": key,
-            "json": f"licenses/{key}.json",
-            "yml": f"licenses/{key}.yml",
-            "html": f"licenses/{key}.html",
-            "text": f"licenses/{key}.LICENSE",
+            "json": f"{key}.json",
+            "yml": f"{key}.yml",
+            "html": f"{key}.html",
+            "text": f"{key}.LICENSE",
         }
         for key in licenses.keys()
     ]
-    (output_path / "index.json").open("w").write(json.dumps(index))
-    (output_path / "index.yml").open("w").write(saneyaml.dump(index))
+    write_file(output_path, "index.json", json.dumps(index))
+    write_file(output_path, "index.yml", saneyaml.dump(index))
 
 
 def generate_details(output_path):
@@ -87,10 +91,9 @@ def generate_details(output_path):
         license_data = license.to_dict()
         yml = saneyaml.dump(license_data)
         html = license_details_template.render(
+            **base_context,
             license=license,
             license_data=yml,
-            scancode_version=scancode_version,
-            now=now(),
         )
         write_file(output_path, f"{license.key}.html", html)
         write_file(output_path, f"{license.key}.yml", yml)
@@ -100,22 +103,16 @@ def generate_details(output_path):
 
 def generate_help(output_path):
     template = env.get_template("help.html")
-    html = template.render(
-        is_root=True,
-        now=now(),
-    )
-    (output_path / "help.html").open("w").write(html)
+    html = template.render(**base_context)
+    write_file(output_path, "help.html", html)
 
 
 def generate():
     root_path = pathlib.Path(BUILD_LOCATION)
     root_path.mkdir(parents=False, exist_ok=True)
 
-    licenses_path = root_path / "licenses"
-    licenses_path.mkdir(parents=False, exist_ok=True)
-
     generate_indexes(root_path)
-    generate_details(licenses_path)
+    generate_details(root_path)
     generate_help(root_path)
 
 
