@@ -36,4 +36,3 @@ local
 /.cache/
 /.python-version
 /.pytest_cache/
-/scancodeio.egg-info/
